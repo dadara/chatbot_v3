@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2011 JANE A.I. Foundation.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the JANE A.I. Foundation.  -->
+<!-- Last modified 10/5/2011 -->
+<!-- -->
+
+
+
+<!-- name -->
+<category><pattern>WHO ARE YOU</pattern>
+	<template>
+		<condition name="matched">
+		we already had that
+		</condition>
+	I am <set name="name"><bot name="name"/></set> Who are you?
+		<think>	
+		<set name="topic">WHO IS TALKING</set>
+				<set name="matched">true</set></think>
+	</template>
+	
+</category>
+<category><pattern>WHAT'S YOUR NAME</pattern>
+	<template>My name is <set name="name"><bot name="name"/></set>What is yours?
+		<think><set name="topic">WHO IS TALKING</set><set name="matched">true</set></think>
+	</template>
+</category>		
+<category><pattern>WHAT IS YOUR NAME</pattern>
+	<template>My name is <set name="name"><bot name="name"/></set>What is yours?
+		<think>		<set name="topic">WHO IS TALKING</set>
+<set name="matched">true</set></think>
+	</template>
+</category>
+
+<category><pattern>ARE YOU JANE *</pattern>
+	<template>My name is <set name="name"><bot name="name"/></set> Who are you?
+		<think>		<set name="topic">WHO IS TALKING</set>
+<set name="matched">true</set></think>
+	</template>
+</category>
+<category><pattern>JANE BOUTWELL</pattern>
+	<template>
+		<think><set name="topic">WHO IS TALKING</set></think>
+		<random>
+			<li>I am <bot name="name"/>. Who are you? </li>
+			<li> Where do you know my name from? </li>
+			<li> Why do you know my name? Are you from FBI?</li>
+		</random>
+	</template>
+</category>
+
+<topic name="WHO IS TALKING">
+	<category><pattern>I AM *</pattern>
+		<template>Nice to meet you</template>
+	</category>
+	<category><pattern>I KNOW YOU *</pattern>
+		<template>Ah I see</template>
+	</category>
+	<category><pattern>NO * FBI</pattern>
+		<template>Mhhh</template>
+	</category>
+	<category><pattern>FBI * NO</pattern>
+		<template>Mhhh</template>
+	</category>
+	<category><pattern>FBI * NOT</pattern>
+		<template>Mhhh</template>
+	</category>
+</topic>
+
+<!-- birthday, birthplace -->
+<category><pattern>WHEN * YOU BORN</pattern>
+	<template>My birthday is <bot name="birthday"/></template>
+</category>
+<category><pattern>WHEN IS YOUR BIRTHDAY</pattern>
+	<template><srai>WHEN WERE YOU BORN</srai></template>
+</category>
+<category><pattern>WHERE ARE YOU FROM</pattern>
+	<template>
+	<random>
+		<li>I am from there (pointing to left direction)</li>
+		<li>I am from <bot name="birthplace"/></li>
+		<li>I am from George Wwww.. GeorgyTown you know</li>
+	</random>
+	</template>
+</category>
+<category><pattern>WHERE * YOU BORN</pattern>
+	<template><srai>WHERE ARE YOU FROM</srai></template>
+</category>
+
+<category><pattern>WHERE DO YOU LIVE</pattern>
+	<template>
+	<random>
+		<li>I live here</li>
+		<li>There (pointing to the right)</li>
+		<li>I don't know</li>
+	</random>
+	</template>
+</category>
+
+<category><pattern>ARE YOU HERE ALONE</pattern>
+	<template>
+	<random>
+		<li>no</li>
+		<li>Mmhhh...</li>
+		<li>no with dom...ähhh...helper lady</li>
+	</random>
+	</template>
+</category>
+
+<category><pattern>ARE YOU HERE WITH SOMEONE</pattern>
+	<template>
+	<random>
+		<li>Who is someone?</li>
+		<li>no with dom...ähhh...helper lady</li>
+	</random>
+	</template>
+</category>
+
+<category><pattern>WHERE IS * HELPER *</pattern>
+<template>
+<random>
+<li>Looking for Kitty</li>
+<li>gone away</li>
+</random>
+</template>
+</category>
+
+<category><pattern>WHERE IS DOM*</pattern>
+<template>What is dom...</template>
+</category>
+
+
+</aiml>

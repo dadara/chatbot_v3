@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{A41028CB-A3FC-63AA-D54E-819B0EFF2BD3}") = "chatbot_v3", "Assembly-CSharp.csproj", "{B9FFCBA4-C369-0748-A7C0-C151379B7078}"
+EndProject
+Project("{A41028CB-A3FC-63AA-D54E-819B0EFF2BD3}") = "chatbot_v3", "Assembly-CSharp-Editor.csproj", "{09D33D7E-E6E7-EC02-5C93-AE4884FD2C4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9FFCBA4-C369-0748-A7C0-C151379B7078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FFCBA4-C369-0748-A7C0-C151379B7078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FFCBA4-C369-0748-A7C0-C151379B7078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FFCBA4-C369-0748-A7C0-C151379B7078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D33D7E-E6E7-EC02-5C93-AE4884FD2C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D33D7E-E6E7-EC02-5C93-AE4884FD2C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D33D7E-E6E7-EC02-5C93-AE4884FD2C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D33D7E-E6E7-EC02-5C93-AE4884FD2C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+				GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal

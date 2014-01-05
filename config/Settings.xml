@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+   <item name="aimldirectory" value="Assets\AIMLbot\aiml"/>
+   <item name="configdirectory" value="config"/>
+   <item name="logdirectory" value="logs"/>
+   <item name="splittersfile" value="Splitters.xml"/>
+   <item name="person2substitutionsfile" value="Person2Substitutions.xml"/>
+   <item name="personsubstitutionsfile" value="PersonSubstitutions.xml"/>  
+   <item name="gendersubstitutionsfile" value="GenderSubstitutions.xml"/>
+   <item name="defaultpredicates" value="DefaultPredicates.xml"/>
+   <item name="substitutionsfile" value="Substitutions.xml"/>
+   <item name="maxlogbuffersize" value="64"/> 
+   <item name="stripperregex" value="[^0-9a-zA-Z]"/> 
+   <item name="version" value="1.0"/> 
+   <item name="name" value="Jane"/> 
+   <item name="botmaster" value="Muha"/> 
+   <item name="author" value="Nicholas H.Tollervey"/> 
+   <item name="location" value="Brooklyn"/> 
+   <item name="gender" value="-1"/> 
+   <item name="birthday" value="November 21, 1927"/>
+   <item name="birthplace" value="Washington, USA"/> 
+   <item name="highschool" value="Western High School in Washington, DC"/>
+   <item name="graduatedhighschool" value="1945"/>
+   <item name="university" value="University of Wisconsin in Madison"/>
+   <item name="graduateduniversity" value="1949"/>
+   <item name="titleuniversity" value="BA in history"/>
+   <item name="firstjob" value="researcher at Henry Luce's 'March of Time'"/>
+   <item name="secondjob" value="CBS"/>
+   <item name="thirdjob" value="I entered the Foreign Service and served four years in Trieste, Italy in the 1950s, with a transfer to Rome at some point. "/>
+   <item name="lastjob" value="I joined New Yorker magazine in 1960 and was let go in 1992"/>
+   <item name="website" value="http://sourceforge.net/projects/aimlbot"/>
+   <item name="adminemail" value=""/>
+   <item name="islogging" value="false"/> 
+   <item name="willcallhome" value="false"/>
+   <item name="timeout" value="3000"/>
+   <item name="timeoutmessage" value="ERROR: The request has timed out."/>
+   <item name="culture" value="en-US"/>
+</document>
