@@ -19,41 +19,41 @@ namespace AIMLbot
 	public class Bot
 	{
 		public SettingsDictionary GlobalSettings;
-
+		
 		public SettingsDictionary GenderSubstitutions;
-
+		
 		public SettingsDictionary Person2Substitutions;
-
+		
 		public SettingsDictionary PersonSubstitutions;
-
+		
 		public SettingsDictionary Substitutions;
-
+		
 		public SettingsDictionary DefaultPredicates;
-
+		
 		private Dictionary<string, TagHandler> CustomTags;
-
+		
 		private Dictionary<string, Assembly> LateBindingAssemblies = new Dictionary<string, Assembly>();
-
+		
 		public List<string> Splitters = new List<string>();
-
+		
 		private List<string> LogBuffer = new List<string>();
-
+		
 		public bool isAcceptingUserInput = true;
-
+		
 		public DateTime StartedOn = DateTime.Now;
-
+		
 		public int Size;
-
+		
 		public Node Graphmaster;
-
+		
 		public bool TrustAIML = true;
-
+		
 		public int MaxThatSize = 256;
-
+		
 		public string LastLogMessage = string.Empty;
-
+		
 		SubQuery subQuery;
-
+		
 		public string AdminEmail
 		{
 			get
@@ -74,7 +74,7 @@ namespace AIMLbot
 				this.GlobalSettings.addSetting("adminemail", value);
 			}
 		}
-
+		
 		public bool IsLogging
 		{
 			get
@@ -86,7 +86,7 @@ namespace AIMLbot
 				return false;
 			}
 		}
-
+		
 		public CultureInfo Locale
 		{
 			get
@@ -94,7 +94,7 @@ namespace AIMLbot
 				return new CultureInfo(this.GlobalSettings.grabSetting("culture"));
 			}
 		}
-
+		
 		private int MaxLogBufferSize
 		{
 			get
@@ -102,7 +102,7 @@ namespace AIMLbot
 				return Convert.ToInt32(this.GlobalSettings.grabSetting("maxlogbuffersize"));
 			}
 		}
-
+		
 		private string NotAcceptingUserInputMessage
 		{
 			get
@@ -110,15 +110,17 @@ namespace AIMLbot
 				return this.GlobalSettings.grabSetting("notacceptinguserinputmessage");
 			}
 		}
-
+		
 		public string PathToAIML
 		{
 			get
 			{
+				string aimlDir = this.GlobalSettings.grabSetting("aimldirectory");
+				aimlDir = aimlDir.Replace("\\", Path.DirectorySeparatorChar.ToString());
 				return Path.Combine(Environment.CurrentDirectory, this.GlobalSettings.grabSetting("aimldirectory"));
 			}
 		}
-
+		
 		public string PathToConfigFiles
 		{
 			get
@@ -126,7 +128,7 @@ namespace AIMLbot
 				return Path.Combine(Environment.CurrentDirectory, this.GlobalSettings.grabSetting("configdirectory"));
 			}
 		}
-
+		
 		public string PathToLogs
 		{
 			get
@@ -134,7 +136,7 @@ namespace AIMLbot
 				return Path.Combine(Environment.CurrentDirectory, this.GlobalSettings.grabSetting("logdirectory"));
 			}
 		}
-
+		
 		public Gender Sex
 		{
 			get
@@ -142,31 +144,31 @@ namespace AIMLbot
 				Gender gender;
 				switch (Convert.ToInt32(this.GlobalSettings.grabSetting("gender")))
 				{
-					case -1:
-					{
-						gender = Gender.Unknown;
-						break;
-					}
-					case 0:
-					{
-						gender = Gender.Female;
-						break;
-					}
-					case 1:
-					{
-						gender = Gender.Male;
-						break;
-					}
-					default:
-					{
-						gender = Gender.Unknown;
-						break;
-					}
+				case -1:
+				{
+					gender = Gender.Unknown;
+					break;
+				}
+				case 0:
+				{
+					gender = Gender.Female;
+					break;
+				}
+				case 1:
+				{
+					gender = Gender.Male;
+					break;
+				}
+				default:
+				{
+					gender = Gender.Unknown;
+					break;
+				}
 				}
 				return gender;
 			}
 		}
-
+		
 		public Regex Strippers
 		{
 			get
@@ -174,7 +176,7 @@ namespace AIMLbot
 				return new Regex(this.GlobalSettings.grabSetting("stripperregex"), RegexOptions.IgnorePatternWhitespace);
 			}
 		}
-
+		
 		public double TimeOut
 		{
 			get
@@ -182,7 +184,7 @@ namespace AIMLbot
 				return Convert.ToDouble(this.GlobalSettings.grabSetting("timeout"));
 			}
 		}
-
+		
 		public string TimeOutMessage
 		{
 			get
@@ -190,7 +192,7 @@ namespace AIMLbot
 				return this.GlobalSettings.grabSetting("timeoutmessage");
 			}
 		}
-
+		
 		public bool WillCallHome
 		{
 			get
@@ -202,18 +204,18 @@ namespace AIMLbot
 				return false;
 			}
 		}
-
+		
 		public Bot()
 		{
 			this.setup();
 		}
-
+		
 		public Result Chat(string rawInput, string UserGUID)
 		{
 			Request request = new Request(rawInput, new User(UserGUID, this), this);
 			return this.Chat(request);
 		}
-
+		
 		public Result Chat(Request request)
 		{
 			Result result = new Result(request.user, this, request);
@@ -271,7 +273,7 @@ namespace AIMLbot
 			request.user.addResult(result);
 			return result;
 		}
-
+		
 		public AIMLTagHandler getBespokeTags(User user, SubQuery query, Request request, Result result, XmlNode node)
 		{
 			if (!this.CustomTags.ContainsKey(node.Name.ToLower()))
@@ -292,17 +294,17 @@ namespace AIMLbot
 			aIMLTagHandler.bot = this;
 			return aIMLTagHandler;
 		}
-
+		
 		public void loadAIMLFromFiles()
 		{
 			(new AIMLLoader(this)).loadAIML();
 		}
-
+		
 		public void loadAIMLFromXML(XmlDocument newAIML, string filename)
 		{
 			(new AIMLLoader(this)).loadAIMLFromXML(newAIML, filename);
 		}
-
+		
 		public void loadCustomTagHandlers(string pathToDLL)
 		{
 			Assembly assembly = Assembly.LoadFrom(pathToDLL);
@@ -334,27 +336,27 @@ namespace AIMLbot
 				}
 			}
 		}
-
+		
 		public void loadFromBinaryFile(string path)
 		{
 			FileStream fileStream = File.OpenRead(path);
 			this.Graphmaster = (Node)(new BinaryFormatter()).Deserialize(fileStream);
 			fileStream.Close();
 		}
-
+		
 		public void loadSettings()
 		{
 			string str = Path.Combine(Environment.CurrentDirectory, Path.Combine("config", "Settings.xml"));
 			this.loadSettings(str);
 		}
-
+		
 		public string loadSettings(int cnt)
 		{
 			string str = Path.Combine(Environment.CurrentDirectory, Path.Combine("config", "Settings.xml"));
 			return str;
 			
 		}
-
+		
 		public void loadSettings(string pathToSettings)
 		{
 			this.GlobalSettings.loadSettings(pathToSettings);
@@ -481,7 +483,7 @@ namespace AIMLbot
 			this.Substitutions.loadSettings(Path.Combine(this.PathToConfigFiles, this.GlobalSettings.grabSetting("substitutionsfile")));
 			this.loadSplitters(Path.Combine(this.PathToConfigFiles, this.GlobalSettings.grabSetting("splittersfile")));
 		}
-
+		
 		private void loadSplitters(string pathToSplitters)
 		{
 			if ((new FileInfo(pathToSplitters)).Exists)
@@ -509,7 +511,7 @@ namespace AIMLbot
 				this.Splitters.Add(";");
 			}
 		}
-
+		
 		public void phoneHome(string errorMessage, Request request)
 		{
 			MailMessage mailMessage = new MailMessage("donotreply@aimlbot.com", this.AdminEmail)
@@ -541,7 +543,7 @@ namespace AIMLbot
 			{
 			}
 		}
-
+		
 		private string processNode(XmlNode node, SubQuery query, Request request, Result result, User user)
 		{
 			if (request.StartedOn.AddMilliseconds(request.bot.TimeOut) < DateTime.Now)
@@ -575,152 +577,152 @@ namespace AIMLbot
 				{
 					switch (str1)
 					{
-						case "bot":
-						{
-							bespokeTags = new AIMLbot.AIMLTagHandlers.bot(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "condition":
-						{
-							bespokeTags = new condition(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "date":
-						{
-							bespokeTags = new date(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "formal":
-						{
-							bespokeTags = new formal(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "gender":
-						{
-							bespokeTags = new gender(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "get":
-						{
-							bespokeTags = new get(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "gossip":
-						{
-							bespokeTags = new gossip(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "id":
-						{
-							bespokeTags = new id(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "input":
-						{
-							bespokeTags = new input(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "javascript":
-						{
-							bespokeTags = new javascript(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "learn":
-						{
-							bespokeTags = new learn(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "lowercase":
-						{
-							bespokeTags = new lowercase(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "person":
-						{
-							bespokeTags = new person(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "person2":
-						{
-							bespokeTags = new person2(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "random":
-						{
-							bespokeTags = new random(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "sentence":
-						{
-							bespokeTags = new sentence(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "set":
-						{
-							bespokeTags = new set(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "size":
-						{
-							bespokeTags = new size(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "sr":
-						{
-							bespokeTags = new sr(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "srai":
-						{
-							bespokeTags = new srai(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "star":
-						{
-							bespokeTags = new star(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "system":
-						{
-							bespokeTags = new system(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "that":
-						{
-							bespokeTags = new that(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "thatstar":
-						{
-							bespokeTags = new thatstar(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "think":
-						{
-							bespokeTags = new think(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "topicstar":
-						{
-							bespokeTags = new topicstar(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "uppercase":
-						{
-							bespokeTags = new uppercase(this, user, query, request, result, node);
-							goto Label0;
-						}
-						case "version":
-						{
-							bespokeTags = new version(this, user, query, request, result, node);
-							goto Label0;
-						}
+					case "bot":
+					{
+						bespokeTags = new AIMLbot.AIMLTagHandlers.bot(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "condition":
+					{
+						bespokeTags = new condition(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "date":
+					{
+						bespokeTags = new date(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "formal":
+					{
+						bespokeTags = new formal(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "gender":
+					{
+						bespokeTags = new gender(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "get":
+					{
+						bespokeTags = new get(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "gossip":
+					{
+						bespokeTags = new gossip(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "id":
+					{
+						bespokeTags = new id(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "input":
+					{
+						bespokeTags = new input(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "javascript":
+					{
+						bespokeTags = new javascript(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "learn":
+					{
+						bespokeTags = new learn(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "lowercase":
+					{
+						bespokeTags = new lowercase(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "person":
+					{
+						bespokeTags = new person(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "person2":
+					{
+						bespokeTags = new person2(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "random":
+					{
+						bespokeTags = new random(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "sentence":
+					{
+						bespokeTags = new sentence(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "set":
+					{
+						bespokeTags = new set(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "size":
+					{
+						bespokeTags = new size(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "sr":
+					{
+						bespokeTags = new sr(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "srai":
+					{
+						bespokeTags = new srai(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "star":
+					{
+						bespokeTags = new star(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "system":
+					{
+						bespokeTags = new system(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "that":
+					{
+						bespokeTags = new that(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "thatstar":
+					{
+						bespokeTags = new thatstar(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "think":
+					{
+						bespokeTags = new think(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "topicstar":
+					{
+						bespokeTags = new topicstar(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "uppercase":
+					{
+						bespokeTags = new uppercase(this, user, query, request, result, node);
+						goto Label0;
+					}
+					case "version":
+					{
+						bespokeTags = new version(this, user, query, request, result, node);
+						goto Label0;
+					}
 					}
 				}
 				bespokeTags = null;
 			}
 		Label0:
-			if (object.Equals(null, bespokeTags))
+				if (object.Equals(null, bespokeTags))
 			{
 				return node.InnerText;
 			}
@@ -752,7 +754,7 @@ namespace AIMLbot
 			}
 			return stringBuilder1.ToString();
 		}
-
+		
 		public void saveToBinaryFile(string path)
 		{
 			FileInfo fileInfo = new FileInfo(path);
@@ -764,7 +766,7 @@ namespace AIMLbot
 			(new BinaryFormatter()).Serialize(fileStream, this.Graphmaster);
 			fileStream.Close();
 		}
-
+		
 		private void setup()
 		{
 			this.GlobalSettings = new SettingsDictionary(this);
@@ -776,7 +778,7 @@ namespace AIMLbot
 			this.CustomTags = new Dictionary<string, TagHandler>();
 			this.Graphmaster = new Node();
 		}
-
+		
 		public void writeToLog(string message)
 		{
 			StreamWriter streamWriter;
@@ -810,9 +812,9 @@ namespace AIMLbot
 				this.WrittenToLog();
 			}
 		}
-
+		
 		public event Bot.LogMessageDelegate WrittenToLog;
-
+		
 		public delegate void LogMessageDelegate();
 	}
 }
