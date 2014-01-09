@@ -11,6 +11,5 @@ using UnityEngine;
 
 [AddComponentMenu("NGUI/UI/Input (Basic)")]
 public class UIInput : UIBaseInput
-{	
-
+{
 }

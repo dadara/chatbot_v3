@@ -10,6 +10,4 @@ using System.Collections.Generic;
 [AddComponentMenu("NGUI/UI/Label")]
 public class UILabel : UIBaseLabel
 {
-
-
 }

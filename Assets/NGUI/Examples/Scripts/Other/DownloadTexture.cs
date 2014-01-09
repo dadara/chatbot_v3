@@ -13,56 +13,32 @@ using System.Collections;
 [RequireComponent(typeof(UITexture))]
 public class DownloadTexture : MonoBehaviour
 {
-//	public string url = "http://www.tasharen.com/misc/logo.png";
+	public string url = "http://www.tasharen.com/misc/logo.png";
 
 	Material mMat;
 	Texture2D mTex;
 
-	void Start ()
+	IEnumerator Start ()
 	{
-//		WWW www = new WWW(url);
-//		yield return www;
-		//		mTex = www.texture;
-//		mTex = new Texture2D(128,128);
-//		
-//		if (mTex != null)
-//		{
-//			UITexture ut = GetComponent<UITexture>();
-//			
-//			if (ut.material == null)
-//			{
-//				Shader shader = Shader.Find("Unlit/Transparent Colored");
-//				mMat = new Material(shader);
-//				ut.material = mMat;
-//			}
-//			ut.material.mainTexture = mTex;
-//			ut.MakePixelPerfect();
-//		}
-		//		www.Dispose();
-	}
+		WWW www = new WWW(url);
+		yield return www;
+		mTex = www.texture;
 
-//	IEnumerator Start ()
-//	{
-//		WWW www = new WWW(url);
-//		yield return www;
-////		mTex = www.texture;
-//		mTex = new Texture2D(128,128);
-//
-//		if (mTex != null)
-//		{
-//			UITexture ut = GetComponent<UITexture>();
-//			
-//			if (ut.material == null)
-//			{
-//				Shader shader = Shader.Find("Unlit/Transparent Colored");
-//				mMat = new Material(shader);
-//				ut.material = mMat;
-//			}
-////			ut.material.mainTexture = mTex;
-//			ut.MakePixelPerfect();
-//		}
-////		www.Dispose();
-//	}
+		if (mTex != null)
+		{
+			UITexture ut = GetComponent<UITexture>();
+			
+			if (ut.material == null)
+			{
+				Shader shader = Shader.Find("Unlit/Transparent Colored");
+				mMat = new Material(shader);
+				ut.material = mMat;
+			}
+			ut.material.mainTexture = mTex;
+			ut.MakePixelPerfect();
+		}
+		www.Dispose();
+	}
 
 	void OnDestroy ()
 	{

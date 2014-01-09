@@ -12,8 +12,6 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Button Sound")]
 public class UIButtonSound : MonoBehaviour
 {
-
-
 	public enum Trigger
 	{
 		OnClick,
@@ -46,12 +44,9 @@ public class UIButtonSound : MonoBehaviour
 
 	void OnClick ()
 	{
-
 		if (enabled && trigger == Trigger.OnClick)
 		{
 			NGUITools.PlaySound(audioClip, volume, pitch);
-
 		}
-		
 	}
 }

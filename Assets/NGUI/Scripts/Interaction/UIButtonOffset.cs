@@ -22,7 +22,10 @@ public class UIButtonOffset : MonoBehaviour
 	bool mStarted = false;
 	bool mHighlighted = false;
 
-	void Start () { mStarted = true; }
+	void Start () 
+	{
+		mStarted = true;
+	}
 
 	void OnEnable () { if (mStarted && mHighlighted) OnHover(UICamera.IsHighlighted(gameObject)); }
 
