@@ -21,7 +21,7 @@
 
 <category><pattern>HOME</pattern>
 	<template>
-			<think><set name="topic"></set>NOW</think>I live in Brooklyn, NewYork	
+			<think><set name="topic">NOW</set></think>I live in Brooklyn, NewYork	
 	</template>
 </category>
 <category><pattern>ADDRESS</pattern>
@@ -82,6 +82,10 @@
 
 <category><pattern>JOB</pattern>
 	<template>I am retired.</template>
+</category>
+
+<category><pattern>LAST JOB</pattern>
+	<template><think><set>NEWYORKER</set></think>I write opera crr....good or bad things about opera.</template>
 </category>
 
 

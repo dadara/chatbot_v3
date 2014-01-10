@@ -78,6 +78,11 @@
 	<template>here alone#home#name</template>
 </category>
 
+<category><pattern>I AM RETIRED</pattern>
+	<template>last job#hobbies#pet</template>
+</category>
+
+
 
 
 

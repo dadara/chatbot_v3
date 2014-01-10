@@ -48,6 +48,11 @@ public class Alice : MonoBehaviour {
 		Input1btnLabel = Input1btn.GetComponentInChildren<UILabel>();
 		Input2btnLabel = Input2btn.GetComponentInChildren<UILabel>();
 		Input3btnLabel = Input3btn.GetComponentInChildren<UILabel>();
+
+		Input1btnLabel.text = "home";
+		Input2btnLabel.text = "address";
+		Input3btnLabel.text = "call taxi";
+
 		
 		//		Input1btnLabel.text = "balalal";
 		
