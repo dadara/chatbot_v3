@@ -79,87 +79,6 @@
 </category>
 
 <category><pattern>I AM RETIRED</pattern>
-	<template>last job#hobbi<?xml version="1.0" encoding="ISO-8859-1"?>
-<aiml version="1.0">
-<!-- -->
-<!-- Free software (c) 2011 JANE A.I. Foundation.   -->
-<!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
-<!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the JANE A.I. Foundation.  -->
-<!-- Last modified 10/5/2011 -->
-<!-- -->
-
-<category><pattern>I LIVE IN BROOKLYN NEWYORK</pattern>
-	<template>address#here alone#call taxi</template>
-</category>
-<category><pattern>I LIVE IN TRIESTE</pattern>
-	<template>address#here alone#You are in New York</template>
-</category>
-<category><pattern>I LIVE NEXT TO THE EAST RIVER</pattern>
-	<template>address#here alone#call taxi</template>
-</category>
-
-<!--ad I live in Triest-->
-<!--address-->
- <category><pattern>I LIVE IN VIA PONDARES</pattern>
-	<template>job#where in New York#pet</template>
-		<!--job-->
-		<category><pattern>I WORK AS A DIPLOMAT</pattern>
-			<template>age#hobbies#pet</template>
-		</category>
-		<!--where in New York-->
-		<category><pattern>WHY ARE YOU TALKING ABOUT NEW YORK * AWAY</pattern>
-			<template>you are in New York#hobbies#pet</template>
-		</category>
-		<!--petHERRRRRRRRRRRRRRRREEEEEEEEEEEEEE-->
-		<category><pattern>I DONT HAVE ONE BUT I CARE * STREET CATS</pattern>
-			<template>age#hobbies#job</template>
-		</category>
-</category>
-<!--here alone-->
-<category><pattern>I KNOW A LOT OF PEOPLE I AM NOT ALONE</pattern>
-	<template>job#hobbies#pet</template>
-</category>
-	<!--job-->
-	<category><pattern>I WORK AS A DIPLOMAT</pattern>
-		<template>job#hobbies#pet</template>
-	</category>
-	<!--hobbies-->
-	<category><pattern>I LIKE GOING TO SOCIAL EVENTS</pattern>
-		<template>job#hobbies#pet</template>
-	</category>
-	<!--pet-->
-	<category><pattern>I DONT HAVE ONE BUT I CARE * STREET CATS</pattern>
-		<template>job#hobbies#pet</template>
-	</category>
-	
-
-<category><pattern>I CAME HERE WITH JENA BUT SHE WENT OF</pattern>
-	<template>job#hobbies#pet</template>
-</category>
-<!--You are in NewYork-->
-
-
-
-
-<category><pattern>I LIVE IN ORANGE STREET</pattern>
-	<template>job#live alone#pet</template>
-</category>
-
-<category><pattern>I LIVE IN COLUMBIA STREET</pattern>
-	<template>job#live alone#pet</template>
-</category>
-
-<category><pattern>NO THANKS I LIVE NEARBY</pattern>
-	<template>here alone#live alone#name</template>
-</category>
-<category><pattern>WHY CALL A TAXI</pattern>
-	<template>here alone#home#name</template>
-</category>
-
-<category><pattern>I AM RETIRED</pattern>
 	<template>last job#hobbies#pet</template>
 </category>
 
@@ -170,15 +89,6 @@
 <category><pattern>I LIVE WITH VENUS</pattern>
 	<template>venus#pet#hobbies</template>
 </category>
-
-
-
-
-
-</aiml>
-es#pet</template>
-</category>
-
 
 
 

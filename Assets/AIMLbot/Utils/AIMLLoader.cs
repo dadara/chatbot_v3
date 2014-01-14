@@ -109,9 +109,21 @@ namespace AIMLbot.Utils
 
 		public void loadAIML(string path)
 		{
-			if (!Directory.Exists(path))
+
+			if(path.Contains("/")){
+				path = path.Replace("/",Path.DirectorySeparatorChar.ToString());
+			}
+			if(path.Contains("\\")){
+				path = path.Replace("\\",Path.DirectorySeparatorChar.ToString());
+			}
+
+
+			string testpath = path;
+
+
+			if(!Directory.Exists(path))
 			{
-				throw new FileNotFoundException(string.Concat("The directory specified as the path to the AIML files (", path, ") cannot be found by the AIMLLoader object. Please make sure the directory where you think the AIML files are to be found is the same as the directory specified in the settings file."));
+				throw new FileNotFoundException(string.Concat("The directory specified as the path to the AIML files (", path, ") cannot be found by the AIMLLoader object. Please make sure the directory where you think the AIML files are to be found is the same as the directory specified in the settings file.  "));
 			}
 			this.bot.writeToLog(string.Concat("Starting to process AIML files found in the directory ", path));
 			string[] files = Directory.GetFiles(path, "*.aiml");

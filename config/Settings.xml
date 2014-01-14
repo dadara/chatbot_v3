@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document>
-   <item name="aimldirectory" value="Assets\AIMLbot\aiml"/>
+   <item name="aimldirectory" value="Assets/AIMLbot/aiml"/>
    <item name="configdirectory" value="config"/>
    <item name="logdirectory" value="logs"/>
    <item name="splittersfile" value="Splitters.xml"/>
