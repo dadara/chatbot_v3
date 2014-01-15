@@ -9,6 +9,8 @@ public class UILogic : MonoBehaviour {
 	GameObject inventoryLargeCloseButton;
 	GameObject inventoryLargeHeader;
 	GameObject inventoryLargeLabel;
+	GameObject inventoryLargeScrollBar;
+	GameObject inventoryLargePanel;
 
 	// Use this for initialization
 	void Start () 
@@ -17,11 +19,15 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeCloseButton = GameObject.Find("InventoryLargeCloseButton");
 		inventoryLargeHeader = GameObject.Find("InventoryLargeHeader");
 		inventoryLargeLabel = GameObject.Find("InventoryLargeLabel");
+		inventoryLargeScrollBar = GameObject.Find("InventoryLargeScrollBar");
+		inventoryLargePanel = GameObject.Find("InventoryLargePanel");
 
 		inventoryLargeBackground.SetActive(false);
 		inventoryLargeCloseButton.SetActive(false);
 		inventoryLargeHeader.SetActive(false);
 		inventoryLargeLabel.SetActive(false);
+		inventoryLargeScrollBar.SetActive(false);
+		inventoryLargePanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -43,5 +49,7 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeCloseButton.SetActive(active);
 		inventoryLargeHeader.SetActive(active);
 		inventoryLargeLabel.SetActive(active);
+		inventoryLargeScrollBar.SetActive(active);
+		inventoryLargePanel.SetActive(active);
 	}
 }
