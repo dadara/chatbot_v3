@@ -222,6 +222,7 @@ Library/metadata
 Library/ScriptAssemblies/CompilationCompleted.txt
 chatbot_v2.userprefs
 chatbot_v3.userprefs
+Assets\AIMLbot\aiml\cache
 *.csproj
 *.pidb
 *.sln
