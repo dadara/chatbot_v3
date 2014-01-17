@@ -1,12 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AIMLbot\Utils\AIMLLoader.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AIMLbot\aiml\janeNewYorker.aiml">
     <Files>
-      <File FileName="Assets\Alice.cs" Line="1" Column="1" />
-      <File FileName="Assets\AIMLbot\aiml\answers.aiml" Line="1" Column="1" />
-      <File FileName="Assets\AIMLbot\aiml\jane.aiml" Line="1" Column="1" />
-      <File FileName="Assets\AIMLbot\Utils\AIMLLoader.cs" Line="119" Column="57" />
+      <File FileName="Assets\Alice.cs" Line="217" Column="2" />
+      <File FileName="Assets\AIMLbot\Utils\AIMLLoader.cs" Line="146" Column="1" />
       <File FileName="config\Settings.xml" Line="1" Column="1" />
+      <File FileName="Assets\AIMLbot\aiml\jane.aiml" Line="154" Column="8" />
+      <File FileName="Assets\AIMLbot\aiml\janeNow.aiml" Line="1" Column="1" />
+      <File FileName="Assets\AIMLbot\aiml\janeCBS.aiml" Line="234" Column="26" />
+      <File FileName="Assets\AIMLbot\aiml\janeMOT.aiml" Line="241" Column="8" />
+      <File FileName="Assets\AIMLbot\aiml\janeDiplomat.aiml" Line="29" Column="11" />
+      <File FileName="..\CSVtoAIML\src\janeMOT.aiml" Line="241" Column="8" />
+      <File FileName="Assets\AIMLbot\aiml\janeNewYorker.aiml" Line="323" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
