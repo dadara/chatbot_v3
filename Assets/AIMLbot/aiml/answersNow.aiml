@@ -1,150 +1,146 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml version="1.0">
-
-<!--chatbot Jane database file-->
-<!--author: Daniela Ramsauer-->
-<!--thesis:Creating Awareness for Demented Persons through a Conversational Bot Integrated in a Serious Game-->
-<!--main advisor:Purgathofer, Peter; Ao.Univ.Prof. Dipl.-Ing. Dr.techn.-->
-<!--Co-advisor:Kayali, Fares; Projektass. Dipl.-Ing. Dr.techn.-->
-!--at Technical University of Vienna-->
+<!-- -->
+<!-- Free software (c) 2011 JANE A.I. Foundation.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the JANE A.I. Foundation.  -->
+<!-- Last modified 10/5/2011 -->
+<!-- -->
 
 <topic name="NOW">
 
-<category><pattern>ADDRESS</pattern>
-<template>I live in Orange Street</template>
+<category><pattern>I LIVE IN BROOKLYN NEWYORK</pattern>
+	<template>address#here alone#call taxi</template>
 </category>
 
-<category><pattern>NAME</pattern>
-<template>I am Jane Boutwell</template>
+<category><pattern>I LIVE IN ORANGE STREET</pattern>
+	<template>name#birthday#year of birth</template>
 </category>
 
-<category><pattern>BIRTHDAY</pattern>
-<template>I was born on 27th November.</template>
+	
+<category><pattern>I AM JANE BOUTWELL</pattern>
+	<template>birthplace#age#parents</template>
 </category>
 
-<category><pattern>YEAR OF BIRTH</pattern>
-<template>I was born in 1927.</template>
+<category><pattern>I AM BORN IN COLUMBIA DISTRICT WASHINGTON DC</pattern>
+	<template>father#mother#siblings</template>
 </category>
 
-<category><pattern>BIRTHPLACE</pattern>
-<template>I am born in Columbia district, Washington D.C</template>
+<category><pattern>I WAS BORN ON 27TH NOVEMBER</pattern>
+	<template>year of birth#name#father</template>
 </category>
 
-<category><pattern>AGE</pattern>
-<template>I am 86 years old.</template>
+<category><pattern>I WAS BORN IN 1927</pattern>
+	<template>age#parents#here alone</template>
 </category>
 
-<category><pattern>PARENTS</pattern>
-<template>My father Bill and my mother Olga were great parent.</template>
+<category><pattern>I AM 86 YEARS OLD</pattern>
+	<template>birthday#birthplace#father</template>
 </category>
 
-<category><pattern>PARENTSsave</pattern>
-<template>
-<random>
-<li>My father Bill and my mother Olga were great parents</li>
-<li><think><set name="topic">MARCHOFTIME</set></think>My father Bill and my mother Olga are great parents</li>
-</random>
-</template>
+<category><pattern>MY FATHER BILL AND MY MOTHER OLGA WERE GREAT PARENT</pattern>
+<template>father#mother#siblings</template>
 </category>
 
-<category><pattern>FATHER</pattern>
-<template>"My father was a execu... boss in educational publishing and photographer.</template>
+<category><pattern>MY FATHER WAS A EXECU BOSS IN EDUCATIONAL PUBLISHING AND PHOTOGRAPHER</pattern>
+<template>mother#elementary school#birthplace</template>
 </category>
 
-<category><pattern>savepublishing and photographer</pattern>
-<template>
-<think><set name="topic">MARCHOFTIME</set></think>My father is a execu... boss in educational publishing and a photographer.
-</template>
+<category><pattern>MY MOTHER WORKED AS SECRSECRETRY AND CARED * PA</pattern>
+<template>father#siblings#holiday</template>
 </category>
 
-<category><pattern>MOTHER</pattern>
-<template>My mother worked as secr...secretry.. and cared for the household. We often went to the pa...</template>
+<category><pattern>I DONT HAVE A SISTER OR BROTHER</pattern>
+<template>elementary school#holiday#subjects</template>
 </category>
 
-<category><pattern>saveMOTHER</pattern>
-<template>
-<random>
-<li>My mother worked as secr...secretry.. and cared for the household. We often went to the pa...</li>
-<li><think><set name="topic">MARCHOFTIME</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa...</li>
-</random>
-</template>
+<category><pattern>I AM RETIRED</pattern>
+<template>last job#first job#college</template>
 </category>
 
-<category><pattern>SIBLINGS</pattern>
-<template>I don’t have a sister or brother.</template>
+<category><pattern>SUBJECTS * WHICH SUBJECTS</pattern>
+<template>elementary school#highschool#holiday</template>
 </category>
 
-<category><pattern>JOB</pattern>
-<template>I am retired.</template>
+<category><pattern>I ALWAYS WENT TO EUROPE WHEN SUN</pattern>
+<template>elementary school#job#highschool</template>
 </category>
 
-<category><pattern>SUBJECTS</pattern>
-<template>Subjects, hmmm which subjects?</template>
+<category><pattern>I WENT TO ELEMENTARY SCHOOL IN COLUMBIA</pattern>
+<template>subjects elementary#favorite subject elementary#school uniform</template>
 </category>
 
-<category><pattern>HOLIDAY</pattern>
-<template>I always went to Europe when sun.</template>
+<category><pattern>NOT REALLY BUT IT OFTEN SEEMED LIKE * DRESSES * KNICKERS</pattern>
+<template>favorite subject elementary#favorite teacher elementary#furniture elementary</template>
 </category>
 
-<category><pattern>ELEMENTARY SCHOOL</pattern>
-<template>I went to elementary school in Columbia.</template>
+<category><pattern>WE HAD MATH ENGLISHSPELLING ART * SEWING</pattern>
+<template>favorite subject elementary#furniture elementary#highschool</template>
 </category>
 
-<category><pattern>SCHOOL UNIFORM</pattern>
-<template>Not really, but it often seemed like we had to. Girls wore dresses or skirts with blouses. Boys were dressed in shorts or knickers.</template>
+<category><pattern>I LIKED BEST ENGLISH AND GEOGRAPHY BUT I HATED * SEWING</pattern>
+<template>highschool#school uniform#subjects highschool</template>
 </category>
 
-<category><pattern>SUBJECTS ELEMENTARY</pattern>
-<template>We had math, English/Spelling, Art, Civics and Geography and sometimes Sewing.</template>
+<!-- ELEMENTARY -->
+<category><pattern>MY FAVORITE TEACHER * WICKHAM * GEOGRAPHY</pattern>
+<template>furniture elementary#favorite teacher highschool#highschool subjects</template>
 </category>
 
-<category><pattern>FAVORITE SUBJECT ELEMENTARY</pattern>
-<template>I liked best English and Geography, but I hated Math and Sewing.</template>
+<category><pattern>THE DESKS WERE ATTACHED * TO THE FLOOOR</pattern>
+<template>highschool#favorite subjects highschool#favorite teacher highschool</template>
 </category>
 
-<category><pattern>FAVORITE TEACHER ELEMENTARY</pattern>
-<template>My favorite teacher was Mrs Wickham, she taught geography.</template>
+<category><pattern>I WENT TO WESTERN HIGH SCHOOL * DC</pattern>
+<template>favorite subjects highschool#favorite teacher highschool#college</template>
 </category>
 
-<category><pattern>FURNITURE ELEMENTARY</pattern>
-<template>The desks were attached to the writing desk behind them as well as to the floor</template>
+<!-- HIGHSCHOOL -->
+<category><pattern>WE HAD LOTS OF HISTORY CIVICS PHYSICAL * FRENCH</pattern>
+<template>sports highschool#favorite teacher highschool#go out highschool</template>
 </category>
 
-<category><pattern>HIGHSCHOOL</pattern>
-<template>I went to Western High School in Washington, DC</template>
+<!-- HIGHSCHOOL -->
+<category><pattern>I LIKED HISTORY AND ARTS BEST</pattern>
+<template>college#go out highschool#hobbies</template>
 </category>
 
-<category><pattern>SUBJECTS HIGHSCHOOL</pattern>
-<template>We had lots of: History, Civics,  Physical Science, Biology, English, Art, Math and Science, Italian and French.</template>
+<category><pattern>MY FAVORITE TEACHER * TORNSHIRE * OUR OWN WAY</pattern>
+<template>hobbies#go out highschool#sports highschool</template>
 </category>
 
-<category><pattern>FAVORITE SUBJECTS HIGHSCHOOL</pattern>
-<template>I liked History and Arts best.</template>
+<category><pattern>I WAS I THE SWIMMING TEAM</pattern>
+<template>swimming team#swimming style#hobbies</template>
 </category>
 
-<category><pattern>FAVORITE TEACHER HIGHSCHOOL</pattern>
-<template>My favorite teacher was Mrs Tornshire, she taught arts. She always encouraged us to be creative and follow our own way.</template>
+<category><pattern>I WAS IN THE SWIMMING TEAM * SCHOOL</pattern>
+<template>swimming style#go out highschool#college</template>
 </category>
 
-<category><pattern>SPORTS HIGHSCHOOL</pattern>
-<template>I was in the swimming team .</template>
+<category><pattern>I LIKED BEST THE BUTTERFLY STROKE * WEEK</pattern>
+<template>subjects highschool#hobbies#college</template>
 </category>
 
-<category><pattern>SWIMMING TEAM</pattern>
-<template>I was in the swimming team in h.. school.</template>
+<category><pattern>I LIKED TO LISTEN TO CLASSICAL * ESPESPA OPERAS</pattern>
+<template>swimming team#sports highschool#hobbies</template>
 </category>
 
-<category><pattern>SWIMMING STYLE</pattern>
-<template>I liked best the butterfly stroke. But I trained a lot more styles. I swam 5 times a week.</template>
+<category><pattern>I WERENT ALLOWED * DANCED AT THE PROM</pattern>
+<template>college#job</template>
 </category>
 
-<category><pattern>HOBBIES HIGHSCHOOL</pattern>
-<template>I liked to listen to classical music, esp...espa... operas.  </template>
-</category>
 
-<category><pattern>GO OUT HIGH SCHOOL</pattern>
-<template>I weren’t allowed to go out. Just when i was a debla...debli... I danced at the prom. </template>
-</category>
+
+
+
+</topic>
+
+
+
+
 
 <category><pattern>COLLEGE</pattern>
 <template>I went to University of Wisconsin in Madison.</template>
@@ -166,12 +162,12 @@
 <template>I have been very good. I was an A student.</template>
 </category>
 
-<category><pattern>HOBBIES COLLEGE</pattern>
+<category><pattern>HOBBIES</pattern>
 <template>I read a lot Francis Scott Fitzgerald,William Faulkner,...</template>
 </category>
 
 <category><pattern>COLLEGE PARTIES</pattern>
-<template>I didn’t go out a lot at college. I was a very ambig... I always studied a lot, just my mother forced me sometimes to go to society parties...  </template>
+<template>I didnâ€™t go out a lot at college. I was a very ambig... I always studied a lot, just my mother forced me sometimes to go to society parties...  </template>
 </category>
 
 <category><pattern>FAVORITE PROFESSOR</pattern>
@@ -187,7 +183,7 @@
 </category>
 
 <category><pattern>HENRY LUCE</pattern>
-<template>He was a very good business man.  His March of Time newsreels created a sensation and won an Academy Award. He also published magazines – Time, Fortune, Life, and Sports Illustrated -- were the most popular and profitable periodicals in America.</template>
+<template>He was a very good business man.  His March of Time newsreels created a sensation and won an Academy Award. He also published magazines â€“ Time, Fortune, Life, and Sports Illustrated -- were the most popular and profitable periodicals in America.</template>
 </category>
 
 <category><pattern>WHAT RESEARCH</pattern>
@@ -247,7 +243,7 @@
 </category>
 
 <category><pattern>HOW LONG AT CBS</pattern>
-<template>I worked there for two years, but then I got a really good offer from the CIA, ähhh I mean the american foreign service.</template>
+<template>I worked there for two years, but then I got a really good offer from the CIA, Ã¤hhh I mean the american foreign service.</template>
 </category>
 
 <category><pattern>GO OUT CBS</pattern>
@@ -351,7 +347,7 @@
 </category>
 
 <category><pattern>DELICATE</pattern>
-<template>I wrote about Dr. John Keshishian, American heart-and-lung surgeon and his work in Poland. He was an original member of MEDICO, organized in 1958, by Dr. Tom Dooley and Dr. Peter Comanduras.  </template>
+<template>I wrote about Dr. John Keshishian, American heart-and-lung surgeon and his work in Poland. He was an original member of MEDICO, organized in 1958, by Dr. Tom Dooley and Dr. Peter Comanduras.  </template>
 </category>
 
 <category><pattern>GO OUT NEW YORKER</pattern>
@@ -474,8 +470,5 @@
 <category><pattern>WHICH ARTS</pattern>
 <template>I prefer italian operas.</template>
 </category>
-
-</topic>
-
 
 </aiml>

@@ -9,7 +9,7 @@
 !--at Technical University of Vienna-->
 
 <category><pattern>HOME</pattern>
-<template>I live in Brooklyn, NewYork</template>
+<template><think><set name="topic">NOW</set></think>I live in Brooklyn, NewYork</template>
 </category>
 
 <category><pattern>ADDRESS</pattern>
