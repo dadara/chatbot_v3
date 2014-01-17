@@ -6,6 +6,7 @@ public class UIButtonInput : MonoBehaviour {
 	GameObject panel;
 	Alice alice;
 	UILogic uiLogic;
+	Vector3 phonePosition;
 	
 	void Start(){
 		panel = GameObject.Find("Panel");
@@ -21,11 +22,17 @@ public class UIButtonInput : MonoBehaviour {
 				alice.inputBot=this.GetComponentInChildren<UILabel>().text;
 			} else if(this.name == "InventoryViewAllButton")
 			{
-				uiLogic.setInventoryIsActive(true);
+				uiLogic.SetInventoryIsActive(true);
 				//this.gameObject.SetActive(false);
 			} else if(this.name == "InventoryLargeCloseButton")
 			{
-				uiLogic.setInventoryIsActive(false);
+				uiLogic.SetInventoryIsActive(false);
+			} else if(this.name == "Phone")
+			{
+				uiLogic.SetPhoneIsActive(true);
+			} else if(this.name == "PhoneCloseButton")
+			{
+				uiLogic.SetPhoneIsActive(false);
 			}
 		}
 	}
