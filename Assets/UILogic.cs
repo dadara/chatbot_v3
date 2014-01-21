@@ -26,6 +26,9 @@ public class UILogic : MonoBehaviour {
 	GameObject Input2btn;
 	GameObject Input3btn;
 
+	public Color selectedColor = new Color(0.6f, 1f, 0.2f, 1f);
+	UISlicedSprite lastSelectedSprite;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -119,7 +122,11 @@ public class UILogic : MonoBehaviour {
 		inventoryLargePanel.SetActive(active);
 
 		//Disable ScanButton
-		if(!active){inventoryLargeScanButton.SetActive(active);}
+		if(!active)
+		{
+			inventoryLargeScanButton.SetActive(active);
+			lastSelectedSprite.color = Color.white;
+		}
 
 		//Enable/Disable Phone and InventoryViewAllButton
 		phone.GetComponent<BoxCollider>().enabled = !active;
@@ -130,5 +137,23 @@ public class UILogic : MonoBehaviour {
 		Input2btn.GetComponent<BoxCollider>().enabled = !active;
 		Input3btn.GetComponent<BoxCollider>().enabled = !active;
 
+	}
+
+	//Changes Color of Selected Item in Inventory
+	public void selectItemInInventory(UISlicedSprite sprite)
+	{
+		//Last Selected Item will be turned white
+		if(lastSelectedSprite != null)
+		{
+			lastSelectedSprite.color = Color.white;
+		}
+		lastSelectedSprite = sprite;
+		lastSelectedSprite.color = selectedColor;
+	}
+
+	public Color SelectedColor {
+		get {
+			return selectedColor;
+		}
 	}
 }
