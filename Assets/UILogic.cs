@@ -14,6 +14,7 @@ public class UILogic : MonoBehaviour {
 	GameObject inventoryLargeLabel;
 	GameObject inventoryLargeScrollBar;
 	GameObject inventoryLargePanel;
+	GameObject inventoryLargeScanButton;
 
 	//Other UI Elements
 	GameObject inventoryViewAllButton;
@@ -35,6 +36,8 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeLabel = GameObject.Find("InventoryLargeLabel");
 		inventoryLargeScrollBar = GameObject.Find("InventoryLargeScrollBar");
 		inventoryLargePanel = GameObject.Find("InventoryLargePanel");
+		inventoryLargeScanButton = GameObject.Find("InventoryLargeScanButton");
+
 
 		inventoryViewAllButton = GameObject.Find("InventoryViewAllButton");
 
@@ -53,6 +56,8 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeLabel.SetActive(false);
 		inventoryLargeScrollBar.SetActive(false);
 		inventoryLargePanel.SetActive(false);
+		inventoryLargeScanButton.SetActive(false);
+
 	}
 	
 	// Update is called once per frame
@@ -112,6 +117,9 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeLabel.SetActive(active);
 		inventoryLargeScrollBar.SetActive(active);
 		inventoryLargePanel.SetActive(active);
+
+		//Disable ScanButton
+		if(!active){inventoryLargeScanButton.SetActive(active);}
 
 		//Enable/Disable Phone and InventoryViewAllButton
 		phone.GetComponent<BoxCollider>().enabled = !active;
