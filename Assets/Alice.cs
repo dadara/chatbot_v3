@@ -33,7 +33,13 @@ public class Alice : MonoBehaviour {
 	
 	string cacheInputBot;
 	string cacheOutputBot;
-	
+
+	string topicSet;
+	string[] chatHistory;
+
+	float startTime;
+	int cnt;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -71,30 +77,39 @@ public class Alice : MonoBehaviour {
 		
 		cacheInputBot = "";
 		cacheOutputBot = "";
+
+		topicSet = "";
+
+		chatHistory = new string[1000];
+		startTime = 0;
+		cnt = 0;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		
 		if(inputBot.Length > 0 && !inputBot.Equals(cacheInputBot)){
 			inputBot = RemoveSpecChar(inputBot);
 			outputBot = getOutput(inputBot);
-			//			if(inputBot.Contains("Are you sure that you are still working Arent you retired")){
-			//				Debug.Log("inputBot: "+inputBot);
-			//				outputBot = getOutput("ARE YOU SURE THAT YOU ARE STILL WORKING ARENT YOU RETIRED");
-			//			}
+			Debug.Log ("inputBot: "+inputBot+" outputBot: "+outputBot);
+
 			jane.text = "B: "+outputBot;
+			chatHistory[cnt] = inputBot;
+			cnt++;
+			chatHistory[cnt] = outputBot;
+			cnt++;
 		}
 		cacheInputBot = inputBot;
 		
 		if(outputBot.Length > 0 && !cacheOutputBot.Equals(outputBot)){
 			outputBot = RemoveSpecChar(outputBot);
-			Debug.Log ("outputBot; "+outputBot);
-			
+
 			posUserInput = getOutput(outputBot);
-			//			Debug.Log ("posUserInput; "+posUserInput);
+			Debug.Log ("outputBot: "+outputBot+" posUserInput: "+posUserInput);
 			//			Debug.Log(posUserInput.IndexOf("#")+" "+ posUserInput.LastIndexOf("#"));
+
 			int index = posUserInput.IndexOf("#");
 			if(index>0){
 				Input1btnLabel.text = posUserInput.Substring(0,	index);
@@ -108,10 +123,14 @@ public class Alice : MonoBehaviour {
 		}
 		cacheOutputBot = outputBot;
 		
-		//		answerBot = answerBot.Replace("#","\n");
-		//		if(answerBot.Contains("{")){
-		//			Debug.Log("answer: "+answerBot);
-		//		}
+		startTime += Time.deltaTime;
+
+		if(startTime>600){
+			System.IO.File.WriteAllLines(@"E:\Dokumente\TU\Diplomarbeit\chatHistory.txt", chatHistory);
+			Input1btnLabel.text = "END";
+			Input2btnLabel.text = "END";
+			Input3btnLabel.text = "END";
+		}
 		
 		
 		
@@ -126,7 +145,19 @@ public class Alice : MonoBehaviour {
 	{
 		Request r = new Request(input, myUser, myBot);
 		Result res = myBot.Chat(r);
+		if(!res.user.Topic.Equals(topicSet)){
+			topicSet = res.user.Topic;
+			NewTopicSet();
+		}else{
+//			Debug.Log("OLDTopic set: "+topicSet);
+		}
+
 		return(res.Output);
+	}
+
+	public void NewTopicSet(){
+//		Debug.Log("NEWTopic set: "+topicSet);
+
 	}
 	
 	public string RemoveSpecChar(string orig){

@@ -53,7 +53,7 @@
 <template>father#siblings#holiday</template>
 </category>
 
-<category><pattern>I DONT HAVE A SISTER OR BROTHER</pattern>
+<category><pattern>I DO NOT HAVE A SISTER OR BROTHER</pattern>
 <template>elementary school#holiday#subjects</template>
 </category>
 
@@ -109,11 +109,11 @@
 </category>
 
 <category><pattern>MY FAVORITE TEACHER * TORNSHIRE * OUR OWN WAY</pattern>
-<template>hobbies#go out highschool#sports highschool</template>
+<template>hobbies highschool#go out highschool#sports highschool</template>
 </category>
 
-<category><pattern>I WAS I THE SWIMMING TEAM</pattern>
-<template>swimming team#swimming style#hobbies</template>
+<category><pattern>I WAS IN THE SWIMMING TEAM</pattern>
+<template>swimming team#swimming style#hobbies highschool</template>
 </category>
 
 <category><pattern>I WAS IN THE SWIMMING TEAM * SCHOOL</pattern>
@@ -121,19 +121,341 @@
 </category>
 
 <category><pattern>I LIKED BEST THE BUTTERFLY STROKE * WEEK</pattern>
-<template>subjects highschool#hobbies#college</template>
+<template>subjects highschool#hobbies highschool#college</template>
 </category>
 
 <category><pattern>I LIKED TO LISTEN TO CLASSICAL * ESPESPA OPERAS</pattern>
-<template>swimming team#sports highschool#hobbies</template>
+<template>swimming team#sports highschool#college</template>
 </category>
 
-<category><pattern>I WERENT ALLOWED * DANCED AT THE PROM</pattern>
-<template>college#job</template>
+<category><pattern>I WERE NOT ALLOWED * DEBLADEBLI * DANCED AT THE PROM</pattern>
+<template>college#job#sports highschool</template>
+</category>
+
+<category><pattern>I WENT TO UNIVERSITY OF WISCONSIN IN MADISON</pattern>
+<template>course of studies#graduated#hobbies college</template>
+</category>
+
+<category><pattern>I STUDIED HISTORY * TRAVEL TO THE PAST</pattern>
+<template>hobbies college#favorite professor#college parties</template>
+</category>
+
+<category><pattern>GRADGRAAA NO I NEVER HAD GRAA</pattern>
+<template>study finished#course of studies#hobbies college</template>
+</category>
+
+<category><pattern>YES I FINISHED WITH A BACHELOR IN HISTORY</pattern>
+<template>March of Time#hobbies college#good grades</template>
+</category>
+
+<category><pattern>I HAVE BEEN VERY GOOD I WAS AN A STUDENT</pattern>
+<template>hobbies college#first job#favorite professor</template>
+</category>
+
+<category><pattern>I READ A LOT FRANCIS SCOTT FITZGERALD WILLIAM FAULKNER</pattern>
+<template>favorite professor#college parties#good grades</template>
+</category>
+
+<category><pattern>I DID NOT GO OUT * AMBIG * SOCIETY PARTIES</pattern>
+<template>good grades#first job#job</template>
+</category>
+
+<category><pattern>IT WAS PROF MACKENSEY * IRELAND * HISTORY</pattern>
+<template>first job#college parties#good grades</template>
+</category>
+
+<category><pattern>MY FIRST JOB WAS RIGHT AFTER COLLEGE AT HENRY LUCES MARCH OF TIME AS A RESEARCHER</pattern>
+<template>March of Time#Henry Luce#what research</template>
+</category>
+
+<category><pattern>THE MARCH OF TIME WAS THE FIRST RADIO NEWSREEL DRAMATIZED NEWS EVENTS * IN 1928</pattern>
+<template>liked March of Time#working times#salary March of Time</template>
+</category>
+
+<category><pattern>HE WAS A VERY GOOD BUSINESS MAN  HIS MARCH OF TIME NEWSREELS * AND PROFITABLE PERIODICALS IN AMERICA</pattern>
+<template>liked March of Time#how long at March of Time#holiday first job</template>
+</category>
+
+<category><pattern>WELL I WAS HIRED AS A RESEARCHER * WOMANS WORK HANG UP CURTAINS * THIS STUFF </pattern>
+<template>how long at March of Time#working times#salary March of Time</template>
+</category>
+
+<category><pattern>I HATED THE JOB * STUDY FOR YEARS * HELPER</pattern>
+<template>henry luce#what research#holiday first job</template>
+</category>
+
+<category><pattern>I WORKED THERE FOR ONE YEAR</pattern>
+<template>what research#March of Time#liked March of Time</template>
+</category>
+
+<category><pattern>WHEN I BEGAN TO WORK THERE I WAS VERY ENTHUASTIC BUT SOON I RECOGNIZED THEY DID NOT RESPECT ME AS A RESEARCHER I ALWAYS WORKED ABOUT 10 HOURS A DAY FOR TWO YEARS BUT THEY HARDLY EVER NOTICED MY EFFORT</pattern>
+<template>how long at March of Time#name kittens March of Time#holiday first job</template>
+</category>
+
+<category><pattern>FROM TIME TO TIME I VISITED MY PARENTS IN WASHINGTON BUT I COULDNT EFFORT TO GO ABROAD</pattern>
+<template>name kittens March of Time#flat first job#working times</template>
+</category>
+
+<category><pattern>IT WAS MY FIRST * EARN THAT MUCH * GOOD LIFE * KITTENS</pattern>
+<template>Henry Luce#flat first job#second job</template>
+</category>
+
+<category><pattern>THEIR NAMES WERE MINI AND CINDERELLA</pattern>
+<template>second job#flat first job#holiday first job</template>
+</category>
+
+<category><pattern>IT WAS A VERY SMALL APARTMENT IN THE COLUMBIA STREET MY FATHER BILL * I PAYED EVERYTHING N MY OWN</pattern>
+<template>second job#salary March of Time#name kittens March of Time</template>
+</category>
+
+<category><pattern>I WORKED AT THE CBS AS A RESEARCHER IN THE EARLY 50S</pattern>
+<template>CBS#What research at CBS#working times CBS</template>
+</category>
+
+<category><pattern>THE COLUMBIA BROADCASTING SYSTEM IS A BROADCAST TV NETWORK BUT IT STARTED AS A RADIO NETWORK</pattern>
+<template>liked CBS#pets CBS#how long at CBS</template>
+</category>
+
+<category><pattern>AT FIRST I WAS HIRED TO RESEARCH HISTORICAL THEMES BUT IN THE END THIS WAS THE SMALLEST PART OF MY WORK MOST OF THE TIME I HAD TO TEACH YOUNG MEN HOW TO DO THE RESEARCH</pattern>
+<template>liked CBS#go out CBS#pets CBS</template>
+</category>
+
+<category><pattern>AS USUALLY HIHI I WORKED 10 HOURS A DAY WELL MOST OF THE TIME BUT SOMETIMES I FOUND THE TIME GO TO THE OPERA OR TO GO OUT WITH MY COLLEAGESPUPILS</pattern>
+<template>music CBS#how long at CBS#go out CBS</template>
+</category>
+
+<category><pattern>I DID NOT LIKE IT THAT MUCH BUT AT LEAST I EARNED A LITTLE BIT MORE THAN AT MARCH OF TIMES</pattern>
+<template>working times CBS#music CBS#what research at CBS</template>
+</category>
+
+<category><pattern>WELL I LIVED WITH MINI AND CINDERELLA FOR FOUR YEARS BUT THEY DIED BOTH IN SEPTEMBER 1954 JUST THREE MONTHS BEFORE I LEFT TO ITALY</pattern>
+<template>go out CBS#music CBS#how long at CBS</template>
+</category>
+
+<category><pattern>I WORKED THERE FOR TWO YEARS BUT THEN I GOT A REALLY GOOD OFFER FROM THE CIA HHH I MEAN THE AMERICAN FOREIGN SERVICE</pattern>
+<template>foreign service#pets CBS#go out CBS</template>
+</category>
+
+<category><pattern>SOMTIMES ME AND MY COLLEAGES OF THE CBS WENT TO BARS MOSTLY WITH LIVE MUSIC</pattern>
+<template>music CBS#working times CBS#third job</template>
+</category>
+
+<category><pattern>I LISTENED MOSTLY TO CLASSICAL MUSIC LIKE OPERAS BUT SOMETIMES I WENT TO JAZZ CLUBS</pattern>
+<template>jazz clubs#opera CBS#third job</template>
+</category>
+
+<category><pattern>IT WAS JUST ONCE THAT MY COLLEAGUES AND I WERE GOING OUT AND AT 12 OCLOCK PM WE DECIDED TO SEE WHAT THIS JAZZ IS WE HEARED OF</pattern>
+<template>third job#opera CBS#foreign service</template>
+</category>
+
+<category><pattern>MY FAVORITE HAVE BEEN ITALIAN OPERAS LIKE VERDI IT ALWAYS WAS SO GLAMEROUS BUT ALSO PORGY AND BESS FROM GERSHWIN IMPRESSED ME MUCH </pattern>
+<template>go out CBS#pets cbs#job foreign service</template>
+</category>
+
+<category><pattern>I WORKED FOR THE FOREIGN SERVICE IN TRIESTE</pattern>
+<template>job foreign service#diplomat#pets Trieste</template>
+</category>
+
+<category><pattern>I WORKED IN TRIESTE FOR THE FOREIGN SERVICE</pattern>
+<template>job foreign service#working time diplomat#diplomat</template>
+</category>
+
+<category><pattern>I WORKED AS A DIPLOMAT FOR TWO YEARS</pattern>
+<template>go out diplomat#address diplomat#working time diplomat</template>
+</category>
+
+<category><pattern>AS A DIPLOMAT YOU NETWORK A LOT GET IN CONTACT WITH LOTS OF PEOPLE MEETINGS MAKE INVESTIGATIONS ABOUT PEOPLE YOU ARE GOING TO MEET</pattern>
+<template>address diplomat#pets Trieste#go out diplomat</template>
+</category>
+
+<category><pattern>WHEN I WAS IN TRIESTE MY WORK BEGAN QUITE LATE BUT ALSO ENDED LATE ABOUT 5 TIMES A WEEK THERE WERE EVENING EVENTS THE ATMOSPHERE WAS SO NICE THERE</pattern>
+<template>go out diplomat#address diplomat#fourth job</template>
+</category>
+
+<category><pattern>YES I ALWAYS WENT TO THE EVENING EVENTS BUT I ALWAYS TRIED TO FORGE LINKS AND TALK TO THE PEOPLE I ALREADY KNEW THIS WAS THE MOST IMPORTANT PART FOR THE WORK IN THE FORGAIN SEVICE</pattern>
+<template>pets Trieste#working time diplomat#street cats</template>
+</category>
+
+<category><pattern>I LIVED IN A REALY NICE FLAT WITH A BALCONY IN THE CENTER IT WAS QUITE BIG AS I LIVED THERE JUST WITH MY KNATENS IT WAS IN THE VIA PONDEPONGA PNODARES </pattern>
+<template>street cats#pets Trieste#working time diplomat</template>
+</category>
+
+<category><pattern>I SAVED TWO STREET CATS I NAMED THEM HUGE AND POGO THEY WERE QUITE WILD THEY USED MY FURNITURE LIKE A CAT SCRATCHY BUT AS THEY GREW OLDER THEY WOUND DOWN</pattern>
+<template>fourth job#diplomat#street cats</template>
+</category>
+
+<category><pattern>I ALWAYS LOVED CATS SO I ALWAYS PUT SOME FOOD OUTSIDE TO FEED THEM S THEY COULD LIVE LONGER BUT HUGE AND POGO CONVICED ME TO LIVE WITH THEM</pattern>
+<template>address diplomat#fourth job#go out diplomat</template>
+</category>
+
+<category><pattern>MY LAST JOB WAS AT THE NEW YORKER MAGAZINE I WORKED THERE AS A WRITER</pattern>
+<template>new yorker#what writer#liked job at NY</template>
+</category>
+
+<category><pattern>I BEGAN TO WORK FOR THE NEW YORKER IN 1956</pattern>
+<template>how long at NY#interviews#Mr. Shawn</template>
+</category>
+
+<category><pattern>I WROTE ABOUT A LOT OF THINGS MADE SOME INTERVIEWS WITH FAM WELL KNOWN PERSONS</pattern>
+<template>interviews#>liked job at NY#how long at NY</template>
+</category>
+
+<category><pattern>I REALLY LOVED IT WHEN MR SHAWN WAS THERE BUT AFTERWARDS</pattern>
+<template>after Mr.Shawn#Mr. Shawn#go out New Yorker</template>
+</category>
+
+<category><pattern>I INTERVIEWED FAMOUS PEOPLE WENT ALONG ON A NARCOTICS POLICE SHIFT COVERED THE TRANSIT STRIKE AND I FOUND  STORIES WHEREVER I WENT</pattern>
+<template>stories at NY#liked job at NY#When retired</template>
+</category>
+
+<category><pattern>I WORKED FOR THE NEW YORKER FOR MORE THAN THIRTY YEARS</pattern>
+<template>last job#interviews#hobbies</template>
+</category>
+
+<category><pattern>I ALWAYS WENT OUT A LOT TO EVENING EVENTS MET LOTS OF INTERESTING PEOPLE I HAD A LOT OF CONTACTS BUT NOW ALMOST ARE DEAD</pattern>
+<template>Mr Shawn#liked job at NY#when retired</template>
+</category>
+
+<category><pattern>MR SHAWN WAS THE EDITOR OF THE NEW YORKER UNTIL THE 1980S</pattern>
+<template>after Mr. Shawn#New Yorker#how long at NY</template>
+</category>
+
+<category><pattern>AFTER MR SHAWN R WENT OFF MR HUCKLEBACK * HARD TIME</pattern>
+<template>preserve#javier pereira#delicate</template>
+</category>
+
+<category><pattern> I WROTE THE TALK OF THE TOWN I WROTE ABOUT JAVIER PEREIRA SLAVE MARKET </pattern>
+<template>javier pereira#preserve#delicate</template>
+</category>
+
+<category><pattern>I RETIRED IN THE 1990S BUT EVEN AFTER THE LAST TEN YEARS WITH MR HUCKLEHEAD I MISS IT A LOT TO WORK THERE</pattern>
+<template>end#end#end</template>
+</category>
+
+<category><pattern>I * JAVIER PEREIRA A COLOMBIAN INDIAN * 150 OR MORE OR LESS</pattern>
+<template>end#end#end</template>
+</category>
+
+<category><pattern>I * BOROUGHS WE HAVE CONCLUDED * 5 BOROUGHS THAN THERE ARE HUMANS</pattern>
+<template>end#end#end</template>
+</category>
+
+<category><pattern>I * DR JOHN KESHISHIAN AMERICAN HEARTANDLUNG SURGEON * DR PETER COMANDURAS  </pattern>
+<template>end#end#end</template>
+</category>
+
+
+<category><pattern>I LIKE TO GO OUT AND SOMETIMES I GO TO THE OPERA</pattern>
+<template>first job#father#mother</template>
+</category>
+
+<category><pattern>NO THANKS I LIVE NEARBY</pattern>
+<template>name#age#year of birth</template>
 </category>
 
 
 
+
+
+
+
+
+
+<category><pattern>RANDOMLI I ALWAYS LIKED CA CA KIT ANIMALSLILII HAVE VENUSLIRANDOM</pattern>
+<template></template>
+</category>
+
+<category><pattern></pattern>
+<template></template>
+</category>
+
+<category><pattern></pattern>
+<template></template>
+</category>
+
+
+
+<category><pattern>I LIKE OPERAS ESPECIALLY FROM VERDI AND WAGNER</pattern>
+<template></template>
+</category>
+
+<category><pattern>HE WAS A ITALIAN COMPOSER OF OPERAS</pattern>
+<template></template>
+</category>
+
+<category><pattern>HE WAS A GERMAN COMPOSER OF OPERAS</pattern>
+<template></template>
+</category>
+
+<category><pattern>I ALWAYS LIKED OPERAS IN MY TEENS I BEGAN TO LISTEN TO THE RECORDS OF MY PARENTS</pattern>
+<template></template>
+</category>
+
+<category><pattern>VENUS IS MY KITTY</pattern>
+<template></template>
+</category>
+
+<category><pattern>I LIKE TO GO ON PARTIES OR SOCIAL EVENTS</pattern>
+<template></template>
+</category>
+
+<category><pattern>I CAME HERE WITH JENA BUT SHE WENT OF</pattern>
+<template></template>
+</category>
+
+<category><pattern>SHE IS MY HOUSEKEEPER AND COOK</pattern>
+<template></template>
+</category>
+
+<category><pattern>I LIVE WITH VENUS</pattern>
+<template></template>
+</category>
+
+
+
+<category><pattern>WHY CALL A TAXI</pattern>
+<template></template>
+</category>
+
+<category><pattern>CONTACTS ARE VERY IMPORTANT TO GET NEW IDEAS</pattern>
+<template></template>
+</category>
+
+<category><pattern>MY CAREER WAS ALWAYS VERY IMPORTANT TO ME WELL AFTER MY KITTENS</pattern>
+<template></template>
+</category>
+
+<category><pattern>I ALWAYS GO THERE ON WEEKENDS</pattern>
+<template></template>
+</category>
+
+<category><pattern>I HAVE A COTTAGE THERE</pattern>
+<template></template>
+</category>
+
+<category><pattern>MY FATHER BILL CONSTRUCTED IT IN THE 1960S</pattern>
+<template></template>
+</category>
+
+<category><pattern>RANDOMLII LIKE ALL ANIMALSLILIANIMALS LIKE VENUSLILII LIKE STACSLIRANDOM</pattern>
+<template></template>
+</category>
+
+<category><pattern>GISELDA AND DAISY WERE MY CATS</pattern>
+<template></template>
+</category>
+
+<category><pattern>HUGE AND POGO WERE MY CC KITTENS</pattern>
+<template></template>
+</category>
+
+<category><pattern>MINI AND CINDERELLA WERE MY CATS</pattern>
+<template></template>
+</category>
+
+<category><pattern>I PREFER ITALIAN OPERAS</pattern>
+<template></template>
+</category>
 
 
 </topic>
@@ -141,222 +463,6 @@
 
 
 
-
-<category><pattern>COLLEGE</pattern>
-<template>I went to University of Wisconsin in Madison.</template>
-</category>
-
-<category><pattern>COURSE OF STUDIES</pattern>
-<template>I studied History. I always like it to travel to the past. </template>
-</category>
-
-<category><pattern>GRADUATED</pattern>
-<template>grad....graaa. No I never had graa...</template>
-</category>
-
-<category><pattern>STUDY FINISHED</pattern>
-<template>Yes I finished with a Bachelor in History.</template>
-</category>
-
-<category><pattern>GOOD GRADES</pattern>
-<template>I have been very good. I was an A student.</template>
-</category>
-
-<category><pattern>HOBBIES</pattern>
-<template>I read a lot Francis Scott Fitzgerald,William Faulkner,...</template>
-</category>
-
-<category><pattern>COLLEGE PARTIES</pattern>
-<template>I didn’t go out a lot at college. I was a very ambig... I always studied a lot, just my mother forced me sometimes to go to society parties...  </template>
-</category>
-
-<category><pattern>FAVORITE PROFESSOR</pattern>
-<template>It was Prof. Mackensey. came from Ireland, he taught  19th century history.</template>
-</category>
-
-<category><pattern>FIRST JOB</pattern>
-<template>" My first job was right after college at Henry Luce's ""March of Time"" as a researcher. "</template>
-</category>
-
-<category><pattern>MARCH OF TIME</pattern>
-<template>The March of Time was the first radio newsreel: dramatized news events, elaborately staged with sound effects and music, but put together like a newspaper: Its roots are found in a series of ten-minute newscasts heard on WLW, Cincinnati, in 1928.</template>
-</category>
-
-<category><pattern>HENRY LUCE</pattern>
-<template>He was a very good business man.  His March of Time newsreels created a sensation and won an Academy Award. He also published magazines – Time, Fortune, Life, and Sports Illustrated -- were the most popular and profitable periodicals in America.</template>
-</category>
-
-<category><pattern>WHAT RESEARCH</pattern>
-<template>Well I was hired as a researcher, but in the end they wanted me to do woman's work. Hang up curtains, organize parties and all this stuff. </template>
-</category>
-
-<category><pattern>LIKED MARCH OF T.</pattern>
-<template>I hated the job there. I didn't study for years for getting a party assassi... helper</template>
-</category>
-
-<category><pattern>HOWLONG AT MOT</pattern>
-<template>I worked there for one years. </template>
-</category>
-
-<category><pattern>WORKING TIMES</pattern>
-<template>When I begun to work there, I was very enthuastic. But soon I recognized they didn't respect me as a researcher. I always worked about 10 hours a day for two years, but they hardly ever noticed my effort.</template>
-</category>
-
-<category><pattern>HOLIDAY FIRST JOB</pattern>
-<template>From time to time I visited my parents in Washington, but I couldn't effort to go abroad.</template>
-</category>
-
-<category><pattern>SALARY MARCH OF TIME</pattern>
-<template>It was my first job so I didn't earn that much. But I had a good life. I lived with my Kittens.</template>
-</category>
-
-<category><pattern>NAME KITTENS MOT</pattern>
-<template>Their names were Mini and Cinderella</template>
-</category>
-
-<category><pattern>FLAT FIRST JOB</pattern>
-<template>It was a very small apartment in the Columbia Street. My father Bill offered me to give me some extra money, but I didn't want to take it. I was so proud of my first apartment and that I payed everything n my own.</template>
-</category>
-
-<category><pattern>SECOND JOB</pattern>
-<template>I worked at the CBS as a researcher in the early 50s.</template>
-</category>
-
-<category><pattern>CBS</pattern>
-<template>The Columbia Broadcasting System is a broadcast tv network, but it started as a radio network.</template>
-</category>
-
-<category><pattern>WHAT RESEARCH AT CBS</pattern>
-<template>At first I was hired to research historical themes. But in the end this was the smallest part of my work. Most of the time I had to teach young men how to do the research.</template>
-</category>
-
-<category><pattern>LIKED CBS</pattern>
-<template>I didn't like it that much, but at least I earned a little bit more than at March of Times.</template>
-</category>
-
-<category><pattern>WORKING TIMES CBS</pattern>
-<template>As usually hihi I worked 10 hours a day, well most of the time. But sometimes I found the time go to the opera or to go out with my colleages/pupils.</template>
-</category>
-
-<category><pattern>PETS CBS</pattern>
-<template>Well I lived with Mini and Cinderella for four years. But they died both in September 1954. Just three months before I left to Italy.</template>
-</category>
-
-<category><pattern>HOW LONG AT CBS</pattern>
-<template>I worked there for two years, but then I got a really good offer from the CIA, ähhh I mean the american foreign service.</template>
-</category>
-
-<category><pattern>GO OUT CBS</pattern>
-<template>Somtimes me and my colleages of the CBS went to bars, mostly with live music.</template>
-</category>
-
-<category><pattern>MUSIC CBS</pattern>
-<template>I listened mostly to classical music like operas, but sometimes I went to Jazz clubs.</template>
-</category>
-
-<category><pattern>JAZZ CLUBS</pattern>
-<template>It was just once that my colleagues and I were going out. And at 12 o'clock p.m. we decided to see what this Jazz is we heared of.</template>
-</category>
-
-<category><pattern>OPERA CBS</pattern>
-<template>My favorite have been italian operas, like Verdi. It always was so glamerous. But also Porgy and Bess from Gershwin impressed me much. </template>
-</category>
-
-<category><pattern>FOREIGN SERVICE</pattern>
-<template>I worked for the Foreign Service in Trieste.</template>
-</category>
-
-<category><pattern>THIRD JOB</pattern>
-<template>I worked in Trieste for the Foreign Service.</template>
-</category>
-
-<category><pattern>JOB FOREIGN SERVICE</pattern>
-<template>I worked as a diplomat for two years.</template>
-</category>
-
-<category><pattern>DIPLOMAT</pattern>
-<template>As a diplomat you network a lot, get in contact with lots of people, meetings, make investigations about people you are going to meet.</template>
-</category>
-
-<category><pattern>WORKING TIME DIPLOMAT</pattern>
-<template>When I was in Trieste, my work began quite late, but also ended late. About 5 times a week there were evening events, the atmosphere was so nice there.</template>
-</category>
-
-<category><pattern>GO OUT DIPLOMAT</pattern>
-<template>Yes I always went to the evening events, but I always tried to forge links. And talk to the people I already knew. This was the most important part for the work in the forgain sevice.</template>
-</category>
-
-<category><pattern>ADDRESS DIPLOMAT</pattern>
-<template>I  lived in a realy nice flat with a balcony in the center. It was quite big as I lived there just with my Knatens. It was in the Via Ponde....Ponga.. Pnodares. </template>
-</category>
-
-<category><pattern>KNATENS</pattern>
-<template>Hmmm...</template>
-</category>
-
-<category><pattern>PETS TRIESTE</pattern>
-<template>I saved two street cats. I named them Huge and Pogo. They were quite wild, they used my furniture like a cat scratchy. But as they grew older they wound down.</template>
-</category>
-
-<category><pattern>STREET CATS</pattern>
-<template>I always loved cats, so I always put some food outside to feed them, s they could live longer. But Huge and Pogo conviced me to live with them.</template>
-</category>
-
-<category><pattern>FOURTH JOB</pattern>
-<template>My last job was at the New Yorker magazine. I worked there as a writer.</template>
-</category>
-
-<category><pattern>NEW YORKER</pattern>
-<template>I began to work for the New Yorker in 1956.</template>
-</category>
-
-<category><pattern>HOW LONG AT NY</pattern>
-<template>I worked for the New Yorker for more than thirty years. </template>
-</category>
-
-<category><pattern>WHAT WRITER</pattern>
-<template>I wrote about a lot of things, made some interviews with fam.... well known persons.</template>
-</category>
-
-<category><pattern>INTERVIEWS</pattern>
-<template>I interviewed famous people, went along on a narcotics police shift, covered the transit strike and I found  stories wherever I went.</template>
-</category>
-
-<category><pattern>LIKE JOB NY</pattern>
-<template>I really loved it, when Mr. Shawn was there, but afterwards.</template>
-</category>
-
-<category><pattern>MR. SHAWN</pattern>
-<template>Mr Shawn was the editor of the New Yorker until the 1980s</template>
-</category>
-
-<category><pattern>AFTER MR. SHAWN</pattern>
-<template>After Mr. Shawn r..... went off, Mr huckleback got the new editor. The new dictat.. eh boss was a very unfriendly, choleric man. He gave us quite a hard time.</template>
-</category>
-
-<category><pattern>STORIES AT NY</pattern>
-<template> I wrote the Talk of the Town. I wrote about Javier Pereira, slave market, </template>
-</category>
-
-<category><pattern>JAVIER PEREIRA</pattern>
-<template>"I wrote a talk story about Javier Pereira, a Colombian Indian, who say he was born in 1789, and his reactions at a press conference at the Hotel Biltmore. The proprietors of ""Believe It Or Not"" brought him up here by plane to see if the specialists in old age at N.Y. Hospital could substantiate his self-proclaimed longevity. After tests, the doctors said it was impossible to estimate accurately the age of a living person. He may not be 167 but he could be 150 or more or less"</template>
-</category>
-
-<category><pattern>PRESERVE</pattern>
-<template>I wrote about wildlife in the five boroughs. We have concluded from our investigation that the city limits are a densely populated game preserve. If it were possible to take an accurate animal census, we might discover that there are more mink, muskrats, skunks, raccoons, rabbits, squirrels, pheasants, foxes, geese, ducks, deer and possum within the 5 boroughs than there are humans.</template>
-</category>
-
-<category><pattern>DELICATE</pattern>
-<template>I wrote about Dr. John Keshishian, American heart-and-lung surgeon and his work in Poland. He was an original member of MEDICO, organized in 1958, by Dr. Tom Dooley and Dr. Peter Comanduras.  </template>
-</category>
-
-<category><pattern>GO OUT NEW YORKER</pattern>
-<template>I always went out a lot to evening events. Met lots of interesting people. I had a lot of contacts but now almost are dead.</template>
-</category>
-
-<category><pattern>WHEN RETIRED</pattern>
-<template>I retired in the 1990s, but even after the last ten years with Mr. Hucklehead I miss it a lot to work there.</template>
-</category>
 
 <category><pattern>ADDRESS</pattern>
 <template>I live in Orange Street</template>

@@ -11,8 +11,10 @@
 <!-- -->
 
 <category><pattern>I LIVE IN BROOKLYN NEWYORK</pattern>
-	<template>address#here alone#call taxi</template>
+	<template>address#here alone#call taxiCOMMON<think><set name="topic">NOW</set></think></template>
 </category>
+
+
 <category><pattern>I LIVE IN TRIESTE</pattern>
 	<template>address#here alone#You are in New York</template>
 </category>

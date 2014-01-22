@@ -71,7 +71,7 @@
 </category>
 
 <category><pattern>SIBLINGS</pattern>
-<template>I don’t have a sister or brother.</template>
+<template>I do not have a sister or brother.</template>
 </category>
 
 <category><pattern>JOB</pattern>
@@ -127,7 +127,7 @@
 </category>
 
 <category><pattern>SPORTS HIGHSCHOOL</pattern>
-<template>I was in the swimming team .</template>
+<template>I was in the swimming team.</template>
 </category>
 
 <category><pattern>SWIMMING TEAM</pattern>
@@ -139,11 +139,11 @@
 </category>
 
 <category><pattern>HOBBIES HIGHSCHOOL</pattern>
-<template>I liked to listen to classical music, esp...espa... operas.  </template>
+<template>I liked to listen to classical music, esp...espa... operas.</template>
 </category>
 
-<category><pattern>GO OUT HIGH SCHOOL</pattern>
-<template>I weren’t allowed to go out. Just when i was a debla...debli... I danced at the prom. </template>
+<category><pattern>GO OUT HIGHSCHOOL</pattern>
+<template>I were not allowed to go out. Just when i was a debla...debli... I danced at the prom.</template>
 </category>
 
 <category><pattern>COLLEGE</pattern>
@@ -167,19 +167,19 @@
 </category>
 
 <category><pattern>HOBBIES COLLEGE</pattern>
-<template>I read a lot Francis Scott Fitzgerald,William Faulkner,...</template>
+<template>I read a lot Francis Scott Fitzgerald, William Faulkner,...</template>
 </category>
 
 <category><pattern>COLLEGE PARTIES</pattern>
-<template>I didn’t go out a lot at college. I was a very ambig... I always studied a lot, just my mother forced me sometimes to go to society parties...  </template>
+<template>I did not go out a lot at college. I was a very ambig... I always studied a lot, just my mother forced me sometimes to go to society parties...  </template>
 </category>
 
 <category><pattern>FAVORITE PROFESSOR</pattern>
-<template>It was Prof. Mackensey. came from Ireland, he taught  19th century history.</template>
+<template>It was Prof. Mackensey. came from Ireland, he taught 19th century history.</template>
 </category>
 
 <category><pattern>FIRST JOB</pattern>
-<template>" My first job was right after college at Henry Luce's ""March of Time"" as a researcher. "</template>
+<template>My first job was right after college at Henry Luce's ""March of Time"" as a researcher. "</template>
 </category>
 
 <category><pattern>MARCH OF TIME</pattern>
@@ -194,16 +194,16 @@
 <template>Well I was hired as a researcher, but in the end they wanted me to do woman's work. Hang up curtains, organize parties and all this stuff. </template>
 </category>
 
-<category><pattern>LIKED MARCH OF T.</pattern>
-<template>I hated the job there. I didn't study for years for getting a party assassi... helper</template>
+<category><pattern>LIKED MARCH OF TIME</pattern>
+<template>I hated the job there. I did not study for years for getting a party assassi... helper</template>
 </category>
 
-<category><pattern>HOWLONG AT MOT</pattern>
-<template>I worked there for one years. </template>
+<category><pattern>HOW LONG AT MARCH OF TIME</pattern>
+<template>I worked there for one year.</template>
 </category>
 
 <category><pattern>WORKING TIMES</pattern>
-<template>When I begun to work there, I was very enthuastic. But soon I recognized they didn't respect me as a researcher. I always worked about 10 hours a day for two years, but they hardly ever noticed my effort.</template>
+<template>When I began to work there, I was very enthuastic. But soon I recognized they didn't respect me as a researcher. I always worked about 10 hours a day for two years, but they hardly ever noticed my effort.</template>
 </category>
 
 <category><pattern>HOLIDAY FIRST JOB</pattern>
@@ -211,15 +211,15 @@
 </category>
 
 <category><pattern>SALARY MARCH OF TIME</pattern>
-<template>It was my first job so I didn't earn that much. But I had a good life. I lived with my Kittens.</template>
+<template>It was my first job so I did not earn that much. But I had a good life. I lived with my Kittens.</template>
 </category>
 
-<category><pattern>NAME KITTENS MOT</pattern>
+<category><pattern>NAME KITTENS MARCH OF TIME</pattern>
 <template>Their names were Mini and Cinderella</template>
 </category>
 
 <category><pattern>FLAT FIRST JOB</pattern>
-<template>It was a very small apartment in the Columbia Street. My father Bill offered me to give me some extra money, but I didn't want to take it. I was so proud of my first apartment and that I payed everything n my own.</template>
+<template>It was a very small apartment in the Columbia Street. My father Bill offered me to give me some extra money, but I did not want to take it. I was so proud of my first apartment and that I payed everything n my own.</template>
 </category>
 
 <category><pattern>SECOND JOB</pattern>
@@ -235,7 +235,7 @@
 </category>
 
 <category><pattern>LIKED CBS</pattern>
-<template>I didn't like it that much, but at least I earned a little bit more than at March of Times.</template>
+<template>I did not like it that much, but at least I earned a little bit more than at March of Times.</template>
 </category>
 
 <category><pattern>WORKING TIMES CBS</pattern>
@@ -263,7 +263,7 @@
 </category>
 
 <category><pattern>OPERA CBS</pattern>
-<template>My favorite have been italian operas, like Verdi. It always was so glamerous. But also Porgy and Bess from Gershwin impressed me much. </template>
+<template>My favorite have been italian operas, like Verdi. It always was so glamerous. But also Porgy and Bess from Gershwin impressed me much.</template>
 </category>
 
 <category><pattern>FOREIGN SERVICE</pattern>
@@ -310,12 +310,16 @@
 <template>My last job was at the New Yorker magazine. I worked there as a writer.</template>
 </category>
 
+<category><pattern>LAST JOB</pattern>
+<template>My last job was at the New Yorker magazine. I worked there as a writer.</template>
+</category>
+
 <category><pattern>NEW YORKER</pattern>
 <template>I began to work for the New Yorker in 1956.</template>
 </category>
 
 <category><pattern>HOW LONG AT NY</pattern>
-<template>I worked for the New Yorker for more than thirty years. </template>
+<template>I worked for the New Yorker for more than thirty years.</template>
 </category>
 
 <category><pattern>WHAT WRITER</pattern>
@@ -326,15 +330,15 @@
 <template>I interviewed famous people, went along on a narcotics police shift, covered the transit strike and I found  stories wherever I went.</template>
 </category>
 
-<category><pattern>LIKE JOB NY</pattern>
+<category><pattern>LIKED JOB AT NY</pattern>
 <template>I really loved it, when Mr. Shawn was there, but afterwards.</template>
 </category>
 
-<category><pattern>MR. SHAWN</pattern>
+<category><pattern>MR SHAWN</pattern>
 <template>Mr Shawn was the editor of the New Yorker until the 1980s</template>
 </category>
 
-<category><pattern>AFTER MR. SHAWN</pattern>
+<category><pattern>AFTER MR SHAWN</pattern>
 <template>After Mr. Shawn r..... went off, Mr huckleback got the new editor. The new dictat.. eh boss was a very unfriendly, choleric man. He gave us quite a hard time.</template>
 </category>
 
@@ -362,9 +366,6 @@
 <template>I retired in the 1990s, but even after the last ten years with Mr. Hucklehead I miss it a lot to work there.</template>
 </category>
 
-<category><pattern>ADDRESS</pattern>
-<template>I live in Orange Street</template>
-</category>
 
 <category><pattern>PET</pattern>
 <template>
@@ -375,7 +376,7 @@
 </template>
 </category>
 
-<category><pattern></pattern>
+<category><pattern>LAST JOBsave</pattern>
 <template>
 <think><set name="topic">NEW YORKER</set></think> <srai>JOB</srai>
 </template>
