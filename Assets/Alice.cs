@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using AIMLbot;
 
 //namespace Chatbot
@@ -59,12 +60,10 @@ public class Alice : MonoBehaviour {
 		Input2btnLabel.text = "address";
 		Input3btnLabel.text = "call taxi";
 
-		
 		//		Input1btnLabel.text = "balalal";
 		
 		myBot = new Bot();
 		myUser = new User("consoleUser", myBot);
-		
 		
 		int cnt=0;
 		string path = myBot.loadSettings(cnt);
@@ -88,6 +87,11 @@ public class Alice : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+//		method 1: just use aiml files to get
+//		1) bot answers to keywords
+//		2) possible keywords to the bot answer
+//		drawback in one play keywords occur multiple times, even the ones already pressed
 
 		
 		if(inputBot.Length > 0 && !inputBot.Equals(cacheInputBot)){
@@ -123,13 +127,39 @@ public class Alice : MonoBehaviour {
 		}
 		cacheOutputBot = outputBot;
 		
-		startTime += Time.deltaTime;
 
-		if(startTime>600){
-			System.IO.File.WriteAllLines(@"E:\Dokumente\TU\Diplomarbeit\chatHistory.txt", chatHistory);
-			Input1btnLabel.text = "END";
-			Input2btnLabel.text = "END";
-			Input3btnLabel.text = "END";
+
+
+//checked finish condition Test how much time it needs to come to the end
+
+		startTime += Time.deltaTime;
+		//		if(startTime>600){
+		int numberChatHistoryFile=0;
+		String line="";
+
+		if(Input1btnLabel.text.Equals("end")){
+			try
+			{
+				using (StreamReader sr = new StreamReader("E:\\Dokumente\\TU\\Diplomarbeit\\chatHistory\\number.txt"))
+				{
+					line = sr.ReadToEnd();
+					numberChatHistoryFile = Convert.ToInt32(line);
+					numberChatHistoryFile++;
+				}
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("The file could not be read:");
+				Console.WriteLine(e.Message);
+			}
+
+			System.IO.File.WriteAllText(@"E:\Dokumente\TU\Diplomarbeit\chatHistory\chatHistory.txt", line);
+
+			chatHistory[cnt] = "PlayTimeInSeconds: "+startTime;
+			System.IO.File.WriteAllLines(@"E:\Dokumente\TU\Diplomarbeit\chatHistory\chatHistory"+numberChatHistoryFile.ToString()+".txt", chatHistory);
+//			Input1btnLabel.text = "END";
+//			Input2btnLabel.text = "END";
+//			Input3btnLabel.text = "END";
 		}
 		
 		

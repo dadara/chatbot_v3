@@ -4,13 +4,16 @@ using System.Collections;
 public class UIButtonInput : MonoBehaviour {
 
 	GameObject panel;
-	Alice alice;
+//	Alice alice;
+	Alice2 alice2;
 	UILogic uiLogic;
 	Vector3 phonePosition;
 	
 	void Start(){
 		panel = GameObject.Find("Panel");
-		alice = panel.GetComponent<Alice>();
+//		alice = panel.GetComponent<Alice>();
+		alice2 = panel.GetComponent<Alice2>();
+
 		uiLogic = panel.GetComponent<UILogic>();
 	}
 	void OnPress (bool isPressed)
@@ -19,7 +22,10 @@ public class UIButtonInput : MonoBehaviour {
 		{				
 			if(this.name.Equals("Input1Button") || this.name == "Input2Button" || this.name == "Input3Button")
 			{
-				alice.inputBot=this.GetComponentInChildren<UILabel>().text;
+//				alice.inputBot=this.GetComponentInChildren<UILabel>().text;
+				alice2.inputBot=this.GetComponentInChildren<UILabel>().text;
+
+				Debug.Log ("Input: "+this.GetComponentInChildren<UILabel>().text);
 			} else if(this.name == "InventoryViewAllButton")
 			{
 				uiLogic.SetInventoryIsActive(true);

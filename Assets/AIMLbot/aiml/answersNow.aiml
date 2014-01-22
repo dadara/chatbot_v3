@@ -90,7 +90,7 @@
 <template>furniture elementary#favorite teacher highschool#highschool subjects</template>
 </category>
 
-<category><pattern>THE DESKS WERE ATTACHED * TO THE FLOOOR</pattern>
+<category><pattern>THE DESKS WERE ATTACHED * TO THE FLOOR</pattern>
 <template>highschool#favorite subjects highschool#favorite teacher highschool</template>
 </category>
 
@@ -301,7 +301,7 @@
 </category>
 
 <category><pattern>I REALLY LOVED IT WHEN MR SHAWN WAS THERE BUT AFTERWARDS</pattern>
-<template>after Mr.Shawn#Mr. Shawn#go out New Yorker</template>
+<template>after Mr. Shawn#Mr. Shawn#go out New Yorker</template>
 </category>
 
 <category><pattern>I INTERVIEWED FAMOUS PEOPLE WENT ALONG ON A NARCOTICS POLICE SHIFT COVERED THE TRANSIT STRIKE AND I FOUND  STORIES WHEREVER I WENT</pattern>
