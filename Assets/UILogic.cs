@@ -15,6 +15,7 @@ public class UILogic : MonoBehaviour {
 	GameObject inventoryLargeScrollBar;
 	GameObject inventoryLargePanel;
 	GameObject inventoryLargeScanButton;
+	GameObject inventorySmallContainer;
 
 	//Other UI Elements
 	GameObject inventoryViewAllButton;
@@ -27,7 +28,7 @@ public class UILogic : MonoBehaviour {
 	GameObject Input3btn;
 
 	public Color selectedColor = new Color(0.6f, 1f, 0.2f, 1f);
-	UISlicedSprite lastSelectedSprite;
+	UISprite lastSelectedSprite;
 
 	// Use this for initialization
 	void Start () 
@@ -40,7 +41,7 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeScrollBar = GameObject.Find("InventoryLargeScrollBar");
 		inventoryLargePanel = GameObject.Find("InventoryLargePanel");
 		inventoryLargeScanButton = GameObject.Find("InventoryLargeScanButton");
-
+		inventorySmallContainer = GameObject.Find("InventorySmallContainer");
 
 		inventoryViewAllButton = GameObject.Find("InventoryViewAllButton");
 
@@ -60,7 +61,6 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeScrollBar.SetActive(false);
 		inventoryLargePanel.SetActive(false);
 		inventoryLargeScanButton.SetActive(false);
-
 	}
 	
 	// Update is called once per frame
@@ -90,6 +90,7 @@ public class UILogic : MonoBehaviour {
 		//Enable/Disable Phone and InventoryViewAllButton
 		phone.GetComponent<BoxCollider>().enabled = !active;
 		inventoryViewAllButton.GetComponent<BoxCollider>().enabled = !active;
+		inventorySmallContainer.SetActive(!active);
 		
 		//Enable/Disable InputButtons
 		Input1btn.GetComponent<BoxCollider>().enabled = !active;
@@ -120,12 +121,16 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeLabel.SetActive(active);
 		inventoryLargeScrollBar.SetActive(active);
 		inventoryLargePanel.SetActive(active);
+		inventorySmallContainer.SetActive(!active);
 
 		//Disable ScanButton
 		if(!active)
 		{
 			inventoryLargeScanButton.SetActive(active);
-			lastSelectedSprite.color = Color.white;
+			if(lastSelectedSprite != null)
+			{
+				lastSelectedSprite.color = Color.white;
+			}
 		}
 
 		//Enable/Disable Phone and InventoryViewAllButton
@@ -140,7 +145,7 @@ public class UILogic : MonoBehaviour {
 	}
 
 	//Changes Color of Selected Item in Inventory
-	public void selectItemInInventory(UISlicedSprite sprite)
+	public void selectItemInInventory(UISprite sprite)
 	{
 		//Last Selected Item will be turned white
 		if(lastSelectedSprite != null)
