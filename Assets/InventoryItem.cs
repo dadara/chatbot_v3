@@ -43,7 +43,7 @@ public class InventoryItem : MonoBehaviour {
 			//Change Sprite
 			//sprite.spriteName = "PJanepassport2";
 
-			uiLogic.selectItemInInventory(background.GetComponent<UISlicedSprite>());
+			uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
 			inventoryLargeScanButton.SetActive(true);
 			inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
 		}
