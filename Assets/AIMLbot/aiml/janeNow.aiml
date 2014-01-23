@@ -219,7 +219,7 @@
 </category>
 
 <category><pattern>FLAT FIRST JOB</pattern>
-<template>It was a very small apartment in the Columbia Street. My father Bill offered me to give me some extra money, but I did not want to take it. I was so proud of my first apartment and that I payed everything n my own.</template>
+<template><think><set name="topic">MARCHOFTIME</set></think>It was a very small apartment in the Columbia Street. My father Bill offered me to give me some extra money, but I did not want to take it. I was so proud of my first apartment and that I payed everything n my own.</template>
 </category>
 
 <category><pattern>SECOND JOB</pattern>

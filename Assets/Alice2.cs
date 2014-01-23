@@ -11,7 +11,9 @@ public class Alice2 : MonoBehaviour {
 
 	StreamReader sr2;
 
-	List<string> posKeywords; 
+	List<string> posKeywords;
+	List<string> posKeywordsMOT; 
+
 	int cnt;
 
 	GameObject janecb;
@@ -46,6 +48,7 @@ public class Alice2 : MonoBehaviour {
 	void Start () {
 		cnt=0;
 		posKeywords = new List<string>();
+		posKeywordsMOT = new List<string>();
 
 		try{
 
@@ -57,6 +60,16 @@ public class Alice2 : MonoBehaviour {
 				{
 //					Debug.Log(s);
 					posKeywords.Add(s);
+				}
+			}
+			string pathMOT = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsMOT.txt";
+			using (StreamReader sr = File.OpenText(pathMOT)) 
+			{
+				string s = "";
+				while ((s = sr.ReadLine()) != null) 
+				{
+					Debug.Log(s);
+					posKeywordsMOT.Add(s);
 				}
 			}
 		}catch (Exception e)
@@ -114,28 +127,48 @@ public class Alice2 : MonoBehaviour {
 		
 
 //			choose posKeywordsString for input buttons
-			if(posKeywords.Count >=3){
-				string button1 = posKeywords.ElementAt(0);
-				string button2 = posKeywords.ElementAt(1);
-				string button3 = posKeywords.ElementAt(2);
-				Input1btnLabel.text = button1;
-				Input2btnLabel.text = button2;
-				Input3btnLabel.text = button3;
-				posKeywords.Remove(button1);
-				posKeywords.Remove(button2);
-				posKeywords.Remove(button3);
-//				Debug.Log("after Delete: "+posKeywords.ElementAt(0));
-//				Debug.Log("after Delete: "+posKeywords.ElementAt(1));
-//				Debug.Log("after Delete: "+posKeywords.ElementAt(2));
-//				Debug.Log("after Delete: "+posKeywords.ElementAt(3));
-//				Debug.Log("after Delete: "+posKeywords.ElementAt(4));
-//				Debug.Log("after Delete: "+posKeywords.ElementAt(5));
-//				Debug.Log("after Delete: "+posKeywords.ElementAt(6));
+			string button1;
+			string button2;
+			string button3;
+
+			if(topicSet=="MARCHOFTIME"){
+				if(posKeywordsMOT.Count >=3){
+					button1 = posKeywordsMOT.ElementAt(0);
+					button2 = posKeywordsMOT.ElementAt(1);
+					button3 = posKeywordsMOT.ElementAt(2);
+					Input1btnLabel.text = button1;
+					Input2btnLabel.text = button2;
+					Input3btnLabel.text = button3;
+					posKeywordsMOT.Remove(button1);
+					posKeywordsMOT.Remove(button2);
+					posKeywordsMOT.Remove(button3);
+				}
 			}else{
-				Input1btnLabel.text = "end";
-				Input2btnLabel.text = "end";
-				Input3btnLabel.text = "end";
+
+				if(posKeywords.Count >=3){
+					button1 = posKeywords.ElementAt(0);
+					button2 = posKeywords.ElementAt(1);
+					button3 = posKeywords.ElementAt(2);
+					Input1btnLabel.text = button1;
+					Input2btnLabel.text = button2;
+					Input3btnLabel.text = button3;
+					posKeywords.Remove(button1);
+					posKeywords.Remove(button2);
+					posKeywords.Remove(button3);
+	//				Debug.Log("after Delete: "+posKeywords.ElementAt(0));
+	//				Debug.Log("after Delete: "+posKeywords.ElementAt(1));
+	//				Debug.Log("after Delete: "+posKeywords.ElementAt(2));
+	//				Debug.Log("after Delete: "+posKeywords.ElementAt(3));
+	//				Debug.Log("after Delete: "+posKeywords.ElementAt(4));
+	//				Debug.Log("after Delete: "+posKeywords.ElementAt(5));
+	//				Debug.Log("after Delete: "+posKeywords.ElementAt(6));
+				}else{
+					Input1btnLabel.text = "end";
+					Input2btnLabel.text = "end";
+					Input3btnLabel.text = "end";
+				}
 			}
+
 		}
 
 		cacheInputBot = inputBot;
@@ -197,7 +230,7 @@ public class Alice2 : MonoBehaviour {
 		Result res = myBot.Chat(r);
 		if(!res.user.Topic.Equals(topicSet)){
 			topicSet = res.user.Topic;
-			NewTopicSet();
+//		Debug.Log("NEWTopic set: "+topicSet);
 		}else{
 			//			Debug.Log("OLDTopic set: "+topicSet);
 		}
@@ -205,10 +238,6 @@ public class Alice2 : MonoBehaviour {
 		return(res.Output);
 	}
 
-	public void NewTopicSet(){
-		//		Debug.Log("NEWTopic set: "+topicSet);
-		
-	}
 
 
 

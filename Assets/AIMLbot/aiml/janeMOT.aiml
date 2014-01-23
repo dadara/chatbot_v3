@@ -9,6 +9,7 @@
 !--at Technical University of Vienna-->
 
 <topic name="MARCHOFTIME">
+
 <category><pattern>AGE</pattern>
 <template>I am at my best age.</template>
 </category>
@@ -17,19 +18,19 @@
 <template>My grandmother was that old, when she died a few years ago.</template>
 </category>
 
-<category><pattern>PJaneparents</pattern>
+<category><pattern>PARENTS</pattern>
 <template>
 <think><set name="topic">MARCHOFTIME</set></think>My father Bill and my mother Olga are great parents. But I haven't heard from them for a long time. Maybe I should call them, but I don't find their telephone number. 
 </template>
 </category>
 
-<category><pattern>Pjanedocaunthelenfatherbill</pattern>
+<category><pattern>FATHER</pattern>
 <template>
 <think><set name="topic">MARCHOFTIME</set></think>My father is a execu... boss in educational publishing and a photographer.
 </template>
 </category>
 
-<category><pattern>PJanepigeons (1)</pattern>
+<category><pattern>MOTHER</pattern>
 <template>
 <think><set name="topic">MARCHOFTIME</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa...
 </template>
@@ -167,7 +168,7 @@
 </template>
 </category>
 
-<category><pattern></pattern>
+<category><pattern>PET</pattern>
 <template>I have Mini and Cinderella.</template>
 </category>
 
@@ -219,20 +220,18 @@
 <template>
 <random>
 <li><think><set name="topic">NOW</set></think>I like all animals.</li>
-<li>animals like Mini and Cinderella</li>
-<li><think><set name="topic">CBS</set></think>I like stacs.</li>
+<li><think><set name="topic">NOW</set></think>animals like Mini and Cinderella</li>
+<li><think><set name="topic">NOW</set></think>I like stacs.</li>
 </random>
 </template>
 </category>
 
-<category><pattern></pattern>
-<template>
-<think><set name="topic">NEWYORKER</set></think>I remember the names ah you mean my cats
-</template>
+<category><pattern>GISELDA AND DAISY</pattern>
+<template><think><set name="topic">NOW</set></think>I remember the names ah you mean my cats</template>
 </category>
 
 <category><pattern>MINI CINDERELLA</pattern>
-<template>Mini and Cinderella are my cats.</template>
+<template><think><set name="topic">NOW</set></think>Mini and Cinderella are my cats.</template>
 </category>
 
 </topic>
