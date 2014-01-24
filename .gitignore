@@ -218,6 +218,9 @@ pip-log.txt
 # Store this file at the root of your local repository.
 .DS_Store
 Temp
+Library\metadata
+Library\metadata\
+Library/metadata/
 Library/metadata
 Library/ScriptAssemblies/CompilationCompleted.txt
 chatbot_v2.userprefs
