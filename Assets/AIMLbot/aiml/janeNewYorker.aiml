@@ -298,23 +298,23 @@
 <category><pattern>WHAT ANIMALS</pattern>
 <template>
 <random>
-<li>I like all animals.</li>
-<li>animals like Giselda and Daisy</li>
-<li>I like stacs</li>
+<li><think><set name="topic">NOW</set></think>I like all animals.</li>
+<li><think><set name="topic">NOW</set></think>animals like Giselda and Daisy</li>
+<li><think><set name="topic">NOW</set></think>I like stacs</li>
 </random>
 </template>
 </category>
 
 <category><pattern>GISELDA AND DAISY</pattern>
-<template>Giselda and Daisy are my cats.</template>
+<template><think><set name="topic">NOW</set></think>Giselda and Daisy are my cats.</template>
 </category>
 
 <category><pattern>MINI CINDERELLA</pattern>
-<template>Mini and Cinderella were my cats.</template>
+<template><think><set name="topic">NOW</set></think> and Cinderella were my cats.</template>
 </category>
 
 <category><pattern>WHICH ARTS</pattern>
-<template>I prefer italian operas.</template>
+<template><think><set name="topic">NOW</set></think>I prefer italian operas.</template>
 </category>
 
 </topic>

@@ -25,7 +25,7 @@ public class UIButtonInput : MonoBehaviour {
 //				alice.inputBot=this.GetComponentInChildren<UILabel>().text;
 				alice2.inputBot=this.GetComponentInChildren<UILabel>().text;
 
-				Debug.Log ("Input: "+this.GetComponentInChildren<UILabel>().text);
+//				Debug.Log ("Input: "+this.GetComponentInChildren<UILabel>().text);
 			} else if(this.name == "InventoryViewAllButton")
 			{
 				uiLogic.SetInventoryIsActive(true);

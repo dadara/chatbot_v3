@@ -18,15 +18,15 @@
 </category>
 
 <category><pattern>PARENTS</pattern>
-<template>"topic=CBS                  </template>
+<template>My father Bill and my mother Olga are great parents. But I haven't heard from them for a long time. Maybe I should call them, but I don't find their telephone number. </template>
 </category>
 
 <category><pattern>FATHER</pattern>
-<template>"topic=CBS                                </template>
+<template>My father is a execu... boss in educational publishing and a photographer.</template>
 </category>
 
 <category><pattern>MOTHER</pattern>
-<template>"topic=CBS</template>
+<template>My mother works as secr...secertary.. and cares for the household. We often went to the pa...</template>
 </category>
 
 <category><pattern>HOLIDAY</pattern>
@@ -231,20 +231,18 @@
 <template>
 <random>
 <li><think><set name="topic">NOW</set></think>I like all animals.</li>
-<li>animals like Mini and Cinderella</li>
-<li><think><set name="topic">CBS</set></think>I like stacs. </li>
+<li><think><set name="topic">NOW</set></think>animals like Mini and Cinderella</li>
+<li><think><set name="topic">NOW</set></think>>I like stacs. </li>
 </random>
 </template>
 </category>
 
 <category><pattern></pattern>
-<template>
-<think><set name="topic">NEWYORKER</set></think>I remember the names ah you mean my cats.
-</template>
+<template><think><set name="topic">NOW</set></think>I remember the names ah you mean my cats.</template>
 </category>
 
 <category><pattern>MINI CINDERELLA</pattern>
-<template>Mini and Cinderella are my cats.</template>
+<template><think><set name="topic">NOW</set></think>Mini and Cinderella are my cats.</template>
 </category>
 
 </topic>

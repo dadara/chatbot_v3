@@ -25,10 +25,8 @@
 <template>"My father is a execu... boss </template>
 </category>
 
-<category><pattern>PJanepigeons (1)</pattern>
-<template>
-<think><set name="topic">DIPLOMAT</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa... when I was a child.
-</template>
+<category><pattern>MOTHER</pattern>
+<template>My mother works as secr...secertary.. and cares for the household. We often went to the pa... when I was a child.</template>
 </category>
 
 <category><pattern>HOLIDAY</pattern>
@@ -257,20 +255,18 @@
 <template>
 <random>
 <li><think><set name="topic">NOW</set></think>I like all animals. </li>
-<li>animals like Huge and Pogo.</li>
-<li><think><set name="topic">CBS</set></think>I like stacs.</li>
+<li><think><set name="topic">NOW</set></think>animals like Huge and Pogo.</li>
+<li><think><set name="topic">NOW</set></think>I like stacs.</li>
 </random>
 </template>
 </category>
 
 <category><pattern></pattern>
-<template>
-<think><set name="topic">NEWYORKER</set></think>I remember the names ah you mean my cats
-</template>
+<template><think><set name="topic">NOW</set></think>I remember the names ah you mean my cats</template>
 </category>
 
 <category><pattern>MINI CINDERELLA</pattern>
-<template>Mini and Cinderella were my cats in NewYork.</template>
+<template><think><set name="topic">NOW</set></think>Mini and Cinderella were my cats in NewYork.</template>
 </category>
 
 </topic>
