@@ -218,6 +218,7 @@ pip-log.txt
 # Store this file at the root of your local repository.
 .DS_Store
 Temp
+metadata/
 Library\metadata
 Library\metadata\
 Library/metadata/
