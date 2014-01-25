@@ -15,5 +15,8 @@ To remove an entire folder from the repo (like Resharper files), do this:
 
 git rm -r --cached folderName
 
-git status | sed -n '/^# *deleted:/s///p' | xargs git rm
-This takes the output of git status, doesn't print anything by default (sed -n), but on lines that start # deleted:, it gets rid of the # and the deleted: and prints what is left; xargs gathers up the arguments and provides them to a git rm command. This works for any number of files regardless of similarity (or dissimilarity) in the names.
+git rm --force blabla.txt
+git removes the file anyway (local changes or not)
+
+git reset HEAD <file>
+to unstage a file
