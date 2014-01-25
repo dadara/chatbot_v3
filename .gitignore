@@ -221,6 +221,8 @@ Temp
 metadata/*
 Library/metadata/*
 Library/metadata
+Library/ScriptAssemblies/*
+ScriptAssemblies/*
 Library/ScriptAssemblies/CompilationCompleted.txt
 chatbot_v2.userprefs
 chatbot_v3.userprefs
