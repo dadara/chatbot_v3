@@ -43,9 +43,16 @@ public class InventoryItem : MonoBehaviour {
 			//Change Sprite
 			//sprite.spriteName = "PJanepassport2";
 
-			uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
-			inventoryLargeScanButton.SetActive(true);
-			inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
+			if(document != null)
+			{
+				uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
+				inventoryLargeScanButton.SetActive(true);
+				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
+			} else 
+			{
+				inventoryLargeScanButton.SetActive(false);
+				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
+			}
 		}
 	}
 }

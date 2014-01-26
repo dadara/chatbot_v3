@@ -84,11 +84,11 @@ public class UILogic : MonoBehaviour {
 	{
 		phoneIsActive = active;
 
-		phoneCloseButton.SetActive(active);
-		inventoryLargeBackgroundDark.SetActive(active);
+		//phoneCloseButton.SetActive(active);
+		//inventoryLargeBackgroundDark.SetActive(active);
 
 		//Enable/Disable Phone and InventoryViewAllButton
-		phone.GetComponent<BoxCollider>().enabled = !active;
+		//phone.GetComponent<BoxCollider>().enabled = !active;
 		inventoryViewAllButton.GetComponent<BoxCollider>().enabled = !active;
 		inventorySmallContainer.SetActive(!active);
 		
@@ -101,7 +101,7 @@ public class UILogic : MonoBehaviour {
 		{
 			phone.GetComponent<phoneHover>().enabled = false;
 			phonePosition = phone.transform.position;
-			phone.transform.position = new Vector3(0,0,0);
+			phone.transform.position = new Vector3(phone.transform.position.x,phone.transform.position.y/3,0);
 		} else 
 		{
 			phone.transform.position = phonePosition;

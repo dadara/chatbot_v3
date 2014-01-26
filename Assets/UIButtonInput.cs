@@ -35,7 +35,13 @@ public class UIButtonInput : MonoBehaviour {
 				uiLogic.SetInventoryIsActive(false);
 			} else if(this.name == "Phone")
 			{
-				uiLogic.SetPhoneIsActive(true);
+				if(uiLogic.PhoneIsActive)
+				{
+					uiLogic.SetPhoneIsActive(false);
+				} else 
+				{
+					uiLogic.SetPhoneIsActive(true);
+				}
 			} else if(this.name == "PhoneCloseButton")
 			{
 				uiLogic.SetPhoneIsActive(false);
