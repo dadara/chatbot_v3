@@ -87,7 +87,7 @@ public class Alice2 : MonoBehaviour {
 
 
 //*************read in possible Keywords for the different topics (time modes of Jane)***********************************//
-		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywords.txt";
+		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsNew.txt";
 		posKeywords = getKeywords(path, posKeywords);
 		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsMOT.txt";
 		posKeywordsMOT = getKeywords(path, posKeywordsMOT);
@@ -123,8 +123,8 @@ public class Alice2 : MonoBehaviour {
 		Input3btnLabel = Input3btn.GetComponentInChildren<UILabel>();
 		
 		Input1btnLabel.text = "home";
-		Input2btnLabel.text = "address";
-		Input3btnLabel.text = "call taxi";
+		Input2btnLabel.text = "call taxi";
+		Input3btnLabel.text = "here alone";
 
 		chatHistory = new string[1000];
 		fileSaved = false;
@@ -143,20 +143,21 @@ public class Alice2 : MonoBehaviour {
 		
 		int startTimeInt = (int) startTime;
 
-		if(topicChangeTime>=30){
-			int topicChooser = UnityEngine.Random.Range(0,topics.Count);
-//			Debug.Log("TOPICCHANGE topicChooser: "+topicChooser+" "+topics.ElementAt(topicChooser));
-			topicSet = topics.ElementAt(topicChooser);
-			string test = getOutput("SETTOPIC"+topicSet);
-			Debug.Log("input: SETTOPIC"+topicSet+", output: "+test);
-			topicChangeTime = 0;
-
-		}
+//		if(topicChangeTime>=30){
+//			int topicChooser = UnityEngine.Random.Range(0,topics.Count);
+////			Debug.Log("TOPICCHANGE topicChooser: "+topicChooser+" "+topics.ElementAt(topicChooser));
+//			topicSet = topics.ElementAt(topicChooser);
+//			string test = getOutput("SETTOPIC"+topicSet);
+//			Debug.Log("input: SETTOPIC"+topicSet+", output: "+test);
+//			topicChangeTime = 0;
+//
+//		}
 		
 		//		1) bot answers to keywords
 
 		if(inputBot.Length > 0 && !inputBot.Equals(cacheInputBot)){
 			inputBot = RemoveSpecChar(inputBot);
+			inputBot = inputBot.ToUpper ();
 			outputBot = getOutput(inputBot);
 //			Debug.Log ("inputBot: "+inputBot+" outputBot: "+outputBot);
 			
