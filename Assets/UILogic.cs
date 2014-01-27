@@ -5,6 +5,7 @@ public class UILogic : MonoBehaviour {
 	
 	private bool inventoryIsActive = false;
 	private bool phoneIsActive = false;
+	private bool scanIsActive = false;
 
 	//Inventory Elements
 	GameObject inventoryLargeBackground;
@@ -16,6 +17,9 @@ public class UILogic : MonoBehaviour {
 	GameObject inventoryLargePanel;
 	GameObject inventoryLargeScanButton;
 	GameObject inventorySmallContainer;
+
+	//Scan
+	GameObject scanSprite;
 
 	//Other UI Elements
 	GameObject inventoryViewAllButton;
@@ -43,6 +47,8 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeScanButton = GameObject.Find("InventoryLargeScanButton");
 		inventorySmallContainer = GameObject.Find("InventorySmallContainer");
 
+		scanSprite = GameObject.Find("ScanSprite");
+
 		inventoryViewAllButton = GameObject.Find("InventoryViewAllButton");
 
 		phone = GameObject.Find("Phone");
@@ -61,6 +67,8 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeScrollBar.SetActive(false);
 		inventoryLargePanel.SetActive(false);
 		inventoryLargeScanButton.SetActive(false);
+
+		scanSprite.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -77,6 +85,12 @@ public class UILogic : MonoBehaviour {
 	public bool PhoneIsActive {
 		get {
 			return phoneIsActive;
+		}
+	}
+
+	public bool ScanIsActive {
+		get {
+			return scanIsActive;
 		}
 	}
 
@@ -159,6 +173,22 @@ public class UILogic : MonoBehaviour {
 	public Color SelectedColor {
 		get {
 			return selectedColor;
+		}
+	}
+
+	public void SetScanIsActive(bool active)
+	{
+		scanIsActive = active;
+
+		if(scanIsActive)
+		{
+			scanSprite.SetActive(active);
+		} else 
+		{
+			scanSprite.SetActive(active);
+			inventoryLargeScanButton.SetActive(active);
+			lastSelectedSprite.color = Color.white;
+			inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
 		}
 	}
 }
