@@ -1,57 +1,57 @@
-AGE
-AGE 86
-PARENTS
-FATHER
-MOTHER
-HOLIDAY
-CITIES VISITED
-FAVORITE CITY
-AGE 86
-FIRST JOB
-MARCH OF TIME
-HENRY LUCE
-WHAT RESEARCH
-LIKED MARCH OF T.
-HOWLONG AT MOT
-WORKING TIMES
-HOLIDAY FIRST JOB
-SALARY MARCH OF TIME
-NAME KITTENS MOT
-FLAT FIRST JOB
-SECOND JOB
+age
+age 86
+parents
+father
+mother
+holiday
+cities visited
+favorite city
+age 86
+first job
+march of time
+Henry Luce
+what research
+liked march of time
+howlong at mot
+working times
+holiday first job
+salary march of time
+name kittens mot
+flat first job
+second job
 CBS
-WHAT RESEARCH AT CBS
-LIKED CBS
-WORKING TIMES CBS
-PETS CBS
-HOW LONG AT CBS
-GO OUT CBS
-MUSIC CBS
-JAZZ CLUBS
-OPERA CBS
-FOREIGN SERVICE
-THIRD JOB
-JOB FOREIGN SERVICE
-DIPLOMAT
-STREET CATS
-FOURTH JOB
-NEW YORKER
-HOW LONG AT NY
-LIKE JOB NY
-WHEN RETIRED
-ADDRESS
-PET
-LAST JOB
-HOBBIES
-VENUS
-GO OUT
-HERE ALONE
-LIVE ALONE
-WHY GO OUT 
-CAREER IMPOTRANT
-SALTAIRE
-FIRE ISLAND
-COTTAGE
-WHAT ANIMALS
-GISELDA AND DAISY
-MINI CINDERELLA
+what research at cbs
+liked cbs
+working times cbs
+pets cbs
+how long at cbs
+go out cbs
+music cbs
+jazz clubs
+opera cbs
+foreign service
+third job
+job foreign service
+diplomat
+street cats
+fourth job
+New Yorker
+how long at ny
+like job ny
+when retired
+address
+pet
+last job
+hobbies
+Venus
+go out
+here alone
+live alone
+why go out 
+career impotrant
+Saltaire
+fire island
+cottage
+what animals
+Giselda and Daisy
+Mini Cinderella

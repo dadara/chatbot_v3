@@ -46,7 +46,7 @@
 </category>
 
 <category><pattern>FIRST JOB</pattern>
-<template>" My first job was right after college at Henry Luce's ""March of Time"" as a researcher. "</template>
+<template>My first job was right after college at Henry Luce's "March of Time" as a researcher.</template>
 </category>
 
 <category><pattern>MARCH OF TIME</pattern>
@@ -61,7 +61,7 @@
 <template>Well I was hired as a researcher, but in the end they wanted me to do woman's work. Hang up curtains, organize parties and all this stuff. </template>
 </category>
 
-<category><pattern>LIKED MARCH OF T.</pattern>
+<category><pattern>LIKED MARCH OF TIME</pattern>
 <template>I hated the job there. I didn't study for years for getting a party assassi... helper</template>
 </category>
 

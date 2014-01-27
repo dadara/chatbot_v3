@@ -16,6 +16,11 @@ public class Alice2 : MonoBehaviour {
 	List<string> posKeywordsCBS; 
 	List<string> posKeywordsDipl; 
 	List<string> posKeywordsNY;
+	List<string> posKeyOrig;
+	List<string> posKeyMOTorig; 
+	List<string> posKeyCBSorig; 
+	List<string> posKeyDorig; 
+	List<string> posKeyNYorig;
 
 	List<string> topics;
 	int cnt;
@@ -48,6 +53,10 @@ public class Alice2 : MonoBehaviour {
 	float topicChangeTime;
 	bool fileSaved;
 
+	UILabel chatHistoryLabel;
+	string chatHistoryString;
+
+
 // Path were the possible Input Textfiles are saved
 	string path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar;
 	
@@ -64,26 +73,11 @@ public class Alice2 : MonoBehaviour {
 //		List to choose randomly a topic
 
 		topics = new List<string>();
-//		topics.Add("NOW");
-//		topics.Add("MARCHOFTIME");
+		topics.Add("NOW");
+		topics.Add("MARCHOFTIME");
 		topics.Add("CBS");
 		topics.Add("DIPLOMAT");
 		topics.Add("NEWYORKER");
-
-//
-//		SETTOPICMOT</pattern>
-//			<template><think><set name="topic">MARCHOFTIME</set></think>balubalub</template>
-//				</category>
-//				<category><pattern>SETTOPICCBS</pattern>
-//				<template><think><set name="topic">CBS</set></think>balubalub</template>
-//				</category>
-//				<category><pattern>SETTOPICDIP</pattern>
-//				<template><think><set name="topic">DIPLOMAT</set></think>balubalub</template>
-//				</category>
-//				<category><pattern>SETTOPICNY</pattern>
-//				<template><think><set name="topic">NEWYORKER</set></think>balubalub</template>
-//				</category>
-//				<category><pattern>SETTOPICNOW
 
 
 //*************read in possible Keywords for the different topics (time modes of Jane)***********************************//
@@ -97,6 +91,12 @@ public class Alice2 : MonoBehaviour {
 		posKeywordsDipl = getKeywords(path, posKeywordsDipl);
 		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsNY.txt";
 		posKeywordsNY = getKeywords(path, posKeywordsNY);
+
+		posKeyOrig = new List<string>(posKeywords);
+		posKeyMOTorig = new List<string>(posKeywordsMOT); 
+		posKeyCBSorig = new List<string>(posKeywordsCBS); 
+		posKeyDorig = new List<string>(posKeywordsDipl); 
+		posKeyNYorig = new List<string>(posKeywordsNY);
 
 //******************initialize chatbot*****************************************************************************************//
 		myBot = new Bot();
@@ -131,11 +131,16 @@ public class Alice2 : MonoBehaviour {
 		topicChangeTime = 0;
 		topicSet = "";
 
+		chatHistoryLabel = GameObject.Find ("ChatHistoryLabel").GetComponent<UILabel>();
+		chatHistoryString="";
+
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+		Debug.Log("posKEyOrig at 0: "+posKeyOrig.ElementAt(0));
 
 		startTime += Time.deltaTime;
 		topicChangeTime += Time.deltaTime;
@@ -143,15 +148,10 @@ public class Alice2 : MonoBehaviour {
 		
 		int startTimeInt = (int) startTime;
 
-//		if(topicChangeTime>=30){
-//			int topicChooser = UnityEngine.Random.Range(0,topics.Count);
-////			Debug.Log("TOPICCHANGE topicChooser: "+topicChooser+" "+topics.ElementAt(topicChooser));
-//			topicSet = topics.ElementAt(topicChooser);
-//			string test = getOutput("SETTOPIC"+topicSet);
-//			Debug.Log("input: SETTOPIC"+topicSet+", output: "+test);
-//			topicChangeTime = 0;
-//
-//		}
+		if(topicChangeTime>=30){
+			ChangeTopic();
+
+		}
 		
 		//		1) bot answers to keywords
 
@@ -166,82 +166,16 @@ public class Alice2 : MonoBehaviour {
 			cnt++;
 			chatHistory[cnt] = outputBot;
 			cnt++;
+
+			chatHistoryString = chatHistoryString + inputBot + Environment.NewLine + outputBot +Environment.NewLine;
+			chatHistoryLabel.text = chatHistoryString;
 		
 			//checked finish condition Test how much time it needs to come to the end
 			//			choose posKeywordsString for input buttons
-			string button1;
-			string button2;
-			string button3;
-			
-			if(topicSet.Equals("MARCHOFTIME")){
 
-				if(posKeywordsMOT.Count >=3){
-					button1 = posKeywordsMOT.ElementAt(0);
-					button2 = posKeywordsMOT.ElementAt(1);
-					button3 = posKeywordsMOT.ElementAt(2);
-					Input1btnLabel.text = button1;
-					Input2btnLabel.text = button2;
-					Input3btnLabel.text = button3;
-					posKeywordsMOT.Remove(button1);
-					posKeywordsMOT.Remove(button2);
-					posKeywordsMOT.Remove(button3);
-				}
-			}else if(topicSet.Equals("CBS")){
-				Debug.Log("CBS "+topicSet);
-				if(posKeywordsCBS.Count >=3){
-					button1 = posKeywordsCBS.ElementAt(0);
-					button2 = posKeywordsCBS.ElementAt(1);
-					button3 = posKeywordsCBS.ElementAt(2);
-					Input1btnLabel.text = button1;
-					Input2btnLabel.text = button2;
-					Input3btnLabel.text = button3;
-					posKeywordsCBS.Remove(button1);
-					posKeywordsCBS.Remove(button2);
-					posKeywordsCBS.Remove(button3);
-				}
-				
-			}else if(topicSet.Equals("DIPLOMAT")){
-				Debug.Log("DIPLOMAT "+topicSet);
-				if(posKeywordsDipl.Count >=3){
-					button1 = posKeywordsDipl.ElementAt(0);
-					button2 = posKeywordsDipl.ElementAt(1);
-					button3 = posKeywordsDipl.ElementAt(2);
-					Input1btnLabel.text = button1;
-					Input2btnLabel.text = button2;
-					Input3btnLabel.text = button3;
-					posKeywordsDipl.Remove(button1);
-					posKeywordsDipl.Remove(button2);
-					posKeywordsDipl.Remove(button3);
-				}
-				
-			}else if(topicSet.Equals("NEWYORKER")){
-				Debug.Log("NEWYORKER "+topicSet);
-				if(posKeywordsNY.Count >=3){
-					button1 = posKeywordsNY.ElementAt(0);
-					button2 = posKeywordsNY.ElementAt(1);
-					button3 = posKeywordsNY.ElementAt(2);
-					Input1btnLabel.text = button1;
-					Input2btnLabel.text = button2;
-					Input3btnLabel.text = button3;
-					posKeywordsNY.Remove(button1);
-					posKeywordsNY.Remove(button2);
-					posKeywordsNY.Remove(button3);
-				}
-				
-			}else{
-				Debug.Log("NOW "+topicSet);
-				if(posKeywords.Count >=3){
-					button1 = posKeywords.ElementAt(0);
-					button2 = posKeywords.ElementAt(1);
-					button3 = posKeywords.ElementAt(2);
-					Input1btnLabel.text = button1;
-					Input2btnLabel.text = button2;
-					Input3btnLabel.text = button3;
-					posKeywords.Remove(button1);
-					posKeywords.Remove(button2);
-					posKeywords.Remove(button3);
-				}
-			}
+			setInputButtons();
+
+
 
 		}
 		
@@ -355,9 +289,32 @@ public class Alice2 : MonoBehaviour {
 				posKeywordsMOT.Remove(button1);
 				posKeywordsMOT.Remove(button2);
 				posKeywordsMOT.Remove(button3);
+			}else{
+				posKeywordsMOT = new List<string>(posKeyMOTorig);
+				button1 = posKeywordsMOT.ElementAt(0);
+				button2 = posKeywordsMOT.ElementAt(1);
+				button3 = posKeywordsMOT.ElementAt(2);
+				Input1btnLabel.text = button1;
+				Input2btnLabel.text = button2;
+				Input3btnLabel.text = button3;
+				posKeywordsMOT.Remove(button1);
+				posKeywordsMOT.Remove(button2);
+				posKeywordsMOT.Remove(button3);
 			}
 		}else if(topicSet.Equals("CBS")){
 			if(posKeywordsCBS.Count >=3){
+				button1 = posKeywordsCBS.ElementAt(0);
+				button2 = posKeywordsCBS.ElementAt(1);
+				button3 = posKeywordsCBS.ElementAt(2);
+				Input1btnLabel.text = button1;
+				Input2btnLabel.text = button2;
+				Input3btnLabel.text = button3;
+				posKeywordsCBS.Remove(button1);
+				posKeywordsCBS.Remove(button2);
+				posKeywordsCBS.Remove(button3);
+			}
+			else{
+				posKeywordsCBS = new List<string>(posKeyCBSorig);
 				button1 = posKeywordsCBS.ElementAt(0);
 				button2 = posKeywordsCBS.ElementAt(1);
 				button3 = posKeywordsCBS.ElementAt(2);
@@ -381,9 +338,33 @@ public class Alice2 : MonoBehaviour {
 				posKeywordsDipl.Remove(button2);
 				posKeywordsDipl.Remove(button3);
 			}
+			else{
+				posKeywordsDipl = new List<string>(posKeyDorig);
+				button1 = posKeywordsDipl.ElementAt(0);
+				button2 = posKeywordsDipl.ElementAt(1);
+				button3 = posKeywordsDipl.ElementAt(2);
+				Input1btnLabel.text = button1;
+				Input2btnLabel.text = button2;
+				Input3btnLabel.text = button3;
+				posKeywordsDipl.Remove(button1);
+				posKeywordsDipl.Remove(button2);
+				posKeywordsDipl.Remove(button3);
+			}
 			
 		}else if(topicSet.Equals("NEWYORKER")){
 			if(posKeywordsNY.Count >=3){
+				button1 = posKeywordsNY.ElementAt(0);
+				button2 = posKeywordsNY.ElementAt(1);
+				button3 = posKeywordsNY.ElementAt(2);
+				Input1btnLabel.text = button1;
+				Input2btnLabel.text = button2;
+				Input3btnLabel.text = button3;
+				posKeywordsNY.Remove(button1);
+				posKeywordsNY.Remove(button2);
+				posKeywordsNY.Remove(button3);
+			}
+			else{
+				posKeywordsNY = new List<string>(posKeyNYorig);
 				button1 = posKeywordsNY.ElementAt(0);
 				button2 = posKeywordsNY.ElementAt(1);
 				button3 = posKeywordsNY.ElementAt(2);
@@ -408,7 +389,28 @@ public class Alice2 : MonoBehaviour {
 				posKeywords.Remove(button2);
 				posKeywords.Remove(button3);
 			}
+			else{
+				posKeywords = new List<string>(posKeyOrig);
+				button1 = posKeywords.ElementAt(0);
+				button2 = posKeywords.ElementAt(1);
+				button3 = posKeywords.ElementAt(2);
+				Input1btnLabel.text = button1;
+				Input2btnLabel.text = button2;
+				Input3btnLabel.text = button3;
+				posKeywords.Remove(button1);
+				posKeywords.Remove(button2);
+				posKeywords.Remove(button3);
+			}
 		}
+	}
+
+	public void ChangeTopic(){
+		int topicChooser = UnityEngine.Random.Range(0,topics.Count);
+		Debug.Log("TOPICCHANGE topicChooser: "+topicChooser+" "+topics.ElementAt(topicChooser));
+		topicSet = topics.ElementAt(topicChooser);
+		string test = getOutput("SETTOPIC"+topicSet);
+		topicChangeTime = 0;
+		setInputButtons();
 	}
 	
 	
