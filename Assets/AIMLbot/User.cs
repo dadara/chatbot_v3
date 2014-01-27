@@ -34,6 +34,14 @@ namespace AIMLbot
 			}
 		}
 
+		public string Document
+		{
+			get
+			{
+				return this.Predicates.grabSetting("document");
+			}
+		}
+
 		public string UserID
 		{
 			get

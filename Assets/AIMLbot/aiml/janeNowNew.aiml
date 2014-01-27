@@ -25,7 +25,7 @@
 </category>
 
 <category><pattern>HOME</pattern>
-<template>I live in Brooklyn, NewYork</template>
+<template><think><set name="document">PJanepassport</set></think>I live in Brooklyn, NewYork</template>
 </category>
 
 <category><pattern>CALL TAXI</pattern>
@@ -81,7 +81,7 @@
 </category>
 
 <category><pattern>MOTHER</pattern>
-<template>My mother worked as secr...secretry.. and cared for the household. We often went to the pa...after elementary school</template>
+<template>My mother worked as secr...secretry.. and cared for the household. We often went to the pa...after elementary school.</template>
 </category>
 
 <category><pattern>JOB</pattern>
@@ -193,7 +193,7 @@
 </category>
 
 <category><pattern>PETS COLLEGE</pattern>
-<template>I lived with my parents in college and they didn't like an...aimag.. cats.</template>
+<template><think><set name="document">Pdaisy</set></think>I lived with my parents in college and they didn't like an...aimag.. cats.</template>
 </category>
 
 
@@ -241,7 +241,7 @@
 </category>
 
 <category><pattern>PETS MARCH OF TIME</pattern>
-<template> I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
+<template><think><set name="document">Pdaisy</set></think>I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
 </category>
 
 <category><pattern>SALARY MARCH OF TIME</pattern>
@@ -254,7 +254,7 @@
 </category>
 
 <category><pattern>NAME KITTENS MARCH OF TIME</pattern>
-<template>Their names were Mini and Cinderella</template>
+<template><think><set name="document">Pdaisy</set></think>Their names were Mini and Cinderella</template>
 </category>
 
 <category><pattern>FLAT FIRST JOB</pattern>
@@ -289,7 +289,7 @@
 
 
 <category><pattern>WORKING TIMES CBS</pattern>
-<template>As usually hihi I worked 10 hours a day, well most of the time. But sometimes I found the time go to the opera or to go out with my colleages/pupils.</template>
+<template>As usually hihi I worked 10 hours a day, well most of the time. But sometimes I found the time go to the opera or to go out with my colleagues/pupils.</template>
 </category>
 
 <category><pattern>PETS CBS</pattern>

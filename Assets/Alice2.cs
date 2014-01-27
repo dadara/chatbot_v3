@@ -59,7 +59,12 @@ public class Alice2 : MonoBehaviour {
 
 // Path were the possible Input Textfiles are saved
 	string path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar;
-	
+
+//	List which contains the documents received from Jane (for inventary) 
+	public List<string> inventary;
+//	last document got from Jane
+	string cacheDocument;
+
 
 	// Use this for initialization
 	void Start () {
@@ -134,6 +139,8 @@ public class Alice2 : MonoBehaviour {
 		chatHistoryLabel = GameObject.Find ("ChatHistoryLabel").GetComponent<UILabel>();
 		chatHistoryString="";
 
+		inventary = new List<string>();
+		cacheDocument = "";
 
 	}
 	
@@ -141,6 +148,12 @@ public class Alice2 : MonoBehaviour {
 	void Update () {
 	
 		Debug.Log("posKEyOrig at 0: "+posKeyOrig.ElementAt(0));
+		if(inventary.Count>0){
+			for(int i=0; i<inventary.Count;i++){
+				Debug.Log("Inventary: "+inventary.ElementAt(i));
+			}
+		}
+
 
 		startTime += Time.deltaTime;
 		topicChangeTime += Time.deltaTime;
@@ -241,8 +254,12 @@ public class Alice2 : MonoBehaviour {
 		Result res = myBot.Chat(r);
 //		if(!res.user.Topic.Equals(topicSet)){
 //			topicSet = res.user.Topic;
-//		Debug.Log("NEWTopic set: "+topicSet);
-//		}else{
+		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
+			Debug.Log("Document: "+res.user.Document);
+			inventary.Add(res.user.Document);
+			cacheDocument = res.user.Document;
+		}
+//		else{
 //						Debug.Log("OLDTopic set: "+topicSet);
 //		}
 		
