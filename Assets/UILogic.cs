@@ -8,24 +8,20 @@ public class UILogic : MonoBehaviour {
 	private bool scanIsActive = false;
 
 	//Inventory Elements
-	GameObject inventoryLargeBackground;
-	GameObject inventoryLargeBackgroundDark;
 	GameObject inventoryLargeCloseButton;
-	GameObject inventoryLargeHeader;
-	GameObject inventoryLargeLabel;
-	GameObject inventoryLargeScrollBar;
 	GameObject inventoryLargePanel;
 	GameObject inventoryLargeScanButton;
+	GameObject inventoryLargePanelItems;
+	GameObject inventoryLargeButtonPanel;
 	GameObject inventorySmallContainer;
 
 	//Scan
-	GameObject scanSprite;
+	GameObject scanPanel;
 
 	//Other UI Elements
 	GameObject inventoryViewAllButton;
 	GameObject phone;
 	Vector3 phonePosition;
-	GameObject phoneCloseButton;
 
 	GameObject Input1btn;
 	GameObject Input2btn;
@@ -37,38 +33,27 @@ public class UILogic : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		inventoryLargeBackground = GameObject.Find("InventoryLargeBackground");
-		inventoryLargeBackgroundDark = GameObject.Find("InventoryLargeBackgroundDark");
 		inventoryLargeCloseButton = GameObject.Find("InventoryLargeCloseButton");
-		inventoryLargeHeader = GameObject.Find("InventoryLargeHeader");
-		inventoryLargeLabel = GameObject.Find("InventoryLargeLabel");
-		inventoryLargeScrollBar = GameObject.Find("InventoryLargeScrollBar");
 		inventoryLargePanel = GameObject.Find("InventoryLargePanel");
 		inventoryLargeScanButton = GameObject.Find("InventoryLargeScanButton");
+		inventoryLargePanelItems = GameObject.Find("InventoryLargePanelItems");
+		inventoryLargeButtonPanel = GameObject.Find("InventoryLargeButtonPanel");
 		inventorySmallContainer = GameObject.Find("InventorySmallContainer");
 
-		scanSprite = GameObject.Find("ScanSprite");
+		scanPanel = GameObject.Find("ScanPanel");
 
 		inventoryViewAllButton = GameObject.Find("InventoryViewAllButton");
 
 		phone = GameObject.Find("Phone");
-		phoneCloseButton = GameObject.Find("PhoneCloseButton");
 
 		Input1btn = GameObject.Find("Input1Button");
 		Input2btn = GameObject.Find("Input2Button");
 		Input3btn = GameObject.Find("Input3Button");
 
-		phoneCloseButton.SetActive(false);
-		inventoryLargeBackground.SetActive(false);
-		inventoryLargeBackgroundDark.SetActive(false);
-		inventoryLargeCloseButton.SetActive(false);
-		inventoryLargeHeader.SetActive(false);
-		inventoryLargeLabel.SetActive(false);
-		inventoryLargeScrollBar.SetActive(false);
 		inventoryLargePanel.SetActive(false);
-		inventoryLargeScanButton.SetActive(false);
-
-		scanSprite.SetActive(false);
+		inventoryLargePanelItems.SetActive(false);
+		inventoryLargeButtonPanel.SetActive(false);
+		scanPanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -128,13 +113,10 @@ public class UILogic : MonoBehaviour {
 		inventoryIsActive = active;
 
 		//Enable/Disable Inventory UI Elements
-		inventoryLargeBackground.SetActive(active);
-		inventoryLargeBackgroundDark.SetActive(active);
-		inventoryLargeCloseButton.SetActive(active);
-		inventoryLargeHeader.SetActive(active);
-		inventoryLargeLabel.SetActive(active);
-		inventoryLargeScrollBar.SetActive(active);
 		inventoryLargePanel.SetActive(active);
+		inventoryLargePanelItems.SetActive(active);
+		inventoryLargeButtonPanel.SetActive(active);
+		inventoryLargeScanButton.SetActive(!active);
 		inventorySmallContainer.SetActive(!active);
 
 		//Disable ScanButton
@@ -182,10 +164,10 @@ public class UILogic : MonoBehaviour {
 
 		if(scanIsActive)
 		{
-			scanSprite.SetActive(active);
+			scanPanel.SetActive(active);
 		} else 
 		{
-			scanSprite.SetActive(active);
+			scanPanel.SetActive(active);
 			inventoryLargeScanButton.SetActive(active);
 			lastSelectedSprite.color = Color.white;
 			inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
