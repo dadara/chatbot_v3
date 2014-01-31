@@ -12,3 +12,5 @@ chatbot_v3.userprefs
 *.pidb
 *.sln
 *.meta
+*.dll
+chatbot_v3_Data/*

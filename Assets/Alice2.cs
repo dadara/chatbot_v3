@@ -87,12 +87,13 @@ public class Alice2 : MonoBehaviour {
 
 //*************read in possible Keywords for the different topics (time modes of Jane)***********************************//
 		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsNew.txt";
+//		path = Resources.Load("aiml"+Path.DirectorySeparatorChar+"posKeywordsNew.txt");
 		posKeywords = getKeywords(path, posKeywords);
 		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsMOT.txt";
 		posKeywordsMOT = getKeywords(path, posKeywordsMOT);
 		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsCBS.txt";
 		posKeywordsCBS = getKeywords(path, posKeywordsCBS);
-		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsDipl.txt";
+		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsD.txt";
 		posKeywordsDipl = getKeywords(path, posKeywordsDipl);
 		path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar+"posKeywordsNY.txt";
 		posKeywordsNY = getKeywords(path, posKeywordsNY);
