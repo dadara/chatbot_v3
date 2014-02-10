@@ -8,9 +8,10 @@ public class UIButtonInput : MonoBehaviour {
 	Alice2 alice2;
 	UILogic uiLogic;
 	Vector3 phonePosition;
-	
+
 	void Start(){
 		panel = GameObject.Find("Panel");
+
 //		alice = panel.GetComponent<Alice>();
 		alice2 = panel.GetComponent<Alice2>();
 

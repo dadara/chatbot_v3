@@ -1,0 +1,95 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class GameLogic : MonoBehaviour {
+
+	public GameObject mainGame;
+
+	public GameObject turnPiecesPuzzle;
+	public GameObject findJanePuzzle1;
+	public GameObject findJanePuzzle2;
+
+	public GameObject puzzleInstructions;
+	public GameObject instructionLabel1;
+	public GameObject instructionLabel2;
+
+	public GameObject alerts;
+	public GameObject alertLabel;
+
+	// Use this for initialization
+	void Start () 
+	{
+	}
+
+	// Update is called once per frame
+	void Update () 
+	{
+		if(Input.GetKeyDown(KeyCode.A))
+		{
+			ActivateTurnPiecesPuzzle();
+		} else if(Input.GetKeyDown(KeyCode.S))
+		{
+			ActivateFindJanePuzzle1();
+		} else if(Input.GetKeyDown(KeyCode.D))
+		{
+			ActivateFindJanePuzzle2();
+		} else if(Input.GetKeyDown(KeyCode.F))
+		{
+			ActivateMainGame();	
+		}
+	}
+
+	public void ActivateTurnPiecesPuzzle()
+	{
+		mainGame.SetActive(false);
+		puzzleInstructions.SetActive(true);
+
+		instructionLabel1.GetComponent<UILabel>().text = "Use Up/Down arrow keys to switch pieces";
+		instructionLabel2.GetComponent<UILabel>().text = "Use Left/Right arrow keys or scroll to rotate selected piece";
+
+		this.transform.position =  new Vector3 (turnPiecesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
+
+		turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().StartGame();
+	}
+
+	public void ActivateFindJanePuzzle1()
+	{
+		mainGame.SetActive(false);
+		puzzleInstructions.SetActive(true);
+
+		instructionLabel1.GetComponent<UILabel>().text = "Find Jane in this picture";
+		instructionLabel2.GetComponent<UILabel>().text = "Use the mouse pointer to click on Jane";
+
+		this.transform.position =  new Vector3 (findJanePuzzle1.transform.position.x, this.transform.position.y, this.transform.position.z);
+
+		findJanePuzzle1.GetComponent<FindJanePuzzle>().StartGame();
+	}
+
+	public void ActivateFindJanePuzzle2()
+	{
+		mainGame.SetActive(false);
+		puzzleInstructions.SetActive(true);
+
+		instructionLabel1.GetComponent<UILabel>().text = "Find Jane in this picture";
+		instructionLabel2.GetComponent<UILabel>().text = "Use the mouse pointer to click on Jane";
+
+		this.transform.position =  new Vector3 (findJanePuzzle2.transform.position.x, this.transform.position.y, this.transform.position.z);
+		
+		findJanePuzzle2.GetComponent<FindJanePuzzle>().StartGame();
+	}
+
+	public void ActivateMainGame()
+	{
+		puzzleInstructions.SetActive(false);
+		mainGame.SetActive(true);
+		
+		this.transform.position =  new Vector3 (0, this.transform.position.y, this.transform.position.z);
+		
+	}
+
+	public void ActivateAlert(string message)
+	{
+		alerts.SetActive(true);
+		alertLabel.GetComponent<UILabel>().text = message;
+	}
+}
