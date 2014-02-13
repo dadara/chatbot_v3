@@ -47,7 +47,7 @@ public class Alice2 : MonoBehaviour {
 	private User myUser;
 	
 	string cacheInputBot;
-	string topicSet;
+	public string topicSet;
 	string[] chatHistory;
 	float startTime;
 	float topicChangeTime;
