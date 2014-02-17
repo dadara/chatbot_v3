@@ -6,6 +6,7 @@ public class TurnCubesPuzzle : MonoBehaviour
 
 	public GameObject[] parts;
 	private int i = 4;
+	int cnt = 0;
 
 	bool gameCompleted = false;
 	bool gameActive = false;
@@ -27,6 +28,7 @@ public class TurnCubesPuzzle : MonoBehaviour
 	public void StartGame()
 	{
 		i = 4;
+		cnt = 0;
 		gameActive = true;
 		gameCompleted = false;
 		cubeSelected = false;
@@ -44,7 +46,6 @@ public class TurnCubesPuzzle : MonoBehaviour
 	**6*7*8*
 	********/
 
-	// Update is called once per frame
 	void Update () 
 	{
 		if(gameActive)
@@ -111,22 +112,27 @@ public class TurnCubesPuzzle : MonoBehaviour
 					parts[i].GetComponent<TurnCube>().SetSelected(false);
 				}
 
-
 				CheckGameComplete();
 			}
 		}
 	}
 
+	//Check if the Game was succesfully completed
 	private void CheckGameComplete()
 	{
-		int cnt = 0;
-		
+		int tempCnt = 0;
 		foreach(GameObject p in parts)
 		{
-			if(p.transform.rotation == Quaternion.identity)
+			if(p.GetComponent<TurnCube>().PuzzlePieceCorrectPosition)
 			{
-				cnt++;
+				tempCnt++;
 			}
+		}
+
+		if(tempCnt > cnt)
+		{
+			cubeSelected = false;
+			cnt = tempCnt;
 		}
 		
 		if(cnt == parts.Length)

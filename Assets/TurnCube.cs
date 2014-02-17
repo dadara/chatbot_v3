@@ -3,13 +3,16 @@ using System.Collections;
 
 public class TurnCube : MonoBehaviour 
 {
+	public GameObject PuzzlePiece;
+
 	private bool selected = false;
 	private bool rotating = false;
-	private float speed = 5f;
+	private bool puzzlePieceCorrectPosition = false;
 
 	Quaternion oldRotation;
-	Quaternion lastRotation;
 	Quaternion newRotation;
+
+	Vector3 initialPosition;
 
 	public bool Selected {
 		get {
@@ -21,11 +24,21 @@ public class TurnCube : MonoBehaviour
 	{
 		selected = boolean;
 	}
+
+	public bool PuzzlePieceCorrectPosition {
+		get {
+			return puzzlePieceCorrectPosition;
+		}
+	}
 	
 	void Start () 
 	{
 		selected = false;
 		rotating = false;
+
+		resetRotation();
+
+		initialPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -33,7 +46,6 @@ public class TurnCube : MonoBehaviour
 	{
 		if(selected)
 		{
-
 			if(Input.GetKeyDown ("up"))
 			{
 				StartCoroutine("RotateUp");
@@ -47,6 +59,28 @@ public class TurnCube : MonoBehaviour
 			{
 				StartCoroutine("RotateRight");
 			}
+
+			transform.position = new Vector3(transform.position.x, transform.position.y, 1f);
+		} else 
+		{
+			transform.position = initialPosition;
+		}
+
+		checkPuzzlePieceCorrectPosition();
+	}
+
+	void checkPuzzlePieceCorrectPosition()
+	{
+		float angle = Quaternion.Angle(PuzzlePiece.transform.rotation, Quaternion.Euler(270,0,0));
+
+		if(Mathf.Abs(angle) < 1)
+		{
+			puzzlePieceCorrectPosition = true;
+			transform.position = initialPosition;
+			selected = false;
+		} else 
+		{
+			puzzlePieceCorrectPosition = false;
 		}
 	}
 
@@ -66,6 +100,8 @@ public class TurnCube : MonoBehaviour
 			} 
 
 			transform.rotation = newRotation; // To make it come out at exactly 90 degrees
+
+			resetRotation();
 			
 			rotating = false;	
 		}
@@ -87,6 +123,8 @@ public class TurnCube : MonoBehaviour
 			} 
 			
 			transform.rotation = newRotation; // To make it come out at exactly 90 degrees
+
+			resetRotation();
 			
 			rotating = false;	
 		}
@@ -107,7 +145,9 @@ public class TurnCube : MonoBehaviour
 			} 
 			
 			transform.rotation = newRotation; // To make it come out at exactly 90 degrees
-			
+
+			resetRotation();
+
 			rotating = false;	
 		}
 	}
@@ -127,8 +167,40 @@ public class TurnCube : MonoBehaviour
 			} 
 			
 			transform.rotation = newRotation; // To make it come out at exactly 90 degrees
-			
+
+			resetRotation();
+
 			rotating = false;	
+		}
+	}
+
+
+	void resetRotation()
+	{
+		Quaternion[] partsRotation = new Quaternion[6];
+		Vector3[] partsPosition = new Vector3[6];
+
+		int i = 0;
+
+		//Copy pieces rotation and position
+		foreach (Transform child in transform)
+		{
+			partsRotation[i] = child.rotation;
+			partsPosition[i] = child.position;
+			i++;
+		}
+
+		//reset Cube rotation
+		transform.rotation = Quaternion.identity;
+
+		i = 0;
+
+		//Paste pieces rotation and position
+		foreach (Transform child in transform)
+		{
+			child.rotation = partsRotation[i];
+			child.position = partsPosition[i];
+			i++;
 		}
 	}
 }
