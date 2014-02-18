@@ -56,6 +56,7 @@ public class GameLogic : MonoBehaviour {
 		transform.position = Vector3.Lerp(transform.position, cameraPos, speed*Time.deltaTime);
 	}
 
+	//Starts TurnPiecesPuzzle
 	public void ActivateTurnPiecesPuzzle()
 	{
 		mainGame.SetActive(false);
@@ -76,6 +77,7 @@ public class GameLogic : MonoBehaviour {
 		turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().StartGame();
 	}
 
+	//Starts FindJanePuzzle1
 	public void ActivateFindJanePuzzle1()
 	{
 		mainGame.SetActive(false);
@@ -95,6 +97,7 @@ public class GameLogic : MonoBehaviour {
 		findJanePuzzle1.GetComponent<FindJanePuzzle>().StartGame();
 	}
 
+	//Starts FindJanePuzzle2
 	public void ActivateFindJanePuzzle2()
 	{
 		mainGame.SetActive(false);
@@ -114,6 +117,7 @@ public class GameLogic : MonoBehaviour {
 		findJanePuzzle2.GetComponent<FindJanePuzzle>().StartGame();
 	}
 
+	//Starts TurnCubesPuzzle
 	public void ActivateTurnCubesPuzzle()
 	{
 		mainGame.SetActive(false);
@@ -133,6 +137,7 @@ public class GameLogic : MonoBehaviour {
 		turnCubesPuzzle.GetComponent<TurnCubesPuzzle>().StartGame();
 	}
 
+	//Starts WordPuzzle
 	public void ActivateWordPuzzle(string correctWord, string faultyWord)
 	{
 		mainGame.SetActive(false);
@@ -152,6 +157,7 @@ public class GameLogic : MonoBehaviour {
 		wordPuzzle.GetComponent<WordPuzzle>().StartGame(correctWord, faultyWord);
 	}
 
+	//Activates Main Game (Chat Bot)
 	public void ActivateMainGame()
 	{
 		puzzleInstructions.SetActive(false);
@@ -167,6 +173,7 @@ public class GameLogic : MonoBehaviour {
 		
 	}
 
+	//Activates AlertPanel and displays a message
 	public void ActivateAlert(string message)
 	{
 		alerts.SetActive(true);
