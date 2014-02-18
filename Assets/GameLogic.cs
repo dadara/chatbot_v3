@@ -5,22 +5,26 @@ public class GameLogic : MonoBehaviour {
 
 	public GameObject mainGame;
 
+	//Puzzle GameObjects
 	public GameObject turnPiecesPuzzle;
 	public GameObject findJanePuzzle1;
 	public GameObject findJanePuzzle2;
 	public GameObject turnCubesPuzzle;
+	public GameObject wordPuzzle;
 
+	//Instructions
 	public GameObject puzzleInstructions;
 	public GameObject instructionLabel1;
 	public GameObject instructionLabel2;
 
+	//Alerts
 	public GameObject alerts;
 	public GameObject alertLabel;
 
+	//Other
 	private float speed = 2.5f;
 	private Vector3 cameraPos;
 
-	// Use this for initialization
 	void Start () 
 	{
 		cameraPos = transform.position;
@@ -31,19 +35,22 @@ public class GameLogic : MonoBehaviour {
 	{
 		if(Input.GetKeyDown(KeyCode.A))
 		{
-			ActivateTurnPiecesPuzzle();
+			ActivateMainGame();
 		} else if(Input.GetKeyDown(KeyCode.S))
 		{
-			ActivateFindJanePuzzle1();
+			ActivateTurnPiecesPuzzle();
 		} else if(Input.GetKeyDown(KeyCode.D))
 		{
-			ActivateFindJanePuzzle2();
+			ActivateFindJanePuzzle1();
 		} else if(Input.GetKeyDown(KeyCode.F))
 		{
-			ActivateTurnCubesPuzzle();	
+			ActivateFindJanePuzzle2();
 		} else if(Input.GetKeyDown(KeyCode.G))
 		{
-			ActivateMainGame();	
+			ActivateTurnCubesPuzzle();	
+		} else if(Input.GetKeyDown(KeyCode.H))
+		{
+			ActivateWordPuzzle("Kittens", "Knatens");	
 		}
 
 		transform.position = Vector3.Lerp(transform.position, cameraPos, speed*Time.deltaTime);
@@ -55,6 +62,7 @@ public class GameLogic : MonoBehaviour {
 		findJanePuzzle1.SetActive(false);
 		findJanePuzzle2.SetActive(false);
 		turnCubesPuzzle.SetActive(false);
+		wordPuzzle.SetActive(false);
 
 		turnPiecesPuzzle.SetActive(true);
 		puzzleInstructions.SetActive(true);
@@ -74,6 +82,7 @@ public class GameLogic : MonoBehaviour {
 		turnPiecesPuzzle.SetActive(false);
 		findJanePuzzle2.SetActive(false);
 		turnCubesPuzzle.SetActive(false);
+		wordPuzzle.SetActive(false);
 
 		findJanePuzzle1.SetActive(true);
 		puzzleInstructions.SetActive(true);
@@ -92,6 +101,7 @@ public class GameLogic : MonoBehaviour {
 		turnPiecesPuzzle.SetActive(false);
 		findJanePuzzle1.SetActive(false);
 		turnCubesPuzzle.SetActive(false);
+		wordPuzzle.SetActive(false);
 
 		findJanePuzzle2.SetActive(true);
 		puzzleInstructions.SetActive(true);
@@ -110,6 +120,7 @@ public class GameLogic : MonoBehaviour {
 		turnPiecesPuzzle.SetActive(false);
 		findJanePuzzle1.SetActive(false);
 		findJanePuzzle2.SetActive(false);
+		wordPuzzle.SetActive(false);
 
 		turnCubesPuzzle.SetActive(true);
 		puzzleInstructions.SetActive(true);
@@ -122,6 +133,25 @@ public class GameLogic : MonoBehaviour {
 		turnCubesPuzzle.GetComponent<TurnCubesPuzzle>().StartGame();
 	}
 
+	public void ActivateWordPuzzle(string correctWord, string faultyWord)
+	{
+		mainGame.SetActive(false);
+		turnPiecesPuzzle.SetActive(false);
+		findJanePuzzle1.SetActive(false);
+		findJanePuzzle2.SetActive(false);
+		turnCubesPuzzle.SetActive(false);
+
+		wordPuzzle.SetActive(true);
+		puzzleInstructions.SetActive(true);
+		
+		instructionLabel1.GetComponent<UILabel>().text = "Jane got confused and said '" + faultyWord + "' instead of another word";
+		instructionLabel2.GetComponent<UILabel>().text = "Click on the letters in the right order to guess the word she meant";
+		
+		cameraPos =  new Vector3 (wordPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
+		
+		wordPuzzle.GetComponent<WordPuzzle>().StartGame(correctWord, faultyWord);
+	}
+
 	public void ActivateMainGame()
 	{
 		puzzleInstructions.SetActive(false);
@@ -129,6 +159,7 @@ public class GameLogic : MonoBehaviour {
 		findJanePuzzle1.SetActive(false);
 		findJanePuzzle2.SetActive(false);
 		turnCubesPuzzle.SetActive(false);
+		wordPuzzle.SetActive(false);
 
 		mainGame.SetActive(true);
 		
