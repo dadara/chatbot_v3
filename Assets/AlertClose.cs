@@ -5,9 +5,14 @@ public class AlertClose : MonoBehaviour {
 
 	public GameObject alerts;
 
+	GameObject mainCamera;
+	GameLogic gameLogic;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		mainCamera = GameObject.Find("MainCamera");
+		gameLogic = mainCamera.GetComponent<GameLogic>();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +25,7 @@ public class AlertClose : MonoBehaviour {
 		if (isPressed)
 		{
 			alerts.SetActive(false);
+			gameLogic.ActivateMainGame();
 		}
 	}
 }
