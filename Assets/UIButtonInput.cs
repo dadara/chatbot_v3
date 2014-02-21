@@ -34,7 +34,7 @@ public class UIButtonInput : MonoBehaviour {
 			} else if(this.name == "InventoryLargeCloseButton")
 			{
 				uiLogic.SetInventoryIsActive(false);
-			} else if(this.name == "Phone")
+			} else if(this.name == "PhoneSprite")
 			{
 				if(uiLogic.PhoneIsActive)
 				{

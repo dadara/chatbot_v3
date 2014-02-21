@@ -17,6 +17,8 @@ public class WordPuzzle : MonoBehaviour {
 	GameObject mainCamera;
 	GameLogic gameLogic;
 
+	public bool gameActive = false;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -49,6 +51,8 @@ public class WordPuzzle : MonoBehaviour {
 				letter.GetComponent<BoxCollider>().enabled = false;
 			}
 		}
+
+		gameActive = true;
 	}
 	
 	void Update () 
@@ -61,6 +65,7 @@ public class WordPuzzle : MonoBehaviour {
 		{
 			particles.Play();
 			gameLogic.ActivateAlert("Congratulations, you correctly guessed the word!");
+			gameActive = false;
 		}
 	}
 
