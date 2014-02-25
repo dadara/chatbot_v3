@@ -3,7 +3,6 @@ using System.Collections;
 
 public class InventoryItem : MonoBehaviour {
 
-	bool empty = true; 
 	GameObject inventoryLargeCloseButton;
 	GameObject inventoryLargeScanButton;
 	GameObject label;
@@ -20,14 +19,9 @@ public class InventoryItem : MonoBehaviour {
 		inventoryLargeScanButton = GameObject.Find("InventoryLargeScanButton");
 		uiLogic = panel.GetComponent<UILogic>();
 
-		label = GameObject.Find(this.name + "/Label");
 		background = GameObject.Find(this.name + "/Background");
 		document = GameObject.Find(this.name + "/Sprite");
 
-		if(document != null)
-		{
-			label.SetActive(false);
-		}
 	}
 	
 	// Update is called once per frame
@@ -40,12 +34,10 @@ public class InventoryItem : MonoBehaviour {
 	{
 		if (isPressed)
 		{
-			//Change Sprite
-			//sprite.spriteName = "PJanepassport2";
 
 			if(document != null)
 			{
-				uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
+				uiLogic.selectItemInInventory(background.GetComponent<UISlicedSprite>());
 				inventoryLargeScanButton.SetActive(true);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
 			} else 

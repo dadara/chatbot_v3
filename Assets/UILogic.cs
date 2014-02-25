@@ -18,7 +18,7 @@ public class UILogic : MonoBehaviour {
 	//Scan
 	GameObject scanPanel;
 
-	//Other UI Elements
+	//Phone
 	GameObject inventoryViewAllButton;
 	GameObject phone;
 	GameObject phoneSprite;
@@ -26,12 +26,13 @@ public class UILogic : MonoBehaviour {
 	GameObject phoneInfo1;
 	Vector3 phonePosition;
 
+	//Input Buttons
 	GameObject Input1btn;
 	GameObject Input2btn;
 	GameObject Input3btn;
 
 	public Color selectedColor = new Color(0.6f, 1f, 0.2f, 1f);
-	UISprite lastSelectedSprite;
+	UISlicedSprite lastSelectedSprite;
 
 	// Use this for initialization
 	void Start () 
@@ -150,7 +151,7 @@ public class UILogic : MonoBehaviour {
 	}
 
 	//Changes Color of Selected Item in Inventory
-	public void selectItemInInventory(UISprite sprite)
+	public void selectItemInInventory(UISlicedSprite sprite)
 	{
 		//Last Selected Item will be turned white
 		if(lastSelectedSprite != null)

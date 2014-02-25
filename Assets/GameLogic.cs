@@ -33,7 +33,7 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		/*
+
 		if(Input.GetKeyDown(KeyCode.A))
 		{
 			ActivateMainGame();
@@ -52,7 +52,7 @@ public class GameLogic : MonoBehaviour {
 		} else if(Input.GetKeyDown(KeyCode.H))
 		{
 			ActivateWordPuzzle("Kittens", "Knatens");	
-		}*/
+		}
 
 		transform.position = Vector3.Lerp(transform.position, cameraPos, speed*Time.deltaTime);
 	}
