@@ -8,9 +8,9 @@ public class UILogic : MonoBehaviour {
 	private bool scanIsActive = false;
 
 	//Inventory Elements
-	GameObject inventoryLargeCloseButton;
+	public GameObject inventoryLargeCloseButton;
 	GameObject inventoryLargePanel;
-	GameObject inventoryLargeScanButton;
+	public GameObject inventoryLargeScanButton;
 	GameObject inventoryLargePanelItems;
 	GameObject inventoryLargeButtonPanel;
 	GameObject inventorySmallContainer;
@@ -32,7 +32,7 @@ public class UILogic : MonoBehaviour {
 	GameObject Input3btn;
 
 	public Color selectedColor = new Color(0.6f, 1f, 0.2f, 1f);
-	UISlicedSprite lastSelectedSprite;
+	UISprite lastSelectedSprite;
 
 	// Use this for initialization
 	void Start () 
@@ -151,7 +151,7 @@ public class UILogic : MonoBehaviour {
 	}
 
 	//Changes Color of Selected Item in Inventory
-	public void selectItemInInventory(UISlicedSprite sprite)
+	public void selectItemInInventory(UISprite sprite)
 	{
 		//Last Selected Item will be turned white
 		if(lastSelectedSprite != null)

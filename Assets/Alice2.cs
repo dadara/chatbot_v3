@@ -55,6 +55,7 @@ public class Alice2 : MonoBehaviour {
 
 	UILabel chatHistoryLabel;
 	string chatHistoryString;
+	GameObject chatHistoryPanel;
 
 
 // Path were the possible Input Textfiles are saved
@@ -139,6 +140,7 @@ public class Alice2 : MonoBehaviour {
 
 		chatHistoryLabel = GameObject.Find ("ChatHistoryLabel").GetComponent<UILabel>();
 		chatHistoryString="";
+		chatHistoryPanel = GameObject.Find("ChatHistoryPanel");
 
 		inventary = new List<string>();
 		cacheDocument = "";
@@ -181,7 +183,8 @@ public class Alice2 : MonoBehaviour {
 			chatHistory[cnt] = outputBot;
 			cnt++;
 
-			chatHistoryString = chatHistoryString + inputBot + Environment.NewLine + outputBot +Environment.NewLine;
+			chatHistoryString = inputBot + Environment.NewLine + outputBot +Environment.NewLine + chatHistoryString;
+			chatHistoryPanel.GetComponent<UIDraggablePanel>().ResetPosition();
 			chatHistoryLabel.text = chatHistoryString;
 		
 			//checked finish condition Test how much time it needs to come to the end

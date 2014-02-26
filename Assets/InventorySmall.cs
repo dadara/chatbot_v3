@@ -44,7 +44,7 @@ public class InventorySmall : MonoBehaviour {
 			}
 		}
 
-		if(inventory.Count >= 1)
+		if(inventory.Count > 1)
 		{
 			//Change First Item
 			document1.SetActive(true);

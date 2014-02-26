@@ -15,8 +15,8 @@ public class InventoryItem : MonoBehaviour {
 	void Start () 
 	{
 		panel = GameObject.Find("Panel");
-		inventoryLargeCloseButton = GameObject.Find("InventoryLargeCloseButton");
-		inventoryLargeScanButton = GameObject.Find("InventoryLargeScanButton");
+		//inventoryLargeCloseButton = uiLogic.inventoryLargeCloseButton;
+		//inventoryLargeScanButton = uiLogic.inventoryLargeScanButton;
 		uiLogic = panel.GetComponent<UILogic>();
 
 		background = GameObject.Find(this.name + "/Background");
@@ -27,17 +27,19 @@ public class InventoryItem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-	
+
 	}
 
 	void OnPress (bool isPressed)
 	{
 		if (isPressed)
 		{
+			inventoryLargeCloseButton = uiLogic.inventoryLargeCloseButton;
+			inventoryLargeScanButton = uiLogic.inventoryLargeScanButton;
 
 			if(document != null)
 			{
-				uiLogic.selectItemInInventory(background.GetComponent<UISlicedSprite>());
+				uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
 				inventoryLargeScanButton.SetActive(true);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
 			} else 
