@@ -31,6 +31,7 @@ public class UILogic : MonoBehaviour {
 	GameObject Input2btn;
 	GameObject Input3btn;
 
+	//Iventory Selection
 	public Color selectedColor = new Color(0.6f, 1f, 0.2f, 1f);
 	UISprite lastSelectedSprite;
 
@@ -122,22 +123,31 @@ public class UILogic : MonoBehaviour {
 	{
 		inventoryIsActive = active;
 
+		//If disable
+		if(!active)
+		{
+			//Disable ScanButton
+			inventoryLargeScanButton.SetActive(active);
+
+			//Color item white
+			if(lastSelectedSprite != null)
+			{
+				lastSelectedSprite.color = Color.white;
+			}
+
+			//Show Jane Item
+			if(inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text == "Show Jane")	
+			{
+				showJaneLastSelectedInventoryItem();
+			}
+		}
+
 		//Enable/Disable Inventory UI Elements
 		inventoryLargePanel.SetActive(active);
 		inventoryLargePanelItems.SetActive(active);
 		inventoryLargeButtonPanel.SetActive(active);
 		inventoryLargeScanButton.SetActive(!active);
 		inventorySmallContainer.SetActive(!active);
-
-		//Disable ScanButton
-		if(!active)
-		{
-			inventoryLargeScanButton.SetActive(active);
-			if(lastSelectedSprite != null)
-			{
-				lastSelectedSprite.color = Color.white;
-			}
-		}
 
 		//Enable/Disable Phone and InventoryViewAllButton
 		phoneSprite.GetComponent<BoxCollider>().enabled = !active;
@@ -158,8 +168,15 @@ public class UILogic : MonoBehaviour {
 		{
 			lastSelectedSprite.color = Color.white;
 		}
+
 		lastSelectedSprite = sprite;
 		lastSelectedSprite.color = selectedColor;
+	}
+
+	public void showJaneLastSelectedInventoryItem()
+	{
+		Debug.Log("Show Jane " + lastSelectedSprite.spriteName);
+		//TODO: Show Jane
 	}
 
 	public Color SelectedColor {

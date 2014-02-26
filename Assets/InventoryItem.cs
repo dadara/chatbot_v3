@@ -37,6 +37,7 @@ public class InventoryItem : MonoBehaviour {
 			inventoryLargeCloseButton = uiLogic.inventoryLargeCloseButton;
 			inventoryLargeScanButton = uiLogic.inventoryLargeScanButton;
 
+
 			if(document != null)
 			{
 				uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
