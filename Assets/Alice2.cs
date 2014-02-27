@@ -263,8 +263,11 @@ public class Alice2 : MonoBehaviour {
 //			topicSet = res.user.Topic;
 		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
 			Debug.Log("Document: "+res.user.Document);
-			inventary.Add(res.user.Document);
+			if(!inventary.Contains(res.user.Document){
+				inventary.Add(res.user.Document);
+			}
 			cacheDocument = res.user.Document;
+
 		}
 //		else{
 //						Debug.Log("OLDTopic set: "+topicSet);
