@@ -140,6 +140,9 @@ public class UILogic : MonoBehaviour {
 			{
 				showJaneLastSelectedInventoryItem();
 			}
+		} else 
+		{
+
 		}
 
 		//Enable/Disable Inventory UI Elements
@@ -148,6 +151,11 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeButtonPanel.SetActive(active);
 		inventoryLargeScanButton.SetActive(!active);
 		inventorySmallContainer.SetActive(!active);
+
+		if(active)
+		{
+			inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
+		}
 
 		//Enable/Disable Phone and InventoryViewAllButton
 		phoneSprite.GetComponent<BoxCollider>().enabled = !active;
