@@ -176,6 +176,13 @@ public class UILogic : MonoBehaviour {
 	public void showJaneLastSelectedInventoryItem()
 	{
 		Debug.Log("Show Jane " + lastSelectedSprite.spriteName);
+		GameObject janecb;
+		janecb = GameObject.Find("JaneChatbox");
+		UILabel jane = janecb.GetComponent<UILabel>();
+		GameObject panel = GameObject.Find ("Panel");
+		Alice2 a2 = panel.GetComponent<Alice2>();
+		jane.text = a2.getOutput(lastSelectedSprite.spriteName);
+
 		//TODO: Show Jane
 	}
 

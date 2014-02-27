@@ -24,6 +24,7 @@ public class Alice2 : MonoBehaviour {
 
 	List<string> topics;
 	int cnt;
+	public GameObject panel;
 
 	GameObject janecb;
 	
@@ -116,6 +117,8 @@ public class Alice2 : MonoBehaviour {
 
 //******************User Interface Elements for chat (input buttons, textfield for Jane's answer*******************************//
 //		variable to check if input has changed (=Input buutton was pressed, Text saved in UIButtonInput in this string)
+		GameObject panel = GameObject.Find("Panel");
+
 		cacheInputBot = "";
 
 		janecb = GameObject.Find("JaneChatbox");
@@ -429,7 +432,16 @@ public class Alice2 : MonoBehaviour {
 		int topicChooser = UnityEngine.Random.Range(0,topics.Count);
 		Debug.Log("TOPICCHANGE topicChooser: "+topicChooser+" "+topics.ElementAt(topicChooser));
 		topicSet = topics.ElementAt(topicChooser);
+
+		GameObject timeshiftPanel = GameObject.Find("TimeshiftPanel");
+		Timeshift ts = timeshiftPanel.GetComponent<Timeshift>();
+		if(!topicSet.Equals("NOW")){
+			ts.ActivateTimeShift(true);
+		}else{
+			ts.ActivateTimeShift(false);
+		}
 		string test = getOutput("SETTOPIC"+topicSet);
+
 		topicChangeTime = 0;
 		setInputButtons();
 	}

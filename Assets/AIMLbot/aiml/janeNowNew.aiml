@@ -24,6 +24,11 @@
 <template><think><set name="topic">NOW</set></think>balubalub</template>
 </category>
 
+<category><pattern>PJANEPASSPORT</pattern>
+<template><think><set name="topic">NOW</set></think>Hey my passport cool</template>
+</category>
+
+
 <category><pattern>HOME</pattern>
 <template><think><set name="document">PJanepassport</set></think>I live in Brooklyn, NewYork</template>
 </category>
