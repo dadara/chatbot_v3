@@ -9,49 +9,89 @@
 !--at Technical University of Vienna-->
 
 <category><pattern>SETTOPICMARCHOFTIME</pattern>
-<template><think><set name="topic">MARCHOFTIME</set></think>balubalub</template>
+<template><think><set name="topic">MARCHOFTIME</set></think><think><set name="document">PJanecatsportait</set></think>Oh see that's a picture of me it was made last month at work.</template>
 </category>
 <category><pattern>SETTOPICCBS</pattern>
-<template><think><set name="topic">CBS</set></think>balubalub</template>
+<template><think><set name="topic">CBS</set></think><think><set name="document">JaneCBS</set></think>My ID card fell out, I need it to get to work.</template>
 </category>
 <category><pattern>SETTOPICDIPLOMAT</pattern>
-<template><think><set name="topic">DIPLOMAT</set></think>balubalub</template>
+<template><think><set name="topic">DIPLOMAT</set></think><think><set name="document">PJaneportait</set></think>Oh see, that photo was taken last week in my flat.</template>
 </category>
 <category><pattern>SETTOPICNEWYORKER</pattern>
-<template><think><set name="topic">NEWYORKER</set></think>balubalub</template>
+<template><think><set name="topic">NEWYORKER</set></think><think><set name="document">PJanepassport</set></think>Ups my passport fell out my bag, I just got it lately.</template>
 </category>
 <category><pattern>SETTOPICNOW</pattern>
 <template><think><set name="topic">NOW</set></think>balubalub</template>
 </category>
 
-<category><pattern>PJANEPASSPORT</pattern>
-<template><think><set name="topic">NOW</set></think>Hey my passport cool</template>
+
+<category><pattern>PJANEPIGEONS</pattern>
+<template><think><set name="topic">NOW</set></think>That was a nice day I went to the park with my mother.</template>
 </category>
+<category><pattern>PJANEDOCAUNTHELENFATHERBILL</pattern>
+<template><think><set name="topic">NOW</set></think>That is my father Bill with aunt Helen.</template>
+</category>
+<category><pattern>PJANEPARENTS</pattern>
+<template><think><set name="topic">NOW</set></think>I always liked holidays with my father Bill and my mother Olga.</template>
+</category>
+<category><pattern>PJANEDEBUTANTE</pattern>
+<template><think><set name="topic">NOW</set></think>That is me in highschool, oh that dress was so beautiful.</template>
+</category>
+<category><pattern>PJANESWIM</pattern>
+<template><think><set name="topic">NOW</set></think>I liked a lot to swim in highschool.</template>
+</category>
+<category><pattern>PJANEBEACH</pattern>
+<template><think><set name="topic">NOW</set></think>I have always loved the beach and the see.</template>
+</category>
+<category><pattern>PJANEBEACH2</pattern>
+<template><think><set name="topic">NOW</set></think>I have always loved the beach and the see.</template>
+</category>
+<category><pattern>PJANENYC</pattern>
+<template><think><set name="topic">NOW</set></think>That picture was taken at the time I went to college.</template>
+</category>
+
+<category><pattern>PJANECATSPORTRAIT</pattern>
+<template><think><set name="topic">MARCHOFTIME</set></think>Oh I remember they took that picture last week at the March of Time office.</template>
+</category>
+
+<category><pattern>JANECBS</pattern>
+<template><think><set name="topic">CBS</set></think>Thanks you found my ID so I can go to work on Monday.</template>
+</category>
+
+<category><pattern>PJANEPORTRAIT</pattern>
+<template><think><set name="topic">DIPLOMAT</set></think>That's me. Why is it so cold, usually it's warmer here in Trieste.</template>
+</category>
+
+
+<category><pattern>PJANEPASSPORT</pattern>
+<template><think><set name="topic">NEWYORKER</set></think>Ah thanks you found my passport, they would not let me go to work at the New Yorker without it.</template>
+</category>
+
 
 
 <category><pattern>HOME</pattern>
-<template><think><set name="document">PJanepassport</set></think>I live in Brooklyn, NewYork</template>
+<template><think><set name="document">PJanecatsportrait 1</set></think>I live in Brooklyn, NewYork</template>
 </category>
 
 <category><pattern>CALL TAXI</pattern>
-<template>No thanks I live nearby. But where is Jena?</template>
+<template><think><set name="document">PJanecatsportrait 1</set></think>No thanks I live nearby. But where is Jena?</template>
 </category>
 
 <category><pattern>HERE ALONE</pattern>
-<template>I came here with Jena, but she went of.</template>
+<template><think><set name="document">PJanecatsportrait 1</set></think>I came here with Jena, but she went of.</template>
 </category>
 
 
 <category><pattern>ADDRESS</pattern>
-<template>I live in Orange Street. I came here to ce...ce...celabrat my birthday.</template>
+<template><think><set name="DementedWord">celebrate#ce...ce...celabrat</set></think>I live in Orange Street. I came here to ce...ce...celabrat my birthday.</template>
 </category>
 
 <category><pattern>NAME</pattern>
-<template>I am Jane Boutwell. I came here with Jena for my birthhour.</template>
+<template><think><set name="DementedWord">birthday#birthhour</set></think>I am Jane Boutwell. I came here with Jena for my birthhour.</template>
 </category>
 
 <category><pattern>JENA</pattern>
-<template>She is my housekeeper and cook. We came here to calibrate my Happy Birtsday.</template>
+<template><think><set name="DementedWord">celebrate my birthday#calibrate my Happy Birtsday</set></think>She is my housekeeper and cook. We came here to calibrate my Happy Birtsday.</template>
 </category>
 
 
@@ -64,7 +104,7 @@
 </category>
 
 <category><pattern>BIRTHPLACE</pattern>
-<template>I am born in Columbia distract, Watertone D.C. My parents were very happy that it finally wo...wor.. happened.</template>
+<template><think><set name="document">PJanemaryland beach</set></think>I am born in Columbia distract, Watertone D.C. My parents were very happy that it finally wo...wor.. happened.</template>
 </category>
 
 
@@ -77,16 +117,16 @@
 </category>
 
 <category><pattern>PARENTS</pattern>
-<template>My father Bill and my mother Olga were great parents.</template>
+<template><think><set name="document">Pjaneparents</set></think>My father Bill and my mother Olga were great parents.</template>
 </category>
 
 
 <category><pattern>FATHER</pattern>
-<template>My father was a execu... boss in educational publishing and photographer. He always brought me to elementary school.</template>
+<template><think><set name="document">Pjanedocaunthelenfatherbill</set></think>My father was a execu... boss in educational publishing and photographer. He always brought me to elementary school.</template>
 </category>
 
 <category><pattern>MOTHER</pattern>
-<template>My mother worked as secr...secretry.. and cared for the household. We often went to the pa...after elementary school.</template>
+<template><think><set name="document">PJanepigeons</set></think>My mother worked as secr...secretry.. and cared for the household. We often went to the pa...after elementary school.</template>
 </category>
 
 <category><pattern>JOB</pattern>
@@ -142,37 +182,37 @@
 </category>
 
 <category><pattern>SPORTS HIGHSCHOOL</pattern>
-<template>I was in the swimming team. It was a very nice hobby and I won the </template>
+<template><think><set name="document">PJanebeach2</set></think>I was in the swimming team. It was a very nice hobby and I won the </template>
 </category>
 
 <category><pattern>HOBBIES HIGHSCHOOL</pattern>
-<template>I liked to listen to classical music, esp...espa... operas.</template>
+<template><think><set name="document">PJanebeach</set></think>I liked to listen to classical music, esp...espa... operas.</template>
 </category>
 
 
 <category><pattern>SWIMMING TEAM</pattern>
-<template>I was in the swimming team in h.. school. I swam a lot and often i was number one.</template>
+<template><think><set name="document">PJaneswim</set></think>I was in the swimming team in h.. school. I swam a lot and often i was number one.</template>
 </category>
 
 <category><pattern>SWIMMING STYLE</pattern>
-<template>I liked best the butterfly stroke. But I trained a lot more styles. I swam 5 times a week.</template>
+<template><think><set name="document">PJaneswim</set></think>I liked best the butterfly stroke. But I trained a lot more styles. I swam 5 times a week.</template>
 </category>
 
 <category><pattern>GO OUT HIGHSCHOOL</pattern>
-<template>I were not allowed to go out. Just when i was a debla...debli... I danced at the prom.</template>
+<template><think><set name="document">PJanedebutante</set></think>I were not allowed to go out. Just when i was a debla...debli... I danced at the prom.</template>
 </category>
 
 
 <category><pattern>COLLEGE</pattern>
-<template>I went to University of Wisconsin in Madison.I studied hi..hisssss... the past.</template>
+<template><think><set name="document">PJaneNYC</set></think>I went to University of Wisconsin in Madison.I studied hi..hisssss... the past.</template>
 </category>
 
 <category><pattern>COURSE OF STUDIES</pattern>
-<template>I studied History. I always like it to travel to the past. </template>
+<template><think><set name="document">PJaneNYC</set></think>I studied History. I always like it to travel to the past. </template>
 </category>
 
 <category><pattern>GRADUATED</pattern>
-<template>grad....graaa. No I don't have graa...</template>
+<template><think><set name="document">PJaneNYC</set></think>grad....graaa. No I don't have graa...</template>
 </category>
 
 
@@ -198,12 +238,12 @@
 </category>
 
 <category><pattern>PETS COLLEGE</pattern>
-<template><think><set name="document">Pdaisy</set></think>I lived with my parents in college and they didn't like an...aimag.. cats.</template>
+<template><think><set name="document">Pdaisy2</set></think>I lived with my parents in college and they didn't like an...aimag.. cats.</template>
 </category>
 
 
 <category><pattern>FIRST JOB</pattern>
-<template>My first job was right after college at Henry Luce's "March of Time" as a researcher.</template>
+<template><think><set name="document">PJanecatsportrait</set></think>My first job was right after college at Henry Luce's "March of Time" as a researcher.</template>
 </category>
 
 <category><pattern>WHY STUDY</pattern>
@@ -216,15 +256,15 @@
 
 
 <category><pattern>MARCH OF TIME</pattern>
-<template>The March of Time was the first radio newsreel: dramatized news events, elaborately staged with sound effects and music, but put together like a newspaper: Its roots are found in a series of ten-minute newscasts heard on WLW, Cincinnati, in 1928.</template>
+<template><think><set name="document">PJanecatsportrait</set></think>The March of Time was the first radio newsreel: dramatized news events, elaborately staged with sound effects and music, but put together like a newspaper: Its roots are found in a series of ten-minute newscasts heard on WLW, Cincinnati, in 1928.</template>
 </category>
 
 <category><pattern>HENRY LUCE</pattern>
-<template>He was a very good business man.  His March of Time newsreels created a sensation and won an Academy Award. He also published magazines – Time, Fortune, Life, and Sports Illustrated -- were the most popular and profitable periodicals in America.</template>
+<template><think><set name="document">PJanecatsportrait</set></think>He was a very good business man.  His March of Time newsreels created a sensation and won an Academy Award. He also published magazines – Time, Fortune, Life, and Sports Illustrated -- were the most popular and profitable periodicals in America.</template>
 </category>
 
 <category><pattern>WHAT RESEARCH</pattern>
-<template>Well I was hired as a researcher, but in the end they wanted me to do woman's work. Hang up curtains, organize parties and all this stuff. </template>
+<template><think><set name="document">PJanecatsportrait</set></think>Well I was hired as a researcher, but in the end they wanted me to do woman's work. Hang up curtains, organize parties and all this stuff. </template>
 </category>
 
 
@@ -246,7 +286,7 @@
 </category>
 
 <category><pattern>PETS MARCH OF TIME</pattern>
-<template><think><set name="document">Pdaisy</set></think>I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
+<template><think><set name="document">Pdaisy2</set></think>I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
 </category>
 
 <category><pattern>SALARY MARCH OF TIME</pattern>
@@ -259,7 +299,7 @@
 </category>
 
 <category><pattern>NAME KITTENS MARCH OF TIME</pattern>
-<template><think><set name="document">Pdaisy</set></think>Their names were Mini and Cinderella</template>
+<template><think><set name="document">Pdaisy2</set></think>Their names were Mini and Cinderella</template>
 </category>
 
 <category><pattern>FLAT FIRST JOB</pattern>
@@ -272,7 +312,7 @@
 </category>
 
 <category><pattern>SECOND JOB</pattern>
-<template>I worked at the CBS as a researcher in 195... the early 50s.</template>
+<template><think><set name="document">JaneCBS</set></think>I worked at the CBS as a researcher in 195... the early 50s.</template>
 </category>
 
 <category><pattern>QUIT FIRST JOB</pattern>
@@ -281,11 +321,11 @@
 
 
 <category><pattern>CBS</pattern>
-<template>The Columbia Broadcasting System is a broadcast tv network, but it started as a radio network.</template>
+<template><think><set name="document">JaneCBS</set></think>The Columbia Broadcasting System is a broadcast tv network, but it started as a radio network.</template>
 </category>
 
 <category><pattern>WHAT JOB AT CBS</pattern>
-<template>At first I was hired to research historical themes. But in the end this was the smallest part of my work. Most of the time I had to teach young men how to do the research.</template>
+<template><think><set name="document">JaneCBS</set></think>At first I was hired to research historical themes. But in the end this was the smallest part of my work. Most of the time I had to teach young men how to do the research.</template>
 </category>
 
 <category><pattern>LIKED CBS</pattern>
@@ -333,15 +373,15 @@
 
 
 <category><pattern>THIRD JOB</pattern>
-<template>I worked in Trieste for the Foreign Service in 19....when The Tournament of Roses Parade becomes the first event televised nationally in color.</template>
+<template><think><set name="document">PJaneportrait</set></think>I worked in Trieste for the Foreign Service in 19....when The Tournament of Roses Parade becomes the first event televised nationally in color.</template>
 </category>
 
 <category><pattern>WORKED ABROAD</pattern>
-<template>I worked for the Foreign Service in Trieste.</template>
+<template><think><set name="document">PJaneportrait</set></think>I worked for the Foreign Service in Trieste.</template>
 </category>
 
 <category><pattern>AFTER CBS</pattern>
-<template>I worked as a diplomat.</template>
+<template><think><set name="document">PJaneportrait</set></think>I worked as a diplomat.</template>
 </category>
 
 
@@ -380,20 +420,20 @@
 </category>
 
 <category><pattern>FOURTH JOB</pattern>
-<template>My last job was at the New Yorker magazine. I worked there as a writer.</template>
+<template><think><set name="document">PJanepassport</set></think>My last job was at the New Yorker magazine. I worked there as a writer.</template>
 </category>
 
 
 <category><pattern>LAST JOB</pattern>
-<template>My last job was at the New Yorker magazine. I worked there as a writer.</template>
+<template><think><set name="document">PJanepassport</set></think>My last job was at the New Yorker magazine. I worked there as a writer.</template>
 </category>
 
 <category><pattern>NEW YORKER</pattern>
-<template>I began to work for the New Yorker in 1956.</template>
+<template><think><set name="document">PJanepassport</set></think>I began to work for the New Yorker in 1956.</template>
 </category>
 
 <category><pattern>HOW LONG AT NEW YORKER</pattern>
-<template>I worked for the New Yorker for more than thirty years.</template>
+<template><think><set name="document">PJanepassport</set></think>I worked for the New Yorker for more than thirty years.</template>
 </category>
 
 

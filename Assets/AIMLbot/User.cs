@@ -42,6 +42,14 @@ namespace AIMLbot
 			}
 		}
 
+		public string DementedWord
+		{
+			get
+			{
+				return this.Predicates.grabSetting("DementedWord");
+			}
+		}
+
 		public string UserID
 		{
 			get

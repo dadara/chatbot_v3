@@ -33,7 +33,7 @@ public class Alice2 : MonoBehaviour {
 	GameObject Input3btn;
 	
 	//	UILabel uilab;
-	UILabel jane;
+	public UILabel jane;
 
 	UILabel Input1btnLabel;
 	UILabel Input2btnLabel;
@@ -66,6 +66,7 @@ public class Alice2 : MonoBehaviour {
 	public List<string> inventary;
 //	last document got from Jane
 	string cacheDocument;
+	string cacheDementedWord;
 
 
 	// Use this for initialization
@@ -147,6 +148,22 @@ public class Alice2 : MonoBehaviour {
 
 		inventary = new List<string>();
 		cacheDocument = "";
+		cacheDementedWord = "";
+
+//		inventary.Add("Pjanepigeon");
+//		inventary.Add("Pjanedocaunthelenfatherbill");
+//		inventary.Add("Pjaneparents");
+//		inventary.Add("PJanedebutante");
+//		inventary.Add("PJaneswim");
+//		inventary.Add("Pjanebeach");
+		inventary.Add("PJaneNYC");
+
+		inventary.Add("PJanecatsportrait");
+		inventary.Add("JaneCBS");
+		inventary.Add("PJaneportrait");
+		inventary.Add("PJanepassport");
+		
+
 
 	}
 	
@@ -154,11 +171,11 @@ public class Alice2 : MonoBehaviour {
 	void Update () {
 	
 		Debug.Log("posKEyOrig at 0: "+posKeyOrig.ElementAt(0));
-		if(inventary.Count>0){
-			for(int i=0; i<inventary.Count;i++){
-				Debug.Log("Inventary: "+inventary.ElementAt(i));
-			}
-		}
+//		if(inventary.Count>0){
+//			for(int i=0; i<inventary.Count;i++){
+//				Debug.Log("Inventary: "+inventary.ElementAt(i));
+//			}
+//		}
 
 
 		startTime += Time.deltaTime;
@@ -167,10 +184,10 @@ public class Alice2 : MonoBehaviour {
 		
 		int startTimeInt = (int) startTime;
 
-		if(topicChangeTime>=30){
-			ChangeTopic();
-
-		}
+//		if(topicChangeTime>=30){
+//			ChangeTopic();
+//
+//		}
 		
 		//		1) bot answers to keywords
 
@@ -229,12 +246,12 @@ public class Alice2 : MonoBehaviour {
 			}
 
 
-			System.IO.File.WriteAllText(@"E:\Dokumente\TU\Diplomarbeit\chatHistory\number.txt", numberChatHistoryFile.ToString());
+			System.IO.File.WriteAllText(@"Assets\chatHistory\number.txt", numberChatHistoryFile.ToString());
 			
 			chatHistory[cnt] = "PlayTimeInSeconds: "+startTime;
 			numberChatHistoryFile--;
 
-			System.IO.File.WriteAllLines(@"E:\Dokumente\TU\Diplomarbeit\chatHistory\chatHistory"+numberChatHistoryFile.ToString()+".txt", chatHistory);
+			System.IO.File.WriteAllLines(@"Assets\chatHistory\chatHistory"+numberChatHistoryFile.ToString()+".txt", chatHistory);
 			//			Input1btnLabel.text = "END";
 			//			Input2btnLabel.text = "END";
 			//			Input3btnLabel.text = "END";
@@ -259,20 +276,69 @@ public class Alice2 : MonoBehaviour {
 	{
 		Request r = new Request(input, myUser, myBot);
 		Result res = myBot.Chat(r);
-//		if(!res.user.Topic.Equals(topicSet)){
-//			topicSet = res.user.Topic;
+
+		if(!res.user.Topic.Equals(topicSet)){
+			if(!res.user.Topic.Equals("*")){
+				setInputButtons();
+			}
+			topicSet = res.user.Topic;
+			Debug.Log("topic in getOutput: "+topicSet);
+		}
+
+		GameObject MainCamera = GameObject.Find("MainCamera");
+		GameLogic gameL = MainCamera.GetComponent<GameLogic>();
+
 		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
 			Debug.Log("Document: "+res.user.Document);
-			if(!inventary.Contains(res.user.Document){
+			if(!inventary.Contains(res.user.Document)){
 				inventary.Add(res.user.Document);
+
+
+				if(topicSet.Contains("MARCHOFTIME")){
+					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+					jane.text = "Oh see that's a picture of me it was made last month at work.";
+				}else if(topicSet.Contains("CBS")){
+					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+					jane.text = "My ID card fell out, I need it to get to work.";
+				}else if(topicSet.Contains("DIPLOMAT")){
+					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+					jane.text = "Oh see, that photo was taken last week in my flat.";
+				}else if(topicSet.Contains("NEWYORKER")){
+					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+					jane.text = "Ups my passport fell out my bag, I just got it lately.";
+				}
+
+//				Start puzzles
+				if(res.user.Document.ToString().Equals ("PJanecatsportrait")){
+					gameL.ActivateTurnCubesPuzzle();
+				}
+				if(res.user.Document.ToString().Equals ("PJaneportrait")){
+					gameL.ActivateTurnPiecesPuzzle();
+				}
+				Debug.Log("document added: "+res.user.Document);
+			}else{
+				Debug.Log("document already in inventary: "+res.user.Document);
 			}
+
+		
 			cacheDocument = res.user.Document;
 
 		}
-//		else{
+		
+		if(!cacheDementedWord.Equals(res.user.DementedWord) && res.user.DementedWord.Contains("#")){
+			string correctfaulty = res.user.DementedWord;
+			int crossPlace = correctfaulty.IndexOf("#");
+			string correctWord = correctfaulty.Substring(0,crossPlace);
+			string faultyWord = correctfaulty.Substring(crossPlace+1);
+			Debug.Log("correctWord: "+correctWord+" faulty word: "+faultyWord);
+			gameL.ActivateWordPuzzle(correctWord, faultyWord);
+		}
+		
+		cacheDementedWord = res.user.DementedWord;
+		//		else{
 //						Debug.Log("OLDTopic set: "+topicSet);
 //		}
-		
+
 		return(res.Output);
 	}
 
@@ -354,6 +420,7 @@ public class Alice2 : MonoBehaviour {
 			}
 			
 		}else if(topicSet.Equals("DIPLOMAT")){
+			Debug.Log("topicSetDiplomat");
 			if(posKeywordsDipl.Count >=3){
 				button1 = posKeywordsDipl.ElementAt(0);
 				button2 = posKeywordsDipl.ElementAt(1);
@@ -445,8 +512,10 @@ public class Alice2 : MonoBehaviour {
 		}
 		string test = getOutput("SETTOPIC"+topicSet);
 
-		topicChangeTime = 0;
 		setInputButtons();
+
+		topicChangeTime = 0;
+//		setInputButtons();
 	}
 	
 	

@@ -20,6 +20,7 @@ public class DragDropSprite : MonoBehaviour
 			GameObject panel = GameObject.Find ("Panel");
 			Alice2 a2 = panel.GetComponent<Alice2>();
 			jane.text = a2.getOutput(document);
+			 
 
 			//Destroy(go);
 		}
