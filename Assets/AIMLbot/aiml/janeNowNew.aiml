@@ -7,18 +7,20 @@
 <!--main advisor:Purgathofer, Peter; Ao.Univ.Prof. Dipl.-Ing. Dr.techn.-->
 <!--Co-advisor:Kayali, Fares; Projektass. Dipl.-Ing. Dr.techn.-->
 !--at Technical University of Vienna-->
+<!--t
+hink><set name="document">PJanecatsportait</set></think>-->
 
 <category><pattern>SETTOPICMARCHOFTIME</pattern>
-<template><think><set name="topic">MARCHOFTIME</set></think><think><set name="document">PJanecatsportait</set></think>Oh see that's a picture of me it was made last month at work.</template>
+<template><think><set name="topic">MARCHOFTIME</set></think>Oh see that's a picture of me it was made last month at work.</template>
 </category>
 <category><pattern>SETTOPICCBS</pattern>
-<template><think><set name="topic">CBS</set></think><think><set name="document">JaneCBS</set></think>My ID card fell out, I need it to get to work.</template>
+<template><think><set name="topic">CBS</set></think>My ID card fell out, I need it to get to work.</template>
 </category>
 <category><pattern>SETTOPICDIPLOMAT</pattern>
-<template><think><set name="topic">DIPLOMAT</set></think><think><set name="document">PJaneportait</set></think>Oh see, that photo was taken last week in my flat.</template>
+<template><think><set name="topic">DIPLOMAT</set></think>Oh see, that photo was taken last week in my flat.</template>
 </category>
 <category><pattern>SETTOPICNEWYORKER</pattern>
-<template><think><set name="topic">NEWYORKER</set></think><think><set name="document">PJanepassport</set></think>Ups my passport fell out my bag, I just got it lately.</template>
+<template><think><set name="topic">NEWYORKER</set></think>Ups my passport fell out my bag, I just got it lately.</template>
 </category>
 <category><pattern>SETTOPICNOW</pattern>
 <template><think><set name="topic">NOW</set></think>balubalub</template>
@@ -62,9 +64,17 @@
 <template><think><set name="topic">DIPLOMAT</set></think>That's me. Why is it so cold, usually it's warmer here in Trieste.</template>
 </category>
 
+<category><pattern>PDAISY2</pattern>
+<template><think><set name="DementedWord">cat#c...ct</set></think><think><set name="topic">NOW</set></think>That was my c...ct in collegge.</template>
+</category>
+
 
 <category><pattern>PJANEPASSPORT</pattern>
 <template><think><set name="topic">NEWYORKER</set></think>Ah thanks you found my passport, they would not let me go to work at the New Yorker without it.</template>
+</category>
+
+<category><pattern>PJANECATSPORTRAIT 1</pattern>
+<template><think><set name="DementedWord">cat#c.. tigers</set></think><think><set name="topic">NOW</set></think>Oh I remember Giselda and Venus my c.. tigers.</template>
 </category>
 
 
@@ -230,7 +240,7 @@
 
 
 <category><pattern>COLLEGE PARTIES</pattern>
-<template>I did not go out a lot at college. I was a very ambig... I always studied a lot, just my mother forced me sometimes to go to society parties...  </template>
+<template><think><set name="DementedWord">ambitious#ambit...</set></think>I did not go out a lot at college. I was a very ambit... I always studied a lot, just my mother forced me sometimes to go to society parties...  </template>
 </category>
 
 <category><pattern>FAVORITE PROFESSOR COLLEGE</pattern>
@@ -247,7 +257,7 @@
 </category>
 
 <category><pattern>WHY STUDY</pattern>
-<template>My care..ceerar work as a writer has always been very important to me. Because of my bach..boc.. finished studies I could work at Henry Luce's "March of Time" as a researcher.</template>
+<template><think><set name="DementedWord">careery#care..ceerar</set></think>My care..ceerar work as a writer has always been very important to me. Because of my bach..boc.. finished studies I could work at Henry Luce's "March of Time" as a researcher.</template>
 </category>
 
 <category><pattern>COLLEGE AIM</pattern>

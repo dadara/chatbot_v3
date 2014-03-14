@@ -10,11 +10,11 @@
 
 <topic name="DIPLOMAT">
 <category><pattern>AGE</pattern>
-<template><think><set name="document">Pjaneportait</set></think>I am at my best age.</template>
+<template><think><set name="document">PJaneportrait</set></think>I am at my best age.</template>
 </category>
 
 <category><pattern>AGE 86</pattern>
-<template><think><set name="document">Pjaneportait</set></think>My grandmother was that old, when she died a few years ago.</template>
+<template><think><set name="document">PJaneportrait</set></think>My grandmother was that old, when she died a few years ago.</template>
 </category>
 
 <category><pattern>PARENTS</pattern>

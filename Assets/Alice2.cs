@@ -22,6 +22,8 @@ public class Alice2 : MonoBehaviour {
 	List<string> posKeyDorig; 
 	List<string> posKeyNYorig;
 
+	List<string> dementedWords;
+
 	List<string> topics;
 	int cnt;
 	public GameObject panel;
@@ -77,6 +79,8 @@ public class Alice2 : MonoBehaviour {
 		posKeywordsCBS = new List<string>(); 
 		posKeywordsDipl = new List<string>(); 
 		posKeywordsNY = new List<string>();
+
+		dementedWords = new List<string>();
 
 //		List to choose randomly a topic
 
@@ -162,15 +166,18 @@ public class Alice2 : MonoBehaviour {
 		inventory.Add("JaneCBS");
 		inventory.Add("PJaneportrait");
 		inventory.Add("PJanepassport");
+
+		for(int i=0; i<inventory.Count; i++){
+			Debug.Log(inventory.ElementAt(i));
+		}
+
 		
-
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		Debug.Log("posKEyOrig at 0: "+posKeyOrig.ElementAt(0));
+//		Debug.Log("posKEyOrig at 0: "+posKeyOrig.ElementAt(0));
 //		if(inventory.Count>0){
 //			for(int i=0; i<inventory.Count;i++){
 //				Debug.Log("inventory: "+inventory.ElementAt(i));
@@ -282,6 +289,13 @@ public class Alice2 : MonoBehaviour {
 				setInputButtons();
 			}
 			topicSet = res.user.Topic;
+			GameObject timeshiftPanel = GameObject.Find("TimeshiftPanel");
+			Timeshift ts = timeshiftPanel.GetComponent<Timeshift>();
+			if(!topicSet.Equals("NOW")){
+				ts.ActivateTimeShift(true);
+			}else{
+				ts.ActivateTimeShift(false);
+			}
 			Debug.Log("topic in getOutput: "+topicSet);
 		}
 
@@ -329,13 +343,14 @@ public class Alice2 : MonoBehaviour {
 //			Debug.Log("correctWord: "+res.user.DementedWord);
 //
 //		}
-		if(!cacheDementedWord.Equals(res.user.DementedWord) && res.user.DementedWord.Contains("#")){
+		if(!cacheDementedWord.Equals(res.user.DementedWord) && res.user.DementedWord.Contains("#") && !dementedWords.Contains(res.user.DementedWord) ){
 			string correctfaulty = res.user.DementedWord;
 			int crossPlace = correctfaulty.IndexOf("#");
 			string correctWord = correctfaulty.Substring(0,crossPlace);
 			string faultyWord = correctfaulty.Substring(crossPlace+1);
 			Debug.Log("correctWord: "+correctWord+" faulty word: "+faultyWord);
 			gameL.ActivateWordPuzzle(correctWord, faultyWord);
+			dementedWords.Add (correctfaulty);
 		}
 		
 		cacheDementedWord = res.user.DementedWord;

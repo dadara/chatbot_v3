@@ -14,6 +14,11 @@ public class InventorySmall : MonoBehaviour {
 
 	List<string> inventory;
 
+	Vector3 pos;
+	Vector3 posDoc2;
+	string spritename;
+	int cnt;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -23,6 +28,14 @@ public class InventorySmall : MonoBehaviour {
 		document1.SetActive(false);
 		document2.SetActive(false);
 
+		posDoc2 = new Vector3();
+		posDoc2 = document2.transform.position;
+		pos = new Vector3(0.3f,0.5f,0);
+		document2.transform.position = pos;
+//		spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
+		spritename = "PJanepassport";
+		Debug.Log("spritename: "+spritename);
+		cnt=0;
 	}
 	
 	// Update is called once per frame
@@ -60,7 +73,48 @@ public class InventorySmall : MonoBehaviour {
 		if(inventory.Count >= 2)
 		{
 			//Change Second Item
+
 			document2.SetActive(true);
+
+
+			Vector3 posAct = new Vector3();
+		
+			posAct = document2.transform.position;
+			float step = 0.01f;
+
+//			Debug.Log ("document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
+//			Debug.Log ("spritename : "+spritename );			
+
+//			if(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName.Contains("cats")){
+//				Debug.Log ("Cats_posDoc2: "+posDoc2 );
+//				Debug.Log ("Cats_posAct : "+posAct );
+//			}else{
+//				Debug.Log ("PAssport_posDoc2: "+posDoc2 );
+//				Debug.Log ("PAssport_posAct : "+posAct );
+//			}
+
+			document2.transform.position = Vector3.MoveTowards(posAct, posDoc2, step);
+
+
+			if(posAct==posDoc2){
+//				Debug.Log ("posDoc2: "+posDoc2+" posAct : "+posAct );
+				pos = new Vector3(0.3f,0.5f,0);
+
+				if(!spritename.Equals(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName)){
+					spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
+					document2.transform.position = pos;
+
+					Debug.Log (cnt+" document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
+
+				}
+
+			}
+				
+
+
+
+
+
 			foreach(Transform child in document2.transform)
 			{
 				if(child.name == "Sprite")
