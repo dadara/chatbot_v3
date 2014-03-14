@@ -26,7 +26,7 @@
 </category>
 
 <category><pattern>MOTHER</pattern>
-<template>My mother works as secr...secertary.. and cares for the household. We often went to the pa...</template>
+<template><think><set name="DementedWord">park#pa..</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa...</template>
 </category>
 
 <category><pattern>HOLIDAY</pattern>
@@ -38,7 +38,7 @@
 </category>
 
 <category><pattern>FAVORITE CITY</pattern>
-<template>I liked Rome most. Rome is great cultural city. Also the remains of ancient Rome were impr... im.. fiscanitang.</template>
+<template><think><set name="DementedWord">impressive#impr..ess..</set></think>I liked Rome most. Rome is great cultural city. Also the remains of ancient Rome were impr..ess.. fascinating.</template>
 </category>
 
 <category><pattern>AGE 86</pattern>
@@ -165,6 +165,10 @@
 <template>I came to New York right after I graduated in 1949.</template>
 </category>
 
+<category><pattern>LIKE JOB NY</pattern>
+<template>Yes I like working in New York.</template>
+</category>
+
 <category><pattern></pattern>
 <template>
 <think><set name="topic">NOW</set></think>Yes I like New York,
@@ -188,7 +192,7 @@
 </category>
 
 <category><pattern>HOBBIES</pattern>
-<template>I like to go out with my colleges and sometimes I go to see an opera.</template>
+<template><think><set name="DementedWord">colleagues#collages</set></think>I like to go out with my collages and sometimes I go to see an opera.</template>
 </category>
 
 <category><pattern>VENUS</pattern>

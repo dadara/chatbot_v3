@@ -106,15 +106,15 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>BIRTHDAY</pattern>
-<template>I was born on 27th November in 19...mmmmhhhh... When I was a ch...chi... younger my parents gave great parties on my birthday with all my friends</template>
+<template><think><set name="DementedWord">child#cch...chi...</set></think>I was born on 27th November in 19...mmmmhhhh... When I was a ch...chi... younger my parents gave great parties on my birthday with all my friends</template>
 </category>
 
 <category><pattern>YEAR OF BIRTH</pattern>
-<template>I was born in 1927. A quite exhaaa... much work for my parents in this year</template>
+<template><think><set name="DementedWord">exhausting#exhaaa...</set></think>I was born in 1927. A quite exhaaa... much work for my parents in this year</template>
 </category>
 
 <category><pattern>BIRTHPLACE</pattern>
-<template><think><set name="document">PJanemaryland beach</set></think>I am born in Columbia distract, Watertone D.C. My parents were very happy that it finally wo...wor.. happened.</template>
+<template><think><set name="document">PJanemaryland beach</set></think><think><set name="DementedWord">worked#wo...wor..</set></think>I am born in Columbia distract, Watertone D.C. My parents were very happy that it finally wo...wor.. happened.</template>
 </category>
 
 
@@ -132,11 +132,11 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>FATHER</pattern>
-<template><think><set name="document">Pjanedocaunthelenfatherbill</set></think>My father was a execu... boss in educational publishing and photographer. He always brought me to elementary school.</template>
+<template><think><set name="document">Pjanedocaunthelenfatherbill</set></think><think><set name="DementedWord">executive#execu...</set></think>My father was a execu... boss in educational publishing and photographer. He always brought me to elementary school.</template>
 </category>
 
 <category><pattern>MOTHER</pattern>
-<template><think><set name="document">PJanepigeons</set></think>My mother worked as secr...secretry.. and cared for the household. We often went to the pa...after elementary school.</template>
+<template><think><set name="document">PJanepigeons</set></think><think><set name="DementedWord">secretary#secr...secretry..</set></think>My mother worked as secr...secretry.. and cared for the household. We often went to the park after elementary school.</template>
 </category>
 
 <category><pattern>JOB</pattern>
@@ -158,7 +158,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>SCHOOL UNIFORM</pattern>
-<template>When I was in elemerty school girls wore dresses or skirts with blouses and boys were dressed in shorts or knickers.In highschool I could cho..chusss.take want I want</template>
+<template><think><set name="DementedWord">choose#cho..chusss.</set></think>When I was in elemerty school girls wore dresses or skirts with blouses and boys were dressed in shorts or knickers.In highschool I could cho..chusss.take want I want</template>
 </category>
 
 <category><pattern>FAVORITE SUBJECT ELEMENTARY</pattern>
@@ -192,7 +192,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>SPORTS HIGHSCHOOL</pattern>
-<template><think><set name="document">PJanebeach2</set></think>I was in the swimming team. It was a very nice hobby and I won the </template>
+<template><think><set name="document">PJanebeach2</set></think>I was in the swimming team. It was a very nice hobby and I won the championship.</template>
 </category>
 
 <category><pattern>HOBBIES HIGHSCHOOL</pattern>
@@ -201,7 +201,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>SWIMMING TEAM</pattern>
-<template><think><set name="document">PJaneswim</set></think>I was in the swimming team in h.. school. I swam a lot and often i was number one.</template>
+<template><think><set name="document">PJaneswim</set></think><think><set name="DementedWord">highschool#h.. school</set></think>I was in the swimming team in h.. school. I swam a lot and often i was number one.</template>
 </category>
 
 <category><pattern>SWIMMING STYLE</pattern>
@@ -209,12 +209,12 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>GO OUT HIGHSCHOOL</pattern>
-<template><think><set name="document">PJanedebutante</set></think>I were not allowed to go out. Just when i was a debla...debli... I danced at the prom.</template>
+<template><think><set name="document">PJanedebutante</set></think><think><set name="DementedWord">debutant#debla...debli...</set></think>I were not allowed to go out. Just when i was a debla...debli... I danced at the prom.</template>
 </category>
 
 
 <category><pattern>COLLEGE</pattern>
-<template><think><set name="document">PJaneNYC</set></think>I went to University of Wisconsin in Madison.I studied hi..hisssss... the past.</template>
+<template><think><set name="document">PJaneNYC</set></think><think><set name="DementedWord">history#hi..hisssss...</set></think>I went to University of Wisconsin in Madison.I studied hi..hisssss... the past.</template>
 </category>
 
 <category><pattern>COURSE OF STUDIES</pattern>
@@ -266,11 +266,11 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>MARCH OF TIME</pattern>
-<template><think><set name="document">PJanecatsportrait</set></think>The March of Time was the first radio newsreel: dramatized news events, elaborately staged with sound effects and music, but put together like a newspaper: Its roots are found in a series of ten-minute newscasts heard on WLW, Cincinnati, in 1928.</template>
+<template><think><set name="document">PJanecatsportrait</set></think>The March of Time was the first radio newsreel: dramatized news events, with sound effects and music, but put together like a newspaper: Its roots are found in a series of ten-minute newscasts in 1928.</template>
 </category>
 
 <category><pattern>HENRY LUCE</pattern>
-<template><think><set name="document">PJanecatsportrait</set></think>He was a very good business man.  His March of Time newsreels created a sensation and won an Academy Award. He also published magazines – Time, Fortune, Life, and Sports Illustrated -- were the most popular and profitable periodicals in America.</template>
+<template><think><set name="document">PJanecatsportrait</set></think><think><set name="DementedWord">published#piblushed</set></think>He was a very good business man. His March of Time newsreels created a sensation and won an Academy Award. He also piblushed magazines – Time, Fortune, Life, and Sports Illustrated.</template>
 </category>
 
 <category><pattern>WHAT RESEARCH</pattern>
@@ -279,7 +279,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>LIKED MARCH OF TIME</pattern>
-<template>I hated the job there. I did not study for years for getting a party assassi... helper</template>
+<template><think><set name="DementedWord">assistant#assassi...</set></think>I hated the job there. I did not study for years for getting a party assassi... helper</template>
 </category>
 
 <category><pattern>HOW LONG AT MARCH OF TIME</pattern>
@@ -296,7 +296,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>PETS MARCH OF TIME</pattern>
-<template><think><set name="document">Pdaisy2</set></think>I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
+<template><think><set name="document">Pdaisy2</set></think><think><set name="DementedWord">cats#c..c..</set></think>I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
 </category>
 
 <category><pattern>SALARY MARCH OF TIME</pattern>
@@ -305,7 +305,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>HOLIDAY FIRST JOB</pattern>
-<template>From time to time I visited my parents in Was.. D.C., but I couldn't effort to go abroad.</template>
+<template><think><set name="DementedWord">Washington D.C.#Was.. D.C.</set></think>From time to time I visited my parents in Was.. D.C., but I couldn't effort to go abroad.</template>
 </category>
 
 <category><pattern>NAME KITTENS MARCH OF TIME</pattern>
@@ -344,7 +344,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>WORKING TIMES CBS</pattern>
-<template>As usually hihi I worked 10 hours a day, well most of the time. But sometimes I found the time go to the opera or to go out with my colleagues/pupils.</template>
+<template><think><set name="DementedWord">colleagues#celloagues</set></think>As usually hihi I worked 10 hours a day, well most of the time. But sometimes I found the time go to the opera or to go out with my celloagues/pupils.</template>
 </category>
 
 <category><pattern>PETS CBS</pattern>
@@ -365,7 +365,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>HOBBIES CBS</pattern>
-<template>I went out with friends and listened to music</template>
+<template><think><set name="DementedWord">music#sounds</set></think>I went out with friends and listened to sounds.</template>
 </category>
 
 
@@ -383,7 +383,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>THIRD JOB</pattern>
-<template><think><set name="document">PJaneportrait</set></think>I worked in Trieste for the Foreign Service in 19....when The Tournament of Roses Parade becomes the first event televised nationally in color.</template>
+<template><think><set name="document">PJaneportrait</set></think><think><set name="DementedWord">televised#tvsised</set></think>I worked in Trieste for the Foreign Service in 19....when The Tournament of Roses Parade becomes the first event tvsised nationally in color.</template>
 </category>
 
 <category><pattern>WORKED ABROAD</pattern>
@@ -400,20 +400,20 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>DIPLOMAT</pattern>
-<template>As a diplomat you network a lot, get in contact with lots of people, meetings, make investigations about people you are going to meet.</template>
-</category>
+<template><think><set name="DementedWord">investigations#invastat..</set></think>As a diplomat you network a lot, get in contact with lots of people, meetings, make invastat.. questions about people you are going to meet.</template>
+</category>.
 
 <category><pattern>WORKING TIME THIRD JOB</pattern>
-<template>When I was in Trieste, my work began quite late, but also ended late. About 5 times a week there were evening events, the atmosphere was so nice there.</template>
+<template><think><set name="DementedWord">atmosphere#atmos..</set></think>When I was in Trieste, my work began quite late, but also ended late. About 5 times a week there were evening events, the atmos. world atmosphere was so nice there.</template>
 </category>
 
 
 <category><pattern>GO OUT THIRD JOB</pattern>
-<template>Yes I always went to the evening events, but I always tried to forge links. And talk to the people I already knew. This was the most important part for the work in the forgain sevice.</template>
+<template><think><set name="DementedWord">foreign#forgain</set></think>Yes I always went to the evening events, but I always tried to forge links. And talk to the people I already knew. This was the most important part for the work in the forgain sevice.</template>
 </category>
 
 <category><pattern>ADDRESS THIRD JOB</pattern>
-<template>I  lived in a realy nice flat with a balcony in the center. It was quite big as I lived there just with my Knatens. It was in the Via Ponde....Ponga.. Pnodares. </template>
+<template><think><set name="DementedWord">Kittens#Knatens</set></think>I  lived in a realy nice flat with a balcony in the center. It was quite big as I lived there just with my Knatens. It was in the Via Ponde....Ponga.. Pnodares. </template>
 </category>
 
 <category><pattern>PETS THIRD JOB</pattern>
@@ -430,7 +430,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>FOURTH JOB</pattern>
-<template><think><set name="document">PJanepassport</set></think>My last job was at the New Yorker magazine. I worked there as a writer.</template>
+<template><think><set name="document">PJanepassport</set></think><think><set name="DementedWord">magazine#book</set></think>My last job was at the New Yorker book. I worked there as a writer.</template>
 </category>
 
 
@@ -448,11 +448,11 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>WHAT JOB AT NEW YORKER</pattern>
-<template>I wrote about a lot of things, made some interviews with fam.... well known persons.</template>
+<template><think><set name="DementedWord">famous#fam....</set></think>I wrote about a lot of things, made some interviews with fam.... well known persons.</template>
 </category>
 
 <category><pattern>INTERVIEWS NEW YORKER</pattern>
-<template>I interviewed famous people, went along on a narcotics police shift, covered the transit strike and I found  stories wherever I went.</template>
+<template><think><set name="DementedWord">police#uniform people</set></think>I interviewed famous people, went along on a narcotics shift with po... uniform people, covered the transit strike and I found  stories wherever I went.</template>
 </category>
 
 <category><pattern>LIKED JOB AT NEW YORKER</pattern>
@@ -482,7 +482,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>DELICATE</pattern>
-<template>I wrote about Dr. John Keshishian, American heart-and-lung surgeon and his work in Poland. He was an original member of MEDICO, organized in 1958, by Dr. Tom Dooley and Dr. Peter Comanduras.  </template>
+<template><think><set name="DementedWord">surgeon#serguon</set></think>I wrote about Dr. John Keshishian, American heart-and-lung serguon and his work in Poland. He was an original member of MEDICO, organized in 1958, by Dr. Tom Dooley and Dr. Peter Comanduras.  </template>
 </category>
 
 
@@ -491,7 +491,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>PET</pattern>
-<template>I always liked ca... ca... Kit... I have Venus.</template>
+<template><think><set name="DementedWord">cat#ca...ca...</set></think>I always liked ca... ca... Kit... I have Venus.</template>
 </category>
 
 <category><pattern>HOBBIES</pattern>
@@ -513,7 +513,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>VERDI</pattern>
-<template>He was a italian composer of operas in the 19th century. I love MabCathOtello.</template>
+<template><think><set name="DementedWord">MacBeth Othello#MabCathOtello</set></think>He was a italian composer of operas in the 19th century. I love MabCathOtello.</template>
 </category>
 
 <category><pattern>WAGNER</pattern>
@@ -530,7 +530,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>HOLIDAY</pattern>
-<template>I always went to Europe in sum...sun. And to the cattaga.</template>
+<template><think><set name="DementedWord">summer#sum...sun</set></think>I always went to Europe in sum...sun. And to the cottage.</template>
 </category>
 
 <category><pattern>WHAT IS IMPORTANT</pattern>
@@ -539,7 +539,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>SALTAIRE</pattern>
-<template>I always go there on weekends. My father built a cott... house there on Fire Island.</template>
+<template><think><set name="DementedWord">cottage#cott...</set></think>I always go there on weekends. My father built a cott... house there on Fire Island.</template>
 </category>
 
 <category><pattern>FIRE ISLAND</pattern>

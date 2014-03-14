@@ -80,20 +80,9 @@ public class InventorySmall : MonoBehaviour {
 			Vector3 posAct = new Vector3();
 		
 			posAct = document2.transform.position;
-			float step = 0.01f;
+			float speed = 0.03f;
 
-//			Debug.Log ("document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
-//			Debug.Log ("spritename : "+spritename );			
-
-//			if(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName.Contains("cats")){
-//				Debug.Log ("Cats_posDoc2: "+posDoc2 );
-//				Debug.Log ("Cats_posAct : "+posAct );
-//			}else{
-//				Debug.Log ("PAssport_posDoc2: "+posDoc2 );
-//				Debug.Log ("PAssport_posAct : "+posAct );
-//			}
-
-			document2.transform.position = Vector3.MoveTowards(posAct, posDoc2, step);
+			document2.transform.position = Vector3.MoveTowards(posAct, posDoc2, speed);
 
 
 			if(posAct==posDoc2){

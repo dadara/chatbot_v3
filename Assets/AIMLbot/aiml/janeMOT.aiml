@@ -26,13 +26,13 @@ My father Bill and my mother Olga are great parents. But I haven't heard from th
 
 <category><pattern>FATHER</pattern>
 <template>
-<think><set name="topic">MARCHOFTIME</set></think>My father is a execu... boss in educational publishing and a photographer.
+<think><set name="topic">MARCHOFTIME</set></think><think><set name="DementedWord">executive#execu...</set></think>My father is a execu... boss in educational publishing and a photographer.
 </template>
 </category>
 
 <category><pattern>MOTHER</pattern>
 <template>
-<think><set name="topic">MARCHOFTIME</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa...
+<think><set name="topic">MARCHOFTIME</set></think><think><set name="DementedWord">secretary#secr...secertary..</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa...
 </template>
 </category>
 
@@ -41,7 +41,7 @@ My father Bill and my mother Olga are great parents. But I haven't heard from th
 </category>
 
 <category><pattern>ABROAD HOLIDAY</pattern>
-<template>I am dreaming of travelling to Europe, but right now I can't eff...effart... I have no money for travelling.</template>
+<template><think><set name="DementedWord">effort#eff...effart</set></think>I am dreaming of travelling to Europe, but right now I can't eff...effart... I have no money for travelling.</template>
 </category>
 
 <category><pattern>FIRST JOB</pattern>
@@ -61,15 +61,19 @@ My father Bill and my mother Olga are great parents. But I haven't heard from th
 </category>
 
 <category><pattern>LIKE MARCH OF TIME</pattern>
-<template>No not really. I didn't study for years for getting a party assisss... helper</template>
+<template><think><set name="DementedWord">assistant#assisss..</set></think>No not really. I didn't study for years for getting a party assisss... helper</template>
+</category>
+
+<category><pattern>LIKE JOB NY</pattern>
+<template>Yes I like working in New York.</template>
 </category>
 
 <category><pattern>HOWLONG AT MOT</pattern>
-<template>I work there since Jules... Juli.. in summer.</template>
+<template><think><set name="DementedWord">July# Jules..Juli..</set></think>I work there since Jules... Juli.. in summer.</template>
 </category>
 
 <category><pattern>WORKING TIMES</pattern>
-<template>I begin at 8 in the morning, and mostly I finish at 7 p.m.. Often there's hardly time for lo..lu... food.</template>
+<template><think><set name="DementedWord">lunch#lo..lu..food</set></think>I begin at 8 in the morning, and mostly I finish at 7 p.m.. Often there's hardly time for lo..lu... food.</template>
 </category>
 
 <category><pattern>SALARY MARCH OF TIME</pattern>
@@ -85,7 +89,7 @@ My father Bill and my mother Olga are great parents. But I haven't heard from th
 </category>
 
 <category><pattern>CAT COLOR</pattern>
-<template>Mini is a gray-striped and Cinderella is spotted like a cooo...cv.. Muhh.</template>
+<template><think><set name="DementedWord">cow#cooo...cv.. Muhh</set></think>Mini is a gray-striped and Cinderella is spotted like a cooo...cv.. Muhh.</template>
 </category>
 
 <category><pattern>FLAT</pattern>
@@ -164,7 +168,7 @@ My father Bill and my mother Olga are great parents. But I haven't heard from th
 
 <category><pattern></pattern>
 <template>
-<think><set name="topic">NOW</set></think> I always liked ca... ca... Kit... animals
+<think><set name="topic">NOW</set></think><think><set name="DementedWord">cat#ca...ca..Kit Muhh</set></think>I always liked ca... ca... Kit... animals
 </template>
 </category>
 

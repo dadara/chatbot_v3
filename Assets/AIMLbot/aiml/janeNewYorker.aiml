@@ -25,13 +25,13 @@
 
 <category><pattern>FATHER</pattern>
 <template>
-<think><set name="topic">NEWYORKER</set></think>My father was a execu... boss in educational publishing and a photographer.
+<think><set name="DementedWord">education#edu..teaching</set></think>My father was a executive boss in edu..teaching publishing and a photographer.
 </template>
 </category>
 
 <category><pattern>MOTHER</pattern>
 <template>
-<think><set name="topic">NEWYORKER</set></think>My mother worked as secr...secertary.. and cared for the household. We often went to the pa... when I was a child.
+<think><set name="DementedWord">park#pa...</set></think>My mother worked as secr...secretary.. and cared for the household. We often went to the pa... when I was a child.
 </template>
 </category>
 
@@ -40,7 +40,7 @@
 </category>
 
 <category><pattern>ABROAD HOLIDAY</pattern>
-<template>Every summer I go to Europe. Last summer I went to Trieste, it looked really do...di.. other, than I rrr...roomi...rem... than picture in my had.</template>
+<template><think><set name="DementedWord">different#do...di..other</set></think>Every summer I go to Europe. Last summer I went to Trieste, it looked really do...di..other, than I rrr...roomi...rem... than picture in my had.</template>
 </category>
 
 <category><pattern>CITIES VISITED</pattern>
@@ -48,7 +48,7 @@
 </category>
 
 <category><pattern>FAVORITE CITY</pattern>
-<template>Italy is a impr... im.. fiscanitang country. All the cities I were, were great. The remains of Ancient Rome, the cultural offer in Venice and the beitauful a... arch.. houses in Trieste.</template>
+<template><think><set name="DementedWord">fascinating#fiscanitang</set></think>Italy is a impr... im.. fiscanitang country. All the cities I were, were great. The remains of Ancient Rome, the cultural offer in Venice and the beitauful a... arch.. houses in Trieste.</template>
 </category>
 
 <category><pattern>AGE 86</pattern>
@@ -72,7 +72,7 @@
 </category>
 
 <category><pattern>LIKED MARCH OF TIME</pattern>
-<template>I hated the job there. I didn't study for years for getting a party assassi... helper</template>
+<template><think><set name="DementedWord">assistant#assassi...</set></think>I hated the job there. I didn't study for years for getting a party assassi... helper</template>
 </category>
 
 <category><pattern>HOWLONG AT MOT</pattern>
@@ -140,7 +140,7 @@
 </category>
 
 <category><pattern>OPERA CBS</pattern>
-<template>My favorite operas have been written by italian composers, like Verdi. It always is so glamerous. But also Porgy and Bess from Gershwin impressed me much. </template>
+<template><think><set name="DementedWord">impressed#imperssed</set></think>My favorite operas have been written by italian composers, like Verdi. It always is so glamerous. But also Porgy and Bess from Gershwin imperssed me much. </template>
 </category>
 
 <category><pattern>FOREIGN SERVICE</pattern>
@@ -196,11 +196,11 @@
 </category>
 
 <category><pattern>WHAT WRITER</pattern>
-<template>I wrote about a lot of things, made some interviews with fam.... well known persons.</template>
+<template><think><set name="DementedWord">famous#fam....</set></think>I wrote about a lot of things, made some interviews with fam.... well known persons.</template>
 </category>
 
 <category><pattern>INTERVIEWS</pattern>
-<template>I interviewed famous people, went along on a na...nca... druggy police shift, wrote about transit strike and I found  stories wherever I went.</template>
+<template><think><set name="DementedWord">narcotic#na...nca... druggy</set></think>I interviewed famous people, went along on a na...nca... druggy police shift, wrote about transit strike and I found  stories wherever I went.</template>
 </category>
 
 <category><pattern>LIKE JOB NY</pattern>
@@ -244,7 +244,7 @@
 </category>
 
 <category><pattern>PET</pattern>
-<template> I always liked ca... ca... Kit... animals</template>
+<template><think><set name="DementedWord">cats#ca...ca...Kit druggy</set></think>I always liked ca... ca... Kit... animals</template>
 </category>
 
 <category><pattern></pattern>

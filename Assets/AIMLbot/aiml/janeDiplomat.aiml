@@ -22,11 +22,11 @@
 </category>
 
 <category><pattern>FATHER</pattern>
-<template>"My father is a execu... boss </template>
+<template><think><set name="DementedWord">executive#execu...</set></think>My father is a execu... boss </template>
 </category>
 
 <category><pattern>MOTHER</pattern>
-<template>My mother works as secr...secertary.. and cares for the household. We often went to the pa... when I was a child.</template>
+<template><think><set name="DementedWord">secretary#secr...secertary..</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa... when I was a child.</template>
 </category>
 
 <category><pattern>HOLIDAY</pattern>
@@ -42,7 +42,7 @@
 </category>
 
 <category><pattern>FAVORITE CITY</pattern>
-<template>I liked them all. In Vienna the opera impressed me much, the architecture in Prague was fas... ficsinatang. The restaurants I Paris were ecxlleent.</template>
+<template><think><set name="DementedWord">fascinating#fas... ficsinatang</set></think>I liked them all. In Vienna the opera impressed me much, the architecture in Prague was fas... ficsinatang. The restaurants I Paris were ecxlleent.</template>
 </category>
 
 <category><pattern>AGE 86</pattern>
@@ -66,7 +66,7 @@
 </category>
 
 <category><pattern>LIKED MARCH OF TIME</pattern>
-<template>I hated the job there. I didn't study for years for getting a party assassi... helper</template>
+<template><think><set name="DementedWord">assistant#assassi...</set></think>I hated the job there. I didn't study for years for getting a party assassi... helper</template>
 </category>
 
 <category><pattern>HOWLONG AT MOT</pattern>
@@ -114,7 +114,7 @@
 </category>
 
 <category><pattern>PETS CBS</pattern>
-<template>I had my c...c...ca...caties Mini and Cinderella.</template>
+<template><think><set name="DementedWord">cats#caties</set></think>I had my c...c...ca...caties Mini and Cinderella.</template>
 </category>
 
 <category><pattern>HOW LONG AT CBS</pattern>
@@ -162,7 +162,7 @@
 </category>
 
 <category><pattern>ADDRESS DIPLOMAT</pattern>
-<template>I  live in a realy nice flat with a balcony in the center. It was quite big as I lived there just with my Knatens. It was in the Via Ponde....Ponga.. Pnodares. </template>
+<template><think><set name="DementedWord">Kitten#Knatens</set></think>I  live in a realy nice flat with a balcony in the center. It was quite big as I lived there just with my Knatens. It was in the Via Ponde....Ponga.. Pnodares. </template>
 </category>
 
 <category><pattern>KNATENS</pattern>
@@ -189,10 +189,8 @@
 <template>I came to New York right after I graduated in 1949.</template>
 </category>
 
-<category><pattern></pattern>
-<template>
-<think><set name="topic">NOW</set></think>Yes I like New York.
-</template>
+<category><pattern>LIKE JOB NY</pattern>
+<template>Yes I like working in New York.</template>
 </category>
 
 <category><pattern>WHEN RETIRED</pattern>
@@ -212,7 +210,7 @@
 </category>
 
 <category><pattern>HOBBIES</pattern>
-<template>I like to go out and cultural activities.</template>
+<template><think><set name="DementedWord">culture#cultar..</set></think>I like to go out and cultar.. art things.</template>
 </category>
 
 <category><pattern>VENUS</pattern>

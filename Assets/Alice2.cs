@@ -208,39 +208,38 @@ public class Alice2 : MonoBehaviour {
 			chatHistoryString = inputBot + Environment.NewLine + outputBot +Environment.NewLine + chatHistoryString;
 			chatHistoryPanel.GetComponent<UIDraggablePanel>().ResetPosition();
 			chatHistoryLabel.text = chatHistoryString;
-		
-			//checked finish condition Test how much time it needs to come to the end
-			//			choose posKeywordsString for input buttons
 
 			setInputButtons();
-
-
-
 		}
 		
 		cacheInputBot = inputBot;
 		
-		//		if(startTime>600){
 		int numberChatHistoryFile=0;
 		String line="";
-		
-		if(Input1btnLabel.text.Equals("end") && !fileSaved){
-			try
-			{
-				using (StreamReader sr = new StreamReader("E:\\Dokumente\\TU\\Diplomarbeit\\chatHistory\\number.txt"))
-				{
-					line = sr.ReadToEnd();
-					numberChatHistoryFile = Convert.ToInt32(line);
-					numberChatHistoryFile++;
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine("The file could not be read:");
-				Console.WriteLine(e.Message);
-			}
+		startTime += Time.deltaTime;
+		if(startTime>= 600){
+			jane.text = "There's Jena and she found my Kitten, thanks for the nice conversation. Have a nice afternoon.";
+			Input1btnLabel.text = "end";
+			Input2btnLabel.text = "fin";
+			Input3btnLabel.text = "ende";		
+		}
 
-
+//		if(Input1btnLabel.text.Equals("end") && !fileSaved){
+//			try
+//			{
+//				using (StreamReader sr = new StreamReader("E:\\Dokumente\\TU\\Diplomarbeit\\chatHistory\\number.txt"))
+//				{
+//					line = sr.ReadToEnd();
+//					numberChatHistoryFile = Convert.ToInt32(line);
+//					numberChatHistoryFile++;
+//				}
+//			}
+//			catch (Exception e)
+//			{
+//				Console.WriteLine("The file could not be read:");
+//				Console.WriteLine(e.Message);
+//			}
+//
 //			System.IO.File.WriteAllText(@"Assets\chatHistory\number.txt", numberChatHistoryFile.ToString());
 //			
 //			chatHistory[cnt] = "PlayTimeInSeconds: "+startTime;
@@ -251,18 +250,7 @@ public class Alice2 : MonoBehaviour {
 //			//			Input2btnLabel.text = "END";
 //			//			Input3btnLabel.text = "END";
 //			fileSaved = true;
-
-			startTime += Time.deltaTime;
-			if(startTime>= 10){
-				jane.text = "There's Jena and she found my Kitten, thanks for the nice conversation. Have a nice afternoon.";
-			Input1btnLabel.text = "end";
-			Input2btnLabel.text = "fin";
-			Input3btnLabel.text = "ende";
-		}
-
-		}
-
-
+//		}
 	}
 
 	public string RemoveSpecChar(string orig){
