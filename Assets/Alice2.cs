@@ -184,16 +184,11 @@ public class Alice2 : MonoBehaviour {
 //			}
 //		}
 
-
-		startTime += Time.deltaTime;
 		topicChangeTime += Time.deltaTime;
-
 		
-		int startTimeInt = (int) startTime;
-
 		if(topicChangeTime>=30){
 			ChangeTopic();
-
+			topicChangeTime=0;
 		}
 		
 		//		1) bot answers to keywords
@@ -224,14 +219,7 @@ public class Alice2 : MonoBehaviour {
 		}
 		
 		cacheInputBot = inputBot;
-
-
-
-
-
-
-
-
+		
 		//		if(startTime>600){
 		int numberChatHistoryFile=0;
 		String line="";
@@ -253,16 +241,24 @@ public class Alice2 : MonoBehaviour {
 			}
 
 
-			System.IO.File.WriteAllText(@"Assets\chatHistory\number.txt", numberChatHistoryFile.ToString());
-			
-			chatHistory[cnt] = "PlayTimeInSeconds: "+startTime;
-			numberChatHistoryFile--;
+//			System.IO.File.WriteAllText(@"Assets\chatHistory\number.txt", numberChatHistoryFile.ToString());
+//			
+//			chatHistory[cnt] = "PlayTimeInSeconds: "+startTime;
+//			numberChatHistoryFile--;
+//
+//			System.IO.File.WriteAllLines(@"Assets\chatHistory\chatHistory"+numberChatHistoryFile.ToString()+".txt", chatHistory);
+//			//			Input1btnLabel.text = "END";
+//			//			Input2btnLabel.text = "END";
+//			//			Input3btnLabel.text = "END";
+//			fileSaved = true;
 
-			System.IO.File.WriteAllLines(@"Assets\chatHistory\chatHistory"+numberChatHistoryFile.ToString()+".txt", chatHistory);
-			//			Input1btnLabel.text = "END";
-			//			Input2btnLabel.text = "END";
-			//			Input3btnLabel.text = "END";
-			fileSaved = true;
+			startTime += Time.deltaTime;
+			if(startTime>= 10){
+				jane.text = "There's Jena and she found my Kitten, thanks for the nice conversation. Have a nice afternoon.";
+			Input1btnLabel.text = "end";
+			Input2btnLabel.text = "fin";
+			Input3btnLabel.text = "ende";
+		}
 
 		}
 
