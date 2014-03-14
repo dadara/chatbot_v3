@@ -324,7 +324,11 @@ public class Alice2 : MonoBehaviour {
 			cacheDocument = res.user.Document;
 
 		}
-		
+
+//		if(cacheDementedWord!=null){
+//			Debug.Log("correctWord: "+res.user.DementedWord);
+//
+//		}
 		if(!cacheDementedWord.Equals(res.user.DementedWord) && res.user.DementedWord.Contains("#")){
 			string correctfaulty = res.user.DementedWord;
 			int crossPlace = correctfaulty.IndexOf("#");
