@@ -62,8 +62,8 @@ public class Alice2 : MonoBehaviour {
 // Path were the possible Input Textfiles are saved
 	string path = "Assets"+Path.DirectorySeparatorChar+"AIMLbot"+Path.DirectorySeparatorChar;
 
-//	List which contains the documents received from Jane (for inventary) 
-	public List<string> inventary;
+//	List which contains the documents received from Jane (for inventory) 
+	public List<string> inventory;
 //	last document got from Jane
 	string cacheDocument;
 	string cacheDementedWord;
@@ -146,22 +146,22 @@ public class Alice2 : MonoBehaviour {
 		chatHistoryString="";
 		chatHistoryPanel = GameObject.Find("ChatHistoryPanel");
 
-		inventary = new List<string>();
+		inventory = new List<string>();
 		cacheDocument = "";
 		cacheDementedWord = "";
 
-//		inventary.Add("Pjanepigeon");
-//		inventary.Add("Pjanedocaunthelenfatherbill");
-//		inventary.Add("Pjaneparents");
-//		inventary.Add("PJanedebutante");
-//		inventary.Add("PJaneswim");
-//		inventary.Add("Pjanebeach");
-		inventary.Add("PJaneNYC");
+//		inventory.Add("Pjanepigeon");
+//		inventory.Add("Pjanedocaunthelenfatherbill");
+//		inventory.Add("Pjaneparents");
+//		inventory.Add("PJanedebutante");
+//		inventory.Add("PJaneswim");
+//		inventory.Add("Pjanebeach");
+		inventory.Add("PJaneNYC");
 
-		inventary.Add("PJanecatsportrait");
-		inventary.Add("JaneCBS");
-		inventary.Add("PJaneportrait");
-		inventary.Add("PJanepassport");
+		inventory.Add("PJanecatsportrait");
+		inventory.Add("JaneCBS");
+		inventory.Add("PJaneportrait");
+		inventory.Add("PJanepassport");
 		
 
 
@@ -171,9 +171,9 @@ public class Alice2 : MonoBehaviour {
 	void Update () {
 	
 		Debug.Log("posKEyOrig at 0: "+posKeyOrig.ElementAt(0));
-//		if(inventary.Count>0){
-//			for(int i=0; i<inventary.Count;i++){
-//				Debug.Log("Inventary: "+inventary.ElementAt(i));
+//		if(inventory.Count>0){
+//			for(int i=0; i<inventory.Count;i++){
+//				Debug.Log("inventory: "+inventory.ElementAt(i));
 //			}
 //		}
 
@@ -184,10 +184,10 @@ public class Alice2 : MonoBehaviour {
 		
 		int startTimeInt = (int) startTime;
 
-//		if(topicChangeTime>=30){
-//			ChangeTopic();
-//
-//		}
+		if(topicChangeTime>=30){
+			ChangeTopic();
+
+		}
 		
 		//		1) bot answers to keywords
 
@@ -290,8 +290,8 @@ public class Alice2 : MonoBehaviour {
 
 		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
 			Debug.Log("Document: "+res.user.Document);
-			if(!inventary.Contains(res.user.Document)){
-				inventary.Add(res.user.Document);
+			if(!inventory.Contains(res.user.Document)){
+				inventory.Add(res.user.Document);
 
 
 				if(topicSet.Contains("MARCHOFTIME")){
@@ -317,7 +317,7 @@ public class Alice2 : MonoBehaviour {
 				}
 				Debug.Log("document added: "+res.user.Document);
 			}else{
-				Debug.Log("document already in inventary: "+res.user.Document);
+				Debug.Log("document already in inventory: "+res.user.Document);
 			}
 
 		

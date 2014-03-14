@@ -28,7 +28,7 @@ public class InventoryLarge : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		inventory = alice2.inventary;
+		inventory = alice2.inventory;
 
 		for(int i=0; i<inventory.Count;i++)
 		{

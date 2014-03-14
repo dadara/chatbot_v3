@@ -28,7 +28,7 @@ public class InventorySmall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		inventory = alice2.inventary;
+		inventory = alice2.inventory;
 
 
 		if(inventory.Count == 1)
