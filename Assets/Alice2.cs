@@ -312,27 +312,29 @@ public class Alice2 : MonoBehaviour {
 					jane.text = "Ups my passport fell out my bag, I just got it lately.";
 				}
 
-//				Start puzzles
-				if(res.user.Document.ToString().Equals ("Pjanebeach2")){
-					gameL.ActivateTurnCubesPuzzle2();
-				}
-				if(res.user.Document.ToString().Equals ("PJaneNYC")){
-					gameL.ActivateTurnPiecesPuzzle2();
-				}
+
 				Debug.Log("document added: "+res.user.Document);
 			}else{
 				Debug.Log("document already in inventory: "+res.user.Document);
-				if(res.user.Document.ToString().Equals ("PJanecatsportrait") && !ActivateTurnCubesPuzzleBool){
-					gameL.ActivateTurnCubesPuzzle();
-					ActivateTurnCubesPuzzleBool = true;
-				}
-				if(res.user.Document.ToString().Equals ("PJaneportrait") && !ActivateTurnPiecesPuzzleBool){
-					gameL.ActivateTurnPiecesPuzzle();
-					ActivateTurnPiecesPuzzleBool =true;
-				}
+
 			}
 
-		
+			//				Start puzzles
+			if(res.user.Document.ToString().Equals ("Pjanebeach2")){
+				gameL.ActivateTurnCubesPuzzle2();
+			}
+			if(res.user.Document.ToString().Equals ("PJaneNYC")){
+				gameL.ActivateTurnPiecesPuzzle2();
+			}
+			if(res.user.Document.ToString().Equals ("PJanecatsportrait") && !ActivateTurnCubesPuzzleBool){
+				gameL.ActivateTurnCubesPuzzle();
+				ActivateTurnCubesPuzzleBool = true;
+			}
+			if(res.user.Document.ToString().Equals ("PJaneportrait") && !ActivateTurnPiecesPuzzleBool){
+				gameL.ActivateTurnPiecesPuzzle();
+				ActivateTurnPiecesPuzzleBool =true;
+			}
+
 			cacheDocument = res.user.Document;
 
 		}

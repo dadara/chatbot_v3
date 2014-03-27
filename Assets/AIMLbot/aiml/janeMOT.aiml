@@ -26,13 +26,13 @@ My father Bill and my mother Olga are great parents. But I haven't heard from th
 
 <category><pattern>FATHER</pattern>
 <template>
-<think><set name="topic">MARCHOFTIME</set></think><think><set name="DementedWord">executive#execu...</set></think>My father is a execu... boss in educational publishing and a photographer.
+<think><set name="DementedWord">executive#execu...</set></think>My father is a execu... boss in educational publishing and a photographer.
 </template>
 </category>
 
 <category><pattern>MOTHER</pattern>
 <template>
-<think><set name="topic">MARCHOFTIME</set></think><think><set name="DementedWord">secretary#secr...secertary..</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa...
+<think><set name="DementedWord">secretary#secr...secertary..</set></think>My mother works as secr...secertary.. and cares for the household. We often went to the pa...
 </template>
 </category>
 
