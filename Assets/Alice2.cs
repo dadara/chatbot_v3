@@ -210,6 +210,7 @@ public class Alice2 : MonoBehaviour {
 			cnt++;
 
 			chatHistoryString = inputBot + Environment.NewLine + outputBot +Environment.NewLine + chatHistoryString;
+//			if(chatHistory.Length > ){}
 			chatHistoryPanel.GetComponent<UIDraggablePanel>().ResetPosition();
 			chatHistoryLabel.text = chatHistoryString;
 
@@ -292,14 +293,6 @@ public class Alice2 : MonoBehaviour {
 
 		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
 			Debug.Log("Document: "+res.user.Document);
-			if(!ActivateTurnCubesPuzzleBool){
-				gameL.ActivateTurnCubesPuzzle();
-				ActivateTurnCubesPuzzleBool=true;
-			}
-			if(!ActivateTurnPiecesPuzzleBool){
-				gameL.ActivateTurnPiecesPuzzle();
-				ActivateTurnPiecesPuzzleBool=true;
-			}
 		
 			if(!inventory.Contains(res.user.Document)){
 				inventory.Add(res.user.Document);
@@ -329,6 +322,14 @@ public class Alice2 : MonoBehaviour {
 				Debug.Log("document added: "+res.user.Document);
 			}else{
 				Debug.Log("document already in inventory: "+res.user.Document);
+				if(res.user.Document.ToString().Equals ("PJanecatsportrait") && !ActivateTurnCubesPuzzleBool){
+					gameL.ActivateTurnCubesPuzzle();
+					ActivateTurnCubesPuzzleBool = true;
+				}
+				if(res.user.Document.ToString().Equals ("PJaneportrait") && !ActivateTurnPiecesPuzzleBool){
+					gameL.ActivateTurnPiecesPuzzle();
+					ActivateTurnPiecesPuzzleBool =true;
+				}
 			}
 
 		

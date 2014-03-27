@@ -145,7 +145,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>ELEMENTARY SCHOOL</pattern>
-<template>I went to elementary school in Columbia.</template>
+<template><think><set name="document">PJaneportrait</set></think>I went to elementary school in Columbia.</template>
 </category>
 
 <category><pattern>FURNITURE ELEMENTARY</pattern>
