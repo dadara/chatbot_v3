@@ -46,9 +46,9 @@ public class UIButtonInput : MonoBehaviour {
 			} else if(this.name == "PhoneCloseButton")
 			{
 				uiLogic.SetPhoneIsActive(false);
-			} else if(this.name == "InventoryLargeScanButton")
+			} else if(this.name == "InventoryLargeCancelButton")
 			{
-				//uiLogic.SetScanIsActive(true);
+				uiLogic.SetInventoryIsActive(false);
 			} else if(this.name == "ScanPanelCloseButton")
 			{
 				//uiLogic.SetScanIsActive(false);

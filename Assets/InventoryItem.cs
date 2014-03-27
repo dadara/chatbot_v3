@@ -4,7 +4,7 @@ using System.Collections;
 public class InventoryItem : MonoBehaviour {
 
 	GameObject inventoryLargeCloseButton;
-	//GameObject inventoryLargeScanButton;
+	GameObject inventoryLargeCancelButton;
 	GameObject label;
 	GameObject background;
 	GameObject document;
@@ -16,7 +16,7 @@ public class InventoryItem : MonoBehaviour {
 	{
 		panel = GameObject.Find("Panel");
 		//inventoryLargeCloseButton = uiLogic.inventoryLargeCloseButton;
-		//inventoryLargeScanButton = uiLogic.inventoryLargeScanButton;
+		//inventoryLargeCancelButton = uiLogic.inventoryLargeCancelButton;
 		uiLogic = panel.GetComponent<UILogic>();
 
 		background = GameObject.Find(this.name + "/Background");
@@ -35,17 +35,17 @@ public class InventoryItem : MonoBehaviour {
 		if (isPressed)
 		{
 			inventoryLargeCloseButton = uiLogic.inventoryLargeCloseButton;
-			//inventoryLargeScanButton = uiLogic.inventoryLargeScanButton;
+			inventoryLargeCancelButton = uiLogic.inventoryLargeCancelButton;
 
 
 			if(document != null)
 			{
 				uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
-				//inventoryLargeScanButton.SetActive(true);
+				inventoryLargeCancelButton.SetActive(true);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
 			} else 
 			{
-				//inventoryLargeScanButton.SetActive(false);
+				inventoryLargeCancelButton.SetActive(false);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
 			}
 		}

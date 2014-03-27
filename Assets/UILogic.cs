@@ -10,7 +10,7 @@ public class UILogic : MonoBehaviour {
 	//Inventory Elements
 	public GameObject inventoryLargeCloseButton;
 	GameObject inventoryLargePanel;
-	//public GameObject inventoryLargeScanButton;
+	public GameObject inventoryLargeCancelButton;
 	GameObject inventoryLargePanelItems;
 	GameObject inventoryLargeButtonPanel;
 	GameObject inventorySmallContainer;
@@ -40,7 +40,7 @@ public class UILogic : MonoBehaviour {
 	{
 		inventoryLargeCloseButton = GameObject.Find("InventoryLargeCloseButton");
 		inventoryLargePanel = GameObject.Find("InventoryLargePanel");
-		//inventoryLargeScanButton = GameObject.Find("InventoryLargeScanButton");
+		inventoryLargeCancelButton = GameObject.Find("InventoryLargeCancelButton");
 		inventoryLargePanelItems = GameObject.Find("InventoryLargePanelItems");
 		inventoryLargeButtonPanel = GameObject.Find("InventoryLargeButtonPanel");
 		inventorySmallContainer = GameObject.Find("InventorySmallContainer");
@@ -61,6 +61,7 @@ public class UILogic : MonoBehaviour {
 		inventoryLargePanel.SetActive(false);
 		inventoryLargePanelItems.SetActive(false);
 		inventoryLargeButtonPanel.SetActive(false);
+		inventoryLargeCancelButton.SetActive(false);
 		//scanPanel.SetActive(false);
 		phoneInfoPanel.SetActive(false);
 	}
@@ -150,7 +151,7 @@ public class UILogic : MonoBehaviour {
 		inventoryLargePanel.SetActive(active);
 		inventoryLargePanelItems.SetActive(active);
 		inventoryLargeButtonPanel.SetActive(active);
-		//inventoryLargeScanButton.SetActive(!active);
+		inventoryLargeCancelButton.SetActive(!active);
 		inventorySmallContainer.SetActive(!active);
 
 		if(active)
