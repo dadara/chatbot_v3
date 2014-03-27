@@ -197,7 +197,7 @@ public class Alice2 : MonoBehaviour {
 			outputBot = getOutput(inputBot);
 //			Debug.Log ("inputBot: "+inputBot+" outputBot: "+outputBot);
 			
-			jane.text = "B: "+outputBot;
+			jane.text = outputBot;
 			chatHistory[cnt] = inputBot;
 			cnt++;
 			chatHistory[cnt] = outputBot;
