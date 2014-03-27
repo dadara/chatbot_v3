@@ -70,6 +70,9 @@ public class Alice2 : MonoBehaviour {
 	string cacheDocument;
 	string cacheDementedWord;
 
+	bool ActivateTurnCubesPuzzleBool;
+	bool ActivateTurnPiecesPuzzleBool;
+
 
 	// Use this for initialization
 	void Start () {
@@ -171,7 +174,8 @@ public class Alice2 : MonoBehaviour {
 			Debug.Log(inventory.ElementAt(i));
 		}
 
-		
+		ActivateTurnCubesPuzzleBool=false;
+		ActivateTurnPiecesPuzzleBool=false;
 	}
 	
 	// Update is called once per frame
@@ -288,6 +292,13 @@ public class Alice2 : MonoBehaviour {
 
 		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
 			Debug.Log("Document: "+res.user.Document);
+			if(!ActivateTurnCubesPuzzleBool){
+				gameL.ActivateTurnCubesPuzzle();
+			}
+			if(!ActivateTurnPiecesPuzzleBool){
+				gameL.ActivateTurnPiecesPuzzle();
+			}
+		
 			if(!inventory.Contains(res.user.Document)){
 				inventory.Add(res.user.Document);
 
@@ -307,12 +318,12 @@ public class Alice2 : MonoBehaviour {
 				}
 
 //				Start puzzles
-				if(res.user.Document.ToString().Equals ("PJanecatsportrait")){
-					gameL.ActivateTurnCubesPuzzle();
-				}
-				if(res.user.Document.ToString().Equals ("PJaneportrait")){
-					gameL.ActivateTurnPiecesPuzzle();
-				}
+//				if(res.user.Document.ToString().Equals ("PJanecatsportrait")){
+//					gameL.ActivateTurnCubesPuzzle();
+//				}
+//				if(res.user.Document.ToString().Equals ("PJaneportrait")){
+//					gameL.ActivateTurnPiecesPuzzle();
+//				}
 				Debug.Log("document added: "+res.user.Document);
 			}else{
 				Debug.Log("document already in inventory: "+res.user.Document);
