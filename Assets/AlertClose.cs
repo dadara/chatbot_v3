@@ -25,7 +25,14 @@ public class AlertClose : MonoBehaviour {
 		if (isPressed)
 		{
 			alerts.SetActive(false);
-			gameLogic.ActivateMainGame();
+
+			if(gameLogic.gameIsWaitingForActivation)
+			{
+				gameLogic.ActivateGame();
+			} else 
+			{
+				gameLogic.ActivateMainGame();
+			}
 		}
 	}
 }

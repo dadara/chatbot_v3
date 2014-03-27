@@ -81,6 +81,12 @@ public class WordPuzzle : MonoBehaviour {
 
 			CheckGameComplete();
 
+			if(gameActive && correctWord[wordIndex].ToString() == " ")
+			{
+				correctWordObject.GetComponent<TextMesh>().text = correctWordObject.GetComponent<TextMesh>().text.Substring(0,wordIndex) + " " + correctWordObject.GetComponent<TextMesh>().text.Substring(wordIndex+1,correctWord.Length-(wordIndex+1));
+				wordIndex++;
+			}
+
 			return true;
 		} else 
 		{

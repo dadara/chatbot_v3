@@ -83,7 +83,7 @@ public class InventorySmall : MonoBehaviour {
 			posAct = document2.transform.position;
 			float speed = 0.03f;
 
-
+			Debug.Log ("posdoc2: "+posDoc2+" posAct: "+posAct);
 //			document2.transform.position = Vector3.MoveTowards(posAct, posDoc2, speed);
 
 

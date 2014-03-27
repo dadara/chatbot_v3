@@ -3,8 +3,8 @@ using System.Collections;
 
 public class LetterMovement : MonoBehaviour {
 
-	float maxX = 20f;
-	float minX = -24f;
+	float maxX = -20f;
+	float minX = -25f;
 	float maxY = 2f;
 	float minY = -2f;
 	
@@ -25,7 +25,7 @@ public class LetterMovement : MonoBehaviour {
 
 	void Update () 
 	{
-		if(this.transform.parent.parent.GetComponent<WordPuzzle>().gameActive)
+		if(this.transform.parent.parent.parent.GetComponent<WordPuzzle>().gameActive)
 		{
 
 			// change to random direction at random intervals
@@ -64,7 +64,7 @@ public class LetterMovement : MonoBehaviour {
 	void OnMouseDown()
 	{
 		string letter = this.transform.GetComponent<TextMesh>().text;
-		if(this.transform.parent.parent.GetComponent<WordPuzzle>().AddLetter(letter))
+		if(this.transform.parent.parent.parent.GetComponent<WordPuzzle>().AddLetter(letter))
 		{
 			this.transform.GetComponent<TextMesh>().text = "";
 			this.transform.GetComponent<BoxCollider>().enabled = true;
