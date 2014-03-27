@@ -7,9 +7,11 @@ public class GameLogic : MonoBehaviour {
 
 	//Puzzle GameObjects
 	public GameObject turnPiecesPuzzle;
+	public GameObject turnPiecesPuzzle2;
 	public GameObject findJanePuzzle1;
 	public GameObject findJanePuzzle2;
 	public GameObject turnCubesPuzzle;
+	public GameObject turnCubesPuzzle2;
 	public GameObject wordPuzzle;
 
 	//Instructions
@@ -42,13 +44,13 @@ public class GameLogic : MonoBehaviour {
 			ActivateTurnPiecesPuzzle();
 		} else if(Input.GetKeyDown(KeyCode.D))
 		{
-			ActivateFindJanePuzzle1();
+			ActivateTurnPiecesPuzzle2();
 		} else if(Input.GetKeyDown(KeyCode.F))
 		{
-			ActivateFindJanePuzzle2();
+			ActivateTurnCubesPuzzle();
 		} else if(Input.GetKeyDown(KeyCode.G))
 		{
-			ActivateTurnCubesPuzzle();	
+			ActivateTurnCubesPuzzle2();	
 		} else if(Input.GetKeyDown(KeyCode.H))
 		{
 			ActivateWordPuzzle("Kittens", "Knatens");	
@@ -67,7 +69,9 @@ public class GameLogic : MonoBehaviour {
 			findJanePuzzle1.SetActive(false);
 			findJanePuzzle2.SetActive(false);
 			turnCubesPuzzle.SetActive(false);
+			turnCubesPuzzle2.SetActive(false);
 			wordPuzzle.SetActive(false);
+			turnPiecesPuzzle2.SetActive(false);
 
 			turnPiecesPuzzle.SetActive(true);
 			puzzleInstructions.SetActive(true);
@@ -79,6 +83,33 @@ public class GameLogic : MonoBehaviour {
 			cameraPos = new Vector3 (turnPiecesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
 
 			turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().StartGame();
+		}
+	}
+
+	//Starts TurnPiecesPuzzle2
+	public void ActivateTurnPiecesPuzzle2()
+	{
+		if(!turnPiecesPuzzle2.GetComponent<TurnPiecesPuzzle>().gameCompleted)
+		{
+			
+			mainGame.SetActive(false);
+			findJanePuzzle1.SetActive(false);
+			findJanePuzzle2.SetActive(false);
+			turnCubesPuzzle.SetActive(false);
+			turnCubesPuzzle2.SetActive(false);
+			wordPuzzle.SetActive(false);
+			turnPiecesPuzzle.SetActive(false);
+			
+			turnPiecesPuzzle2.SetActive(true);
+			puzzleInstructions.SetActive(true);
+			
+			instructionLabel1.GetComponent<UILabel>().text = "Use Up/Down arrow keys to switch pieces";
+			instructionLabel2.GetComponent<UILabel>().text = "Use Left/Right arrow keys or scroll to rotate selected piece";
+			
+			//this.transform.position =  new Vector3 (turnPiecesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
+			cameraPos = new Vector3 (turnPiecesPuzzle2.transform.position.x, this.transform.position.y, this.transform.position.z);
+			
+			turnPiecesPuzzle2.GetComponent<TurnPiecesPuzzle>().StartGame();
 		}
 	}
 
@@ -129,9 +160,11 @@ public class GameLogic : MonoBehaviour {
 		{
 			mainGame.SetActive(false);
 			turnPiecesPuzzle.SetActive(false);
+			turnPiecesPuzzle2.SetActive(false);
 			findJanePuzzle1.SetActive(false);
 			findJanePuzzle2.SetActive(false);
 			wordPuzzle.SetActive(false);
+			turnCubesPuzzle2.SetActive(false);
 
 			turnCubesPuzzle.SetActive(true);
 			puzzleInstructions.SetActive(true);
@@ -145,14 +178,41 @@ public class GameLogic : MonoBehaviour {
 		}
 	}
 
+	//Starts TurnCubesPuzzle2
+	public void ActivateTurnCubesPuzzle2()
+	{
+		if(!turnCubesPuzzle2.GetComponent<TurnCubesPuzzle>().gameCompleted)
+		{
+			mainGame.SetActive(false);
+			turnPiecesPuzzle.SetActive(false);
+			turnPiecesPuzzle2.SetActive(false);
+			findJanePuzzle1.SetActive(false);
+			findJanePuzzle2.SetActive(false);
+			wordPuzzle.SetActive(false);
+			turnCubesPuzzle.SetActive(false);
+			
+			turnCubesPuzzle2.SetActive(true);
+			puzzleInstructions.SetActive(true);
+			
+			instructionLabel1.GetComponent<UILabel>().text = "Use arrow keys to switch cubes, use Space to select/unselect";
+			instructionLabel2.GetComponent<UILabel>().text = "Once selected, use arrow keys to turn cube";
+			
+			cameraPos =  new Vector3 (turnCubesPuzzle2.transform.position.x, this.transform.position.y, this.transform.position.z);
+			
+			turnCubesPuzzle2.GetComponent<TurnCubesPuzzle>().StartGame();
+		}
+	}
+
 	//Starts WordPuzzle
 	public void ActivateWordPuzzle(string correctWord, string faultyWord)
 	{
 		mainGame.SetActive(false);
 		turnPiecesPuzzle.SetActive(false);
+		turnPiecesPuzzle2.SetActive(false);
 		findJanePuzzle1.SetActive(false);
 		findJanePuzzle2.SetActive(false);
 		turnCubesPuzzle.SetActive(false);
+		turnCubesPuzzle2.SetActive(false);
 
 		wordPuzzle.SetActive(true);
 		puzzleInstructions.SetActive(true);
@@ -170,9 +230,11 @@ public class GameLogic : MonoBehaviour {
 	{
 		puzzleInstructions.SetActive(false);
 		turnPiecesPuzzle.SetActive(false);
+		turnPiecesPuzzle2.SetActive(false);
 		findJanePuzzle1.SetActive(false);
 		findJanePuzzle2.SetActive(false);
 		turnCubesPuzzle.SetActive(false);
+		turnCubesPuzzle2.SetActive(false);
 		wordPuzzle.SetActive(false);
 
 		mainGame.SetActive(true);
