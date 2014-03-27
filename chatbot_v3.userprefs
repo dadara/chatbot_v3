@@ -1,20 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Alice2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\NGUI\Scripts\Interaction\UIButton.cs">
     <Files>
-      <File FileName="..\Alice2.cs" Line="189" Column="3" />
-      <File FileName="..\UIButtonInput.cs" Line="1" Column="1" />
-      <File FileName="aiml\janeMOT.aiml" Line="1" Column="1" />
+      <File FileName="..\..\chatbot_v3.sln" Line="1" Column="1" />
+      <File FileName="..\Alice2.cs" Line="228" Column="20" />
+      <File FileName="..\Alice2.cs" Line="228" Column="20" />
+      <File FileName="aiml\janeNowNew.aiml" Line="1" Column="1" />
       <File FileName="aiml\janeNewYorker.aiml" Line="1" Column="1" />
+      <File FileName="aiml\janeMOT.aiml" Line="1" Column="1" />
+      <File FileName="aiml\janeDiplomat.aiml" Line="1" Column="1" />
       <File FileName="aiml\janeCBS.aiml" Line="1" Column="1" />
-      <File FileName="aiml\janeDiplomat.aiml" Line="13" Column="49" />
-      <File FileName="aiml\janeNowNew.aiml" Line="64" Column="40" />
-      <File FileName="User.cs" Line="1" Column="1" />
-      <File FileName="..\GameLogic.cs" Line="173" Column="38" />
-      <File FileName="..\InventoryLarge.cs" Line="34" Column="4" />
-      <File FileName="..\InventorySmall.cs" Line="103" Column="95" />
-      <File FileName="e:\Dokumente\TU\Diplomarbeit\chatbot_v3\Assets\NGUI\Scripts\Editor\UIAtlasInspector.cs" Line="1" Column="1" />
-      <File FileName="..\Timeshift.cs" Line="20" Column="31" />
+      <File FileName="Utils\AIMLLoader.cs" Line="1" Column="1" />
+      <File FileName="..\NGUI\Scripts\Interaction\UIButton.cs" Line="30" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -75,7 +75,8 @@ public class InventorySmall : MonoBehaviour {
 			//Change Second Item
 
 			document2.SetActive(true);
-
+			Debug.Log ("1: "+cnt+" document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
+			Debug.Log ("1: "+cnt+" document2.sprite.name : "+document2.transform.position);
 
 			Vector3 posAct = new Vector3();
 		
@@ -95,7 +96,6 @@ public class InventorySmall : MonoBehaviour {
 					document2.transform.position = pos;
 
 					Debug.Log (cnt+" document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
-
 				}
 
 			}

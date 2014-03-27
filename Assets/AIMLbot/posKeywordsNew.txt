@@ -103,6 +103,3 @@ What is important
 Saltaire
 Fire Island
 Cottage
-end
-end
-end

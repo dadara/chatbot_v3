@@ -73,6 +73,7 @@ public class Alice2 : MonoBehaviour {
 	bool ActivateTurnCubesPuzzleBool;
 	bool ActivateTurnPiecesPuzzleBool;
 
+	public GameObject endscreen;
 
 	// Use this for initialization
 	void Start () {
@@ -224,11 +225,12 @@ public class Alice2 : MonoBehaviour {
 		int numberChatHistoryFile=0;
 		String line="";
 		startTime += Time.deltaTime;
-		if(startTime>= 600){
+		if(startTime>= 360){
 			jane.text = "There's Jena and she found my Kitten, thanks for the nice conversation. Have a nice afternoon.";
 			Input1btnLabel.text = "end";
 			Input2btnLabel.text = "fin";
-			Input3btnLabel.text = "ende";		
+			Input3btnLabel.text = "ende";
+			endscreen.SetActive (true);
 		}
 
 //		if(Input1btnLabel.text.Equals("end") && !fileSaved){
