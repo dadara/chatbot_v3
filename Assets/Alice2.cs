@@ -156,13 +156,7 @@ public class Alice2 : MonoBehaviour {
 		inventory = new List<string>();
 		cacheDocument = "";
 		cacheDementedWord = "";
-
-//		inventory.Add("Pjanepigeon");
-//		inventory.Add("Pjanedocaunthelenfatherbill");
-//		inventory.Add("Pjaneparents");
-//		inventory.Add("PJanedebutante");
-//		inventory.Add("PJaneswim");
-//		inventory.Add("Pjanebeach");
+	
 		inventory.Add("PJaneNYC");
 
 		inventory.Add("PJanecatsportrait");
@@ -319,12 +313,12 @@ public class Alice2 : MonoBehaviour {
 				}
 
 //				Start puzzles
-//				if(res.user.Document.ToString().Equals ("PJanecatsportrait")){
-//					gameL.ActivateTurnCubesPuzzle();
-//				}
-//				if(res.user.Document.ToString().Equals ("PJaneportrait")){
-//					gameL.ActivateTurnPiecesPuzzle();
-//				}
+				if(res.user.Document.ToString().Equals ("Pjanebeach2")){
+					gameL.ActivateTurnCubesPuzzle2();
+				}
+				if(res.user.Document.ToString().Equals ("PJaneNYC")){
+					gameL.ActivateTurnPiecesPuzzle2();
+				}
 				Debug.Log("document added: "+res.user.Document);
 			}else{
 				Debug.Log("document already in inventory: "+res.user.Document);
