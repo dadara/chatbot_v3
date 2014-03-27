@@ -70,6 +70,8 @@ public class Alice2 : MonoBehaviour {
 	string cacheDocument;
 	string cacheDementedWord;
 
+	bool ActivateTurnCubesPuzzleBool;
+	bool ActivateTurnPiecesPuzzleBool;
 
 	// Use this for initialization
 	void Start () {
@@ -161,7 +163,6 @@ public class Alice2 : MonoBehaviour {
 //		inventory.Add("PJaneswim");
 //		inventory.Add("Pjanebeach");
 		inventory.Add("PJaneNYC");
-
 		inventory.Add("PJanecatsportrait");
 		inventory.Add("JaneCBS");
 		inventory.Add("PJaneportrait");
@@ -170,6 +171,9 @@ public class Alice2 : MonoBehaviour {
 		for(int i=0; i<inventory.Count; i++){
 			Debug.Log(inventory.ElementAt(i));
 		}
+
+		ActivateTurnCubesPuzzleBool = false;
+		ActivateTurnPiecesPuzzleBool = false;
 
 		
 	}
@@ -288,6 +292,16 @@ public class Alice2 : MonoBehaviour {
 
 		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
 			Debug.Log("Document: "+res.user.Document);
+			//				Start puzzles
+			if(!ActivateTurnCubesPuzzleBool){
+				gameL.ActivateTurnCubesPuzzle();
+				ActivateTurnCubesPuzzleBool = true;
+			}
+			if(!ActivateTurnPiecesPuzzleBool){
+				gameL.ActivateTurnPiecesPuzzle();
+				ActivateTurnPiecesPuzzleBool = true;
+			}
+			//!inventory contains
 			if(!inventory.Contains(res.user.Document)){
 				inventory.Add(res.user.Document);
 
@@ -306,13 +320,13 @@ public class Alice2 : MonoBehaviour {
 					jane.text = "Ups my passport fell out my bag, I just got it lately.";
 				}
 
-//				Start puzzles
-				if(res.user.Document.ToString().Equals ("PJanecatsportrait")){
-					gameL.ActivateTurnCubesPuzzle();
-				}
-				if(res.user.Document.ToString().Equals ("PJaneportrait")){
-					gameL.ActivateTurnPiecesPuzzle();
-				}
+////				Start puzzles
+//				if(res.user.Document.ToString().Equals ("PJanecatsportrait")){
+//					gameL.ActivateTurnCubesPuzzle();
+//				}
+//				if(res.user.Document.ToString().Equals ("PJaneportrait")){
+//					gameL.ActivateTurnPiecesPuzzle();
+//				}
 				Debug.Log("document added: "+res.user.Document);
 			}else{
 				Debug.Log("document already in inventory: "+res.user.Document);
@@ -518,7 +532,6 @@ public class Alice2 : MonoBehaviour {
 		setInputButtons();
 
 		topicChangeTime = 0;
-//		setInputButtons();
 	}
 	
 	
