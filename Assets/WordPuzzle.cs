@@ -11,6 +11,7 @@ public class WordPuzzle : MonoBehaviour {
 	public GameObject word;
 	public GameObject faultyWordObject;
 	public GameObject correctWordObject;
+	public GameObject janeMessageObject;
 
 	public ParticleSystem particles;
 
@@ -26,7 +27,7 @@ public class WordPuzzle : MonoBehaviour {
 		gameLogic = mainCamera.GetComponent<GameLogic>();
 	}
 
-	public void StartGame(string correctWord, string faultyWord)
+	public void StartGame(string janeMessage, string correctWord, string faultyWord)
 	{
 		this.correctWord = correctWord;
 		this.faultyWord = faultyWord;
@@ -34,8 +35,10 @@ public class WordPuzzle : MonoBehaviour {
 
 		int i = 0;
 
+
 		faultyWordObject.GetComponent<TextMesh>().text = faultyWord;
 		correctWordObject.GetComponent<TextMesh>().text = "";
+		janeMessageObject.GetComponent<TextMesh>().text = "Jane said: " + janeMessage + " What could she mean by " + faultyWord + "?";
 
 		foreach (Transform letter in word.transform)
 		{

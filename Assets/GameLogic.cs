@@ -53,7 +53,7 @@ public class GameLogic : MonoBehaviour {
 			ActivateTurnCubesPuzzle2();	
 		} else if(Input.GetKeyDown(KeyCode.H))
 		{
-			ActivateWordPuzzle("Kittens", "Knatens");	
+			ActivateWordPuzzle("I love Knatens!", "Kittens", "Knatens");	
 		}
 
 		transform.position = Vector3.Lerp(transform.position, cameraPos, speed*Time.deltaTime);
@@ -204,7 +204,7 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	//Starts WordPuzzle
-	public void ActivateWordPuzzle(string correctWord, string faultyWord)
+	public void ActivateWordPuzzle(string janeMessage, string correctWord, string faultyWord)
 	{
 		mainGame.SetActive(false);
 		turnPiecesPuzzle.SetActive(false);
@@ -222,7 +222,7 @@ public class GameLogic : MonoBehaviour {
 		
 		cameraPos =  new Vector3 (wordPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
 		
-		wordPuzzle.GetComponent<WordPuzzle>().StartGame(correctWord, faultyWord);
+		wordPuzzle.GetComponent<WordPuzzle>().StartGame(janeMessage, correctWord, faultyWord);
 	}
 
 	//Activates Main Game (Chat Bot)

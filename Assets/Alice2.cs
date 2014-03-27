@@ -349,7 +349,7 @@ public class Alice2 : MonoBehaviour {
 			string correctWord = correctfaulty.Substring(0,crossPlace);
 			string faultyWord = correctfaulty.Substring(crossPlace+1);
 			Debug.Log("correctWord: "+correctWord+" faulty word: "+faultyWord);
-			gameL.ActivateWordPuzzle(correctWord, faultyWord);
+			gameL.ActivateWordPuzzle(jane.text, correctWord, faultyWord);
 			dementedWords.Add (correctfaulty);
 		}
 		
