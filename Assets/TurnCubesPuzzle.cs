@@ -8,7 +8,7 @@ public class TurnCubesPuzzle : MonoBehaviour
 	private int i = 4;
 	int cnt = 0;
 
-	bool gameCompleted = false;
+	public bool gameCompleted = false;
 	bool gameActive = false;
 	bool cubeSelected = false;
 
@@ -30,7 +30,6 @@ public class TurnCubesPuzzle : MonoBehaviour
 		i = 4;
 		cnt = 0;
 		gameActive = true;
-		gameCompleted = false;
 		cubeSelected = false;
 
 		//Color selected Cube

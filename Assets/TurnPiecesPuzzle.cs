@@ -7,7 +7,7 @@ public class TurnPiecesPuzzle : MonoBehaviour
 	private int i = 0;
 	public float scrollIncrement = 10;
 
-	bool gameCompleted = false;
+	public bool gameCompleted = false;
 	bool gameActive = false;
 
 	public Color selectedColor = new Color(0.6f, 1f, 0.2f, 1f);
@@ -33,7 +33,6 @@ public class TurnPiecesPuzzle : MonoBehaviour
 
 		i = 0;
 		gameActive = true;
-		gameCompleted = false;
 	}
 	
 	// Update is called once per frame

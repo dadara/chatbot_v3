@@ -60,22 +60,26 @@ public class GameLogic : MonoBehaviour {
 	//Starts TurnPiecesPuzzle
 	public void ActivateTurnPiecesPuzzle()
 	{
-		mainGame.SetActive(false);
-		findJanePuzzle1.SetActive(false);
-		findJanePuzzle2.SetActive(false);
-		turnCubesPuzzle.SetActive(false);
-		wordPuzzle.SetActive(false);
+		if(!turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().gameCompleted)
+		{
 
-		turnPiecesPuzzle.SetActive(true);
-		puzzleInstructions.SetActive(true);
+			mainGame.SetActive(false);
+			findJanePuzzle1.SetActive(false);
+			findJanePuzzle2.SetActive(false);
+			turnCubesPuzzle.SetActive(false);
+			wordPuzzle.SetActive(false);
 
-		instructionLabel1.GetComponent<UILabel>().text = "Use Up/Down arrow keys to switch pieces";
-		instructionLabel2.GetComponent<UILabel>().text = "Use Left/Right arrow keys or scroll to rotate selected piece";
+			turnPiecesPuzzle.SetActive(true);
+			puzzleInstructions.SetActive(true);
 
-		//this.transform.position =  new Vector3 (turnPiecesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
-		cameraPos = new Vector3 (turnPiecesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
+			instructionLabel1.GetComponent<UILabel>().text = "Use Up/Down arrow keys to switch pieces";
+			instructionLabel2.GetComponent<UILabel>().text = "Use Left/Right arrow keys or scroll to rotate selected piece";
 
-		turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().StartGame();
+			//this.transform.position =  new Vector3 (turnPiecesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
+			cameraPos = new Vector3 (turnPiecesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
+
+			turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().StartGame();
+		}
 	}
 
 	//Starts FindJanePuzzle1
@@ -121,21 +125,24 @@ public class GameLogic : MonoBehaviour {
 	//Starts TurnCubesPuzzle
 	public void ActivateTurnCubesPuzzle()
 	{
-		mainGame.SetActive(false);
-		turnPiecesPuzzle.SetActive(false);
-		findJanePuzzle1.SetActive(false);
-		findJanePuzzle2.SetActive(false);
-		wordPuzzle.SetActive(false);
+		if(!turnCubesPuzzle.GetComponent<TurnCubesPuzzle>().gameCompleted)
+		{
+			mainGame.SetActive(false);
+			turnPiecesPuzzle.SetActive(false);
+			findJanePuzzle1.SetActive(false);
+			findJanePuzzle2.SetActive(false);
+			wordPuzzle.SetActive(false);
 
-		turnCubesPuzzle.SetActive(true);
-		puzzleInstructions.SetActive(true);
-		
-		instructionLabel1.GetComponent<UILabel>().text = "Use arrow keys to switch cubes, use Space to select/unselect";
-		instructionLabel2.GetComponent<UILabel>().text = "Once selected, use arrow keys to turn cube";
-		
-		cameraPos =  new Vector3 (turnCubesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
-		
-		turnCubesPuzzle.GetComponent<TurnCubesPuzzle>().StartGame();
+			turnCubesPuzzle.SetActive(true);
+			puzzleInstructions.SetActive(true);
+			
+			instructionLabel1.GetComponent<UILabel>().text = "Use arrow keys to switch cubes, use Space to select/unselect";
+			instructionLabel2.GetComponent<UILabel>().text = "Once selected, use arrow keys to turn cube";
+			
+			cameraPos =  new Vector3 (turnCubesPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
+			
+			turnCubesPuzzle.GetComponent<TurnCubesPuzzle>().StartGame();
+		}
 	}
 
 	//Starts WordPuzzle
