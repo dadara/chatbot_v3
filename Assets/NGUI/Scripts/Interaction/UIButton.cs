@@ -22,6 +22,12 @@ public class UIButton : UIButtonColor
 		else UpdateColor(false, true);
 	}
 
+
+	void OnClick ()
+	{
+		GameObject startscreen = GameObject.Find("Startscreen");
+		startscreen.SetActive(false);
+	}
 	/// <summary>
 	/// Whether the button should be enabled.
 	/// </summary>

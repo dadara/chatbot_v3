@@ -170,10 +170,12 @@ public class Alice2 : MonoBehaviour {
 
 		ActivateTurnCubesPuzzleBool=false;
 		ActivateTurnPiecesPuzzleBool=false;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 	
 //		Debug.Log("posKEyOrig at 0: "+posKeyOrig.ElementAt(0));
 //		if(inventory.Count>0){
