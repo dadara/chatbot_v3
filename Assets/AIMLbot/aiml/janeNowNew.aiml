@@ -65,7 +65,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>PDAISY2</pattern>
-<template><think><set name="DementedWord">cat#c...ct</set></think><think><set name="topic">NOW</set></think>That was my c...ct in collegge.</template>
+<template><think><set name="topic">NOW</set></think>That was my c...ct in collegge.</template>
 </category>
 
 
@@ -74,7 +74,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>PJANECATSPORTRAIT 1</pattern>
-<template><think><set name="DementedWord">cat#c.. tigers</set></think><think><set name="topic">NOW</set></think>Oh I remember Giselda and Venus my c.. tigers.</template>
+<template><think><set name="topic">NOW</set></think>Oh I remember Giselda and Venus my c.. tigers.</template>
 </category>
 
 
@@ -114,7 +114,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>BIRTHPLACE</pattern>
-<template><think><set name="document">PJanemaryland beach</set></think><think><set name="DementedWord">worked#wo...wor..</set></think>I am born in Columbia distract, Watertone D.C. My parents were very happy that it finally wo...wor.. happened.</template>
+<template><think><set name="document">PJanemaryland beach</set></think>I am born in Columbia distract, Watertone D.C. My parents were very happy that it finally wo...wor.. happened.</template>
 </category>
 
 
@@ -214,7 +214,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>COLLEGE</pattern>
-<template><think><set name="document">PJaneNYC</set></think><think><set name="DementedWord">history#hi..hisssss...</set></think>I went to University of Wisconsin in Madison.I studied hi..hisssss... the past.</template>
+<template><think><set name="document">PJaneNYC</set></think>I went to University of Wisconsin in Madison.I studied hi..hisssss... the past.</template>
 </category>
 
 <category><pattern>COURSE OF STUDIES</pattern>
@@ -270,7 +270,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>HENRY LUCE</pattern>
-<template><think><set name="document">PJanecatsportrait</set></think><think><set name="DementedWord">published#piblushed</set></think>He was a very good business man. His March of Time newsreels created a sensation and won an Academy Award. He also piblushed magazines – Time, Fortune, Life, and Sports Illustrated.</template>
+<template><think><set name="document">PJanecatsportrait</set></think>He was a very good business man. His March of Time newsreels created a sensation and won an Academy Award. He also piblushed magazines – Time, Fortune, Life, and Sports Illustrated.</template>
 </category>
 
 <category><pattern>WHAT RESEARCH</pattern>
@@ -296,7 +296,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>PETS MARCH OF TIME</pattern>
-<template><think><set name="document">Pdaisy2</set></think><think><set name="DementedWord">cats#c..c..</set></think>I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
+<template><think><set name="document">Pdaisy2</set></think>I had two c..c.. Kittens. One day calleoge at work asked if I could take them for two weeks, but they stayed.</template>
 </category>
 
 <category><pattern>SALARY MARCH OF TIME</pattern>
@@ -383,7 +383,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 
 
 <category><pattern>THIRD JOB</pattern>
-<template><think><set name="document">PJaneportrait</set></think><think><set name="DementedWord">televised#tvsised</set></think>I worked in Trieste for the Foreign Service in 19....when The Tournament of Roses Parade becomes the first event tvsised nationally in color.</template>
+<template><think><set name="DementedWord">televised#tvsised</set></think>I worked in Trieste for the Foreign Service in 19....when The Tournament of Roses Parade becomes the first event tvsised nationally in color.</template>
 </category>
 
 <category><pattern>WORKED ABROAD</pattern>
@@ -430,7 +430,7 @@ hink><set name="document">PJanecatsportait</set></think>-->
 </category>
 
 <category><pattern>FOURTH JOB</pattern>
-<template><think><set name="document">PJanepassport</set></think><think><set name="DementedWord">magazine#book</set></think>My last job was at the New Yorker book. I worked there as a writer.</template>
+<template><think><set name="document">PJanepassport</set></think>My last job was at the New Yorker book. I worked there as a writer.</template>
 </category>
 
 

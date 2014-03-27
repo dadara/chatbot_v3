@@ -156,13 +156,7 @@ public class Alice2 : MonoBehaviour {
 		inventory = new List<string>();
 		cacheDocument = "";
 		cacheDementedWord = "";
-
-//		inventory.Add("Pjanepigeon");
-//		inventory.Add("Pjanedocaunthelenfatherbill");
-//		inventory.Add("Pjaneparents");
-//		inventory.Add("PJanedebutante");
-//		inventory.Add("PJaneswim");
-//		inventory.Add("Pjanebeach");
+	
 		inventory.Add("PJaneNYC");
 
 		inventory.Add("PJanecatsportrait");
@@ -210,9 +204,15 @@ public class Alice2 : MonoBehaviour {
 			cnt++;
 
 			chatHistoryString = inputBot + Environment.NewLine + outputBot +Environment.NewLine + chatHistoryString;
-//			if(chatHistory.Length > ){}
+			if(chatHistoryString.Length > 17000){
+				Debug.Log("chatHistoryString too long");
+				chatHistoryString = chatHistoryString.Substring(0,17000);
+				int end = chatHistoryString.LastIndexOf(Environment.NewLine);
+				chatHistoryString = chatHistoryString.Substring(0,end);
+			}
 			chatHistoryPanel.GetComponent<UIDraggablePanel>().ResetPosition();
 			chatHistoryLabel.text = chatHistoryString;
+
 
 			setInputButtons();
 		}
@@ -312,27 +312,29 @@ public class Alice2 : MonoBehaviour {
 					jane.text = "Ups my passport fell out my bag, I just got it lately.";
 				}
 
-//				Start puzzles
-//				if(res.user.Document.ToString().Equals ("PJanecatsportrait")){
-//					gameL.ActivateTurnCubesPuzzle();
-//				}
-//				if(res.user.Document.ToString().Equals ("PJaneportrait")){
-//					gameL.ActivateTurnPiecesPuzzle();
-//				}
+
 				Debug.Log("document added: "+res.user.Document);
 			}else{
 				Debug.Log("document already in inventory: "+res.user.Document);
-				if(res.user.Document.ToString().Equals ("PJanecatsportrait") && !ActivateTurnCubesPuzzleBool){
-					gameL.ActivateTurnCubesPuzzle();
-					ActivateTurnCubesPuzzleBool = true;
-				}
-				if(res.user.Document.ToString().Equals ("PJaneportrait") && !ActivateTurnPiecesPuzzleBool){
-					gameL.ActivateTurnPiecesPuzzle();
-					ActivateTurnPiecesPuzzleBool =true;
-				}
+
 			}
 
-		
+			//				Start puzzles
+			if(res.user.Document.ToString().Equals ("Pjanebeach2")){
+				gameL.ActivateTurnCubesPuzzle2();
+			}
+			if(res.user.Document.ToString().Equals ("PJaneNYC")){
+				gameL.ActivateTurnPiecesPuzzle2();
+			}
+			if(res.user.Document.ToString().Equals ("PJanecatsportrait") && !ActivateTurnCubesPuzzleBool){
+				gameL.ActivateTurnCubesPuzzle();
+				ActivateTurnCubesPuzzleBool = true;
+			}
+			if(res.user.Document.ToString().Equals ("PJaneportrait") && !ActivateTurnPiecesPuzzleBool){
+				gameL.ActivateTurnPiecesPuzzle();
+				ActivateTurnPiecesPuzzleBool =true;
+			}
+
 			cacheDocument = res.user.Document;
 
 		}
