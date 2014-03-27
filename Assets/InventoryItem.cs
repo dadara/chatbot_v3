@@ -4,7 +4,7 @@ using System.Collections;
 public class InventoryItem : MonoBehaviour {
 
 	GameObject inventoryLargeCloseButton;
-	GameObject inventoryLargeScanButton;
+	//GameObject inventoryLargeScanButton;
 	GameObject label;
 	GameObject background;
 	GameObject document;
@@ -35,17 +35,17 @@ public class InventoryItem : MonoBehaviour {
 		if (isPressed)
 		{
 			inventoryLargeCloseButton = uiLogic.inventoryLargeCloseButton;
-			inventoryLargeScanButton = uiLogic.inventoryLargeScanButton;
+			//inventoryLargeScanButton = uiLogic.inventoryLargeScanButton;
 
 
 			if(document != null)
 			{
 				uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
-				inventoryLargeScanButton.SetActive(true);
+				//inventoryLargeScanButton.SetActive(true);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
 			} else 
 			{
-				inventoryLargeScanButton.SetActive(false);
+				//inventoryLargeScanButton.SetActive(false);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
 			}
 		}
