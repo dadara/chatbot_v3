@@ -210,9 +210,15 @@ public class Alice2 : MonoBehaviour {
 			cnt++;
 
 			chatHistoryString = inputBot + Environment.NewLine + outputBot +Environment.NewLine + chatHistoryString;
-//			if(chatHistory.Length > ){}
+			if(chatHistoryString.Length > 17000){
+				Debug.Log("chatHistoryString too long");
+				chatHistoryString = chatHistoryString.Substring(0,17000);
+				int end = chatHistoryString.LastIndexOf(Environment.NewLine);
+				chatHistoryString = chatHistoryString.Substring(0,end);
+			}
 			chatHistoryPanel.GetComponent<UIDraggablePanel>().ResetPosition();
 			chatHistoryLabel.text = chatHistoryString;
+
 
 			setInputButtons();
 		}
