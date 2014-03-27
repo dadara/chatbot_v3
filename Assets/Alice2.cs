@@ -294,9 +294,11 @@ public class Alice2 : MonoBehaviour {
 			Debug.Log("Document: "+res.user.Document);
 			if(!ActivateTurnCubesPuzzleBool){
 				gameL.ActivateTurnCubesPuzzle();
+				ActivateTurnCubesPuzzleBool=true;
 			}
 			if(!ActivateTurnPiecesPuzzleBool){
 				gameL.ActivateTurnPiecesPuzzle();
+				ActivateTurnPiecesPuzzleBool=true;
 			}
 		
 			if(!inventory.Contains(res.user.Document)){
