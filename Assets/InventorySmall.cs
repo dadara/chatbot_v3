@@ -30,6 +30,7 @@ public class InventorySmall : MonoBehaviour {
 
 		posDoc2 = new Vector3();
 		posDoc2 = document2.transform.position;
+		pos = document2.transform.position;
 //		pos = new Vector3(0.3f,0.5f,0);
 //		document2.transform.position = pos;
 //		spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
@@ -83,20 +84,18 @@ public class InventorySmall : MonoBehaviour {
 			float speed = 0.03f;
 
 			Debug.Log ("posdoc2: "+posDoc2+" posAct: "+posAct);
-//			document2.transform.position = Vector3.MoveTowards(posAct, posDoc2, speed);
 
 
 //			if(posAct==posDoc2){
-////				Debug.Log ("posDoc2: "+posDoc2+" posAct : "+posAct );
-//				pos = new Vector3(0.3f,0.5f,0);
-//
-//				if(!spritename.Equals(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName)){
-//					spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
-//					document2.transform.position = pos;
-//
-//					Debug.Log (cnt+" document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
-//				}
-//
+
+				pos = document2.transform.position;
+
+				
+				if(!spritename.Equals(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName)){
+					spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
+					document2.transform.position = pos;
+				}
+
 //			}
 				
 
