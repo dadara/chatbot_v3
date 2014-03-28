@@ -1,17 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\NGUI\Scripts\Interaction\UIButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\InventorySmall.cs">
     <Files>
+      <File FileName="..\WordPuzzle.cs" Line="30" Column="23" />
       <File FileName="..\..\chatbot_v3.sln" Line="1" Column="1" />
-      <File FileName="..\Alice2.cs" Line="228" Column="20" />
-      <File FileName="..\Alice2.cs" Line="228" Column="20" />
-      <File FileName="aiml\janeNowNew.aiml" Line="1" Column="1" />
+      <File FileName="..\Alice2.cs" Line="288" Column="51" />
+      <File FileName="aiml\janeNowNew.aiml" Line="91" Column="11" />
       <File FileName="aiml\janeNewYorker.aiml" Line="1" Column="1" />
       <File FileName="aiml\janeMOT.aiml" Line="1" Column="1" />
       <File FileName="aiml\janeDiplomat.aiml" Line="1" Column="1" />
       <File FileName="aiml\janeCBS.aiml" Line="1" Column="1" />
       <File FileName="Utils\AIMLLoader.cs" Line="1" Column="1" />
-      <File FileName="..\NGUI\Scripts\Interaction\UIButton.cs" Line="30" Column="3" />
+      <File FileName="..\NGUI\Scripts\Interaction\UIButton.cs" Line="1" Column="1" />
+      <File FileName="..\LetterMovement.cs" Line="1" Column="1" />
+      <File FileName="..\InventorySmall.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
