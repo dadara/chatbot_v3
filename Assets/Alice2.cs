@@ -352,8 +352,8 @@ public class Alice2 : MonoBehaviour {
 			int crossPlace = correctfaulty.IndexOf("#");
 			string correctWord = correctfaulty.Substring(0,crossPlace);
 			string faultyWord = correctfaulty.Substring(crossPlace+1);
-			Debug.Log("correctWord: "+correctWord+" faulty word: "+faultyWord);
-			gameL.ActivateWordPuzzle(jane.text, correctWord, faultyWord);
+			Debug.Log("correctWord: "+correctWord+" faulty word: "+faultyWord+" jane.text: "+res.Output);
+			gameL.ActivateWordPuzzle(res.Output, correctWord, faultyWord);
 			dementedWords.Add (correctfaulty);
 		}
 		
