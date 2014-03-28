@@ -15,7 +15,7 @@ public class InventorySmall : MonoBehaviour {
 	List<string> inventory;
 
 	Vector3 pos;
-	Vector3 posDoc2;
+//	Vector3 posDoc2;
 	string spritename;
 	int cnt;
 
@@ -28,8 +28,8 @@ public class InventorySmall : MonoBehaviour {
 		document1.SetActive(false);
 		document2.SetActive(false);
 
-		posDoc2 = new Vector3();
-		posDoc2 = document2.transform.position;
+//		posDoc2 = new Vector3();
+//		posDoc2 = document2.transform.position;
 		pos = document2.transform.position;
 //		pos = new Vector3(0.3f,0.5f,0);
 //		document2.transform.position = pos;
@@ -75,34 +75,27 @@ public class InventorySmall : MonoBehaviour {
 			//Change Second Item
 
 			document2.SetActive(true);
-			Debug.Log ("1: "+cnt+" document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
-			Debug.Log ("1: "+cnt+" document2.sprite.name : "+document2.transform.position);
+//			Debug.Log ("1: "+cnt+" document2.sprite.name : "+document2.transform.GetChild(2).GetComponent<UISprite>().spriteName );
+//			Debug.Log ("1: "+cnt+" document2.sprite.name : "+document2.transform.position);
 
 			Vector3 posAct = new Vector3();
 		
-			posAct = document2.transform.position;
-			float speed = 0.03f;
-
-			Debug.Log ("posdoc2: "+posDoc2+" posAct: "+posAct);
-
-
+//			posAct = document2.transform.position;
+//			float speed = 0.03f;
+//			Debug.Log ("posdoc2: "+posDoc2+" posAct: "+posAct);
+		
 //			if(posAct==posDoc2){
 
-				pos = document2.transform.position;
+			pos = document2.transform.position;
 
-				
-				if(!spritename.Equals(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName)){
-					spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
-					document2.transform.position = pos;
-				}
+			
+			if(!spritename.Equals(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName)){
+				spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
+				document2.transform.position = pos;
+			}
 
 //			}
 				
-
-
-
-
-
 			foreach(Transform child in document2.transform)
 			{
 				if(child.name == "Sprite")

@@ -285,7 +285,7 @@ public class Alice2 : MonoBehaviour {
 			GameObject timeshiftPanel = GameObject.Find("TimeshiftPanel");
 			Timeshift ts = timeshiftPanel.GetComponent<Timeshift>();
 			Debug.Log ("Topic: "+topicSet);
-			if(!topicSet.Equals("NOW")){
+			if(!topicSet.Equals("NOW")||!topicSet.Equals("*")){
 				ts.ActivateTimeShift(true);
 			}else{
 				ts.ActivateTimeShift(false);
