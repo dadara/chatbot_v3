@@ -5,7 +5,7 @@ public class UILogic : MonoBehaviour {
 	
 	private bool inventoryIsActive = false;
 	private bool phoneIsActive = false;
-	//private bool scanIsActive = false;
+	private bool scanIsActive = false;
 
 	//Inventory Elements
 	public GameObject inventoryLargeCloseButton;
@@ -15,8 +15,10 @@ public class UILogic : MonoBehaviour {
 	GameObject inventoryLargeButtonPanel;
 	GameObject inventorySmallContainer;
 
-	//Scan
-	//GameObject scanPanel;
+	//Scan/Image Panel
+	GameObject scanPanel;
+	GameObject imageView;
+	public GameObject inventoryLargeViewImageButton;
 
 	//Phone
 	GameObject inventoryViewAllButton;
@@ -45,7 +47,9 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeButtonPanel = GameObject.Find("InventoryLargeButtonPanel");
 		inventorySmallContainer = GameObject.Find("InventorySmallContainer");
 
-		//scanPanel = GameObject.Find("ScanPanel");
+		inventoryLargeViewImageButton = GameObject.Find("InventoryLargeViewImageButton");
+		scanPanel = GameObject.Find("ScanPanel");
+		imageView = GameObject.Find("ImageView");
 
 		inventoryViewAllButton = GameObject.Find("InventoryViewAllButton");
 
@@ -61,8 +65,9 @@ public class UILogic : MonoBehaviour {
 		inventoryLargePanel.SetActive(false);
 		inventoryLargePanelItems.SetActive(false);
 		inventoryLargeButtonPanel.SetActive(false);
+		inventoryLargeViewImageButton.SetActive(false);
 		inventoryLargeCancelButton.SetActive(false);
-		//scanPanel.SetActive(false);
+		scanPanel.SetActive(false);
 		phoneInfoPanel.SetActive(false);
 	}
 	
@@ -82,13 +87,12 @@ public class UILogic : MonoBehaviour {
 			return phoneIsActive;
 		}
 	}
-
-	/*
+	
 	public bool ScanIsActive {
 		get {
 			return scanIsActive;
 		}
-	}*/
+	}
 
 	public void SetPhoneIsActive(bool active)
 	{
@@ -202,7 +206,7 @@ public class UILogic : MonoBehaviour {
 		}
 	}
 
-	/*
+
 	public void SetScanIsActive(bool active)
 	{
 		scanIsActive = active;
@@ -210,12 +214,14 @@ public class UILogic : MonoBehaviour {
 		if(scanIsActive)
 		{
 			scanPanel.SetActive(active);
+			imageView.GetComponent<UISlicedSprite>().spriteName = lastSelectedSprite.spriteName;
 		} else 
 		{
 			scanPanel.SetActive(active);
-			inventoryLargeScanButton.SetActive(active);
-			lastSelectedSprite.color = Color.white;
-			inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
+			//inventoryLargeViewImageButton.SetActive(active);
+			//inventoryLargeCancelButton.SetActive(active);
+			//lastSelectedSprite.color = Color.white;
+			//inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
 		}
-	}*/
+	}
 }

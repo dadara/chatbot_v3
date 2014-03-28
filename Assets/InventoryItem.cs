@@ -5,6 +5,7 @@ public class InventoryItem : MonoBehaviour {
 
 	GameObject inventoryLargeCloseButton;
 	GameObject inventoryLargeCancelButton;
+	GameObject inventoryLargeViewImageButton;
 	GameObject label;
 	GameObject background;
 	GameObject document;
@@ -36,15 +37,17 @@ public class InventoryItem : MonoBehaviour {
 		{
 			inventoryLargeCloseButton = uiLogic.inventoryLargeCloseButton;
 			inventoryLargeCancelButton = uiLogic.inventoryLargeCancelButton;
-
+			inventoryLargeViewImageButton = uiLogic.inventoryLargeViewImageButton;
 
 			if(document != null)
 			{
 				uiLogic.selectItemInInventory(document.GetComponent<UISprite>());
 				inventoryLargeCancelButton.SetActive(true);
+				inventoryLargeViewImageButton.SetActive(true);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Show Jane";
 			} else 
 			{
+				inventoryLargeViewImageButton.SetActive(false);
 				inventoryLargeCancelButton.SetActive(false);
 				inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text = "Close";
 			}

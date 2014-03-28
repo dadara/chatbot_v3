@@ -51,7 +51,10 @@ public class UIButtonInput : MonoBehaviour {
 				uiLogic.SetInventoryIsActive(false);
 			} else if(this.name == "ScanPanelCloseButton")
 			{
-				//uiLogic.SetScanIsActive(false);
+				uiLogic.SetScanIsActive(false);
+			} if(this.name == "InventoryLargeViewImageButton")
+			{
+				uiLogic.SetScanIsActive(true);
 			}
 		}
 	}
