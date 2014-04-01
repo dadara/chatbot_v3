@@ -187,10 +187,10 @@ public class Alice2 : MonoBehaviour {
 
 		topicChangeTime += Time.deltaTime;
 		
-		if(topicChangeTime>=30){
-			ChangeTopic();
-			topicChangeTime=0;
-		}
+//		if(topicChangeTime>=30){
+//			ChangeTopic();
+//			topicChangeTime=0;
+//		}
 		
 		//		1) bot answers to keywords
 
@@ -284,12 +284,12 @@ public class Alice2 : MonoBehaviour {
 			topicSet = res.user.Topic;
 			GameObject timeshiftPanel = GameObject.Find("TimeshiftPanel");
 			Timeshift ts = timeshiftPanel.GetComponent<Timeshift>();
-			Debug.Log ("Topic: "+topicSet);
-			if(!topicSet.Equals("NOW")||!topicSet.Equals("*")){
-				ts.ActivateTimeShift(true);
-			}else{
+			if(topicSet.Contains("NOW") || topicSet.Contains("*")){
 				ts.ActivateTimeShift(false);
+			}else{
+				ts.ActivateTimeShift(true);
 			}
+
 			Debug.Log("topic in getOutput: "+topicSet);
 		}
 
@@ -297,7 +297,6 @@ public class Alice2 : MonoBehaviour {
 		GameLogic gameL = MainCamera.GetComponent<GameLogic>();
 
 		if(res.user.Document!=null && !res.user.Document.Equals(cacheDocument)){
-			Debug.Log("Document: "+res.user.Document);
 		
 			if(!inventory.Contains(res.user.Document)){
 				inventory.Add(res.user.Document);
@@ -325,11 +324,11 @@ public class Alice2 : MonoBehaviour {
 			}
 
 			//				Start puzzles
-			if(res.user.Document.ToString().Equals ("Pjanebeach2")){
-				gameL.ActivateTurnCubesPuzzle2();
+			if(res.user.Document.ToString().Equals ("PJanebeach2")){
+				gameL.ActivateTurnPiecesPuzzle2();
 			}
 			if(res.user.Document.ToString().Equals ("PJaneNYC")){
-				gameL.ActivateTurnPiecesPuzzle2();
+				gameL.ActivateTurnCubesPuzzle2();
 			}
 			if(res.user.Document.ToString().Equals ("PJanecatsportrait") && !ActivateTurnCubesPuzzleBool){
 				gameL.ActivateTurnCubesPuzzle();
