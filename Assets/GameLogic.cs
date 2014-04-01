@@ -88,6 +88,7 @@ public class GameLogic : MonoBehaviour {
 			gameWaitingForActivation = "ActivateTurnPiecesPuzzle";
 		} else 
 		{
+			gameIsWaitingForActivation = false;
 
 			if(!turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().gameCompleted)
 			{
@@ -124,6 +125,7 @@ public class GameLogic : MonoBehaviour {
 			gameWaitingForActivation = "ActivateTurnPiecesPuzzle2";
 		} else 
 		{
+			gameIsWaitingForActivation = false;
 
 			if(!turnPiecesPuzzle2.GetComponent<TurnPiecesPuzzle>().gameCompleted)
 			{
@@ -202,6 +204,7 @@ public class GameLogic : MonoBehaviour {
 			gameWaitingForActivation = "ActivateTurnCubesPuzzle";
 		} else 
 		{
+			gameIsWaitingForActivation = false;
 
 			if(!turnCubesPuzzle.GetComponent<TurnCubesPuzzle>().gameCompleted)
 			{
@@ -237,6 +240,8 @@ public class GameLogic : MonoBehaviour {
 
 		} else 
 		{
+			gameIsWaitingForActivation = false;
+
 			if(!turnCubesPuzzle2.GetComponent<TurnCubesPuzzle>().gameCompleted)
 			{
 				mainGame.SetActive(false);
