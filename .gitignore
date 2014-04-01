@@ -1,0 +1,22 @@
+# Unity3D .gitignore file.
+# Store this file at the root of your local repository.
+.DS_Store
+Temp
+Library/metadata/*
+Library/ScriptAssemblies/*
+Library/ScriptAssemblies/CompilationCompleted.txt
+Assets/AIMLbot/aiml/cache/*
+chatbot_v2.userprefs
+chatbot_v3.userprefs
+*.csproj
+*.pidb
+*.sln
+*.meta
+*.dll
+chatbot_v3_Data/*
+Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+Library/ScriptAssemblies/Assembly-CSharp.dll
+Library/ScriptAssemblies/Assembly-CSharp.dll
+Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
