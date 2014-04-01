@@ -28,7 +28,10 @@ public class TurnPiecesPuzzle : MonoBehaviour
 		//Randomize Rotations
 		foreach(GameObject p in parts)
 		{
-			p.transform.transform.Rotate(Vector3.down * (Random.Range(-10, 10)*scrollIncrement));
+			if(!p.Equals(parts[0]))
+			{
+				p.transform.transform.Rotate(Vector3.down * (Random.Range(-15, 15)*scrollIncrement));
+			}
 		}
 
 		i = 0;
