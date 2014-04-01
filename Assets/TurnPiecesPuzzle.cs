@@ -49,11 +49,17 @@ public class TurnPiecesPuzzle : MonoBehaviour
 
 				if(Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetKeyDown ("left"))
 				{
-					parts[i].transform.Rotate(Vector3.down * scrollIncrement);
+					if(i>0)	
+					{
+						parts[i].transform.Rotate(Vector3.down * scrollIncrement);
+					}
 
 				} else if( Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKeyDown ("right"))
 				{
-					parts[i].transform.Rotate(Vector3.up * scrollIncrement);
+					if(i>0)
+					{
+						parts[i].transform.Rotate(Vector3.up * scrollIncrement);
+					}
 
 				} else if(Input.GetKeyDown ("up"))
 				{
