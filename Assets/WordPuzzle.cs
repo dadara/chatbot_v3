@@ -38,7 +38,7 @@ public class WordPuzzle : MonoBehaviour {
 
 		faultyWordObject.GetComponent<TextMesh>().text = faultyWord;
 		correctWordObject.GetComponent<TextMesh>().text = "";
-		janeMessageObject.GetComponent<TextMesh>().text = "Jane said: " + janeMessage + " What could she mean by " + faultyWord + "?";
+		janeMessageObject.GetComponent<TextMesh>().text = janeMessage + " What could she mean by " + faultyWord + "?";
 
 		foreach (Transform letter in word.transform)
 		{
