@@ -29,11 +29,11 @@ public class UIButtonInput : MonoBehaviour {
 //				Debug.Log ("Input: "+this.GetComponentInChildren<UILabel>().text);
 			} else if(this.name == "InventoryViewAllButton")
 			{
-				uiLogic.SetInventoryIsActive(true);
+				uiLogic.SetInventoryIsActive(true, false);
 				//this.gameObject.SetActive(false);
 			} else if(this.name == "InventoryLargeCloseButton")
 			{
-				uiLogic.SetInventoryIsActive(false);
+				uiLogic.SetInventoryIsActive(false, true);
 			} else if(this.name == "PhoneSprite")
 			{
 				if(uiLogic.PhoneIsActive)
@@ -48,7 +48,7 @@ public class UIButtonInput : MonoBehaviour {
 				uiLogic.SetPhoneIsActive(false);
 			} else if(this.name == "InventoryLargeCancelButton")
 			{
-				uiLogic.SetInventoryIsActive(false);
+				uiLogic.SetInventoryIsActive(false, false);
 			} else if(this.name == "ScanPanelCloseButton")
 			{
 				uiLogic.SetScanIsActive(false);

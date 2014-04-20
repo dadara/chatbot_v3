@@ -187,10 +187,11 @@ public class Alice2 : MonoBehaviour {
 
 		topicChangeTime += Time.deltaTime;
 		
-//		if(topicChangeTime>=30){
-//			ChangeTopic();
-//			topicChangeTime=0;
-//		}
+		if(topicChangeTime>=30){
+			ChangeTopic();
+			topicChangeTime=0;
+			Debug.Log("topicChangeTime=0");
+		}
 		
 		//		1) bot answers to keywords
 
@@ -286,8 +287,14 @@ public class Alice2 : MonoBehaviour {
 			Timeshift ts = timeshiftPanel.GetComponent<Timeshift>();
 			if(topicSet.Contains("NOW") || topicSet.Contains("*")){
 				ts.ActivateTimeShift(false);
+				topicChangeTime=0;
+				Debug.Log("topicChangeTime=0");
+
 			}else{
 				ts.ActivateTimeShift(true);
+				topicChangeTime=0;
+				Debug.Log("topicChangeTime=0");
+
 			}
 
 			Debug.Log("topic in getOutput: "+topicSet);
@@ -303,23 +310,23 @@ public class Alice2 : MonoBehaviour {
 
 
 				if(topicSet.Contains("MARCHOFTIME")){
-					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+//					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
 					jane.text = "Oh see that's a picture of me it was made last month at work.";
 				}else if(topicSet.Contains("CBS")){
-					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+//					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
 					jane.text = "My ID card fell out, I need it to get to work.";
 				}else if(topicSet.Contains("DIPLOMAT")){
-					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+//					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
 					jane.text = "Oh see, that photo was taken last week in my flat.";
 				}else if(topicSet.Contains("NEWYORKER")){
-					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
+//					Debug.Log("HERE   TOPICCHANGE topicChooser: "+topicSet);
 					jane.text = "Ups my passport fell out my bag, I just got it lately.";
 				}
 
 
-				Debug.Log("document added: "+res.user.Document);
+//				Debug.Log("document added: "+res.user.Document);
 			}else{
-				Debug.Log("document already in inventory: "+res.user.Document);
+//				Debug.Log("document already in inventory: "+res.user.Document);
 
 			}
 

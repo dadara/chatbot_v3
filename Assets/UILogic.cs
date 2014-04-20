@@ -125,7 +125,7 @@ public class UILogic : MonoBehaviour {
 		}
 	}
 
-	public void SetInventoryIsActive(bool active)
+	public void SetInventoryIsActive(bool active, bool show)
 	{
 		inventoryIsActive = active;
 
@@ -142,7 +142,7 @@ public class UILogic : MonoBehaviour {
 			}
 
 			//Show Jane Item
-			if(inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text == "Show Jane")	
+			if(inventoryLargeCloseButton.GetComponentInChildren<UILabel>().text == "Show Jane" && show)	
 			{
 				showJaneLastSelectedInventoryItem();
 			}
