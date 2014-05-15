@@ -27,6 +27,7 @@ public class UILogic : MonoBehaviour {
 	GameObject phoneInfoPanel;
 	GameObject phoneInfo1;
 	Vector3 phonePosition;
+	GameObject phoneInfoScrollbar;
 
 	//Input Buttons
 	GameObject Input1btn;
@@ -57,6 +58,7 @@ public class UILogic : MonoBehaviour {
 		phoneSprite = GameObject.Find("PhoneSprite");
 		phoneInfoPanel = GameObject.Find("PhoneInfoPanel");
 		phoneInfo1 = GameObject.Find("PhoneInfo1");
+		phoneInfoScrollbar = GameObject.Find("PhoneInfoScrollbar");
 
 		Input1btn = GameObject.Find("Input1Button");
 		Input2btn = GameObject.Find("Input2Button");
@@ -67,8 +69,8 @@ public class UILogic : MonoBehaviour {
 		inventoryLargeButtonPanel.SetActive(false);
 		inventoryLargeViewImageButton.SetActive(false);
 		inventoryLargeCancelButton.SetActive(false);
-		scanPanel.SetActive(false);
 		phoneInfoPanel.SetActive(false);
+		scanPanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -98,16 +100,14 @@ public class UILogic : MonoBehaviour {
 	{
 		phoneIsActive = active;
 
-		//phoneCloseButton.SetActive(active);
-		//inventoryLargeBackgroundDark.SetActive(active);
 
 		//Enable/Disable Phone and InventoryViewAllButton
-		//phone.GetComponent<BoxCollider>().enabled = !active;
 		inventoryViewAllButton.GetComponent<BoxCollider>().enabled = !active;
 		inventorySmallContainer.SetActive(!active);
 		phoneInfoPanel.SetActive(active);
 		phoneInfo1.SetActive(!active);
-		
+		phoneInfoScrollbar.GetComponent<UIScrollBar>().scrollValue = 0;
+
 		//Enable/Disable InputButtons
 		//Input1btn.GetComponent<BoxCollider>().enabled = !active;
 		//Input2btn.GetComponent<BoxCollider>().enabled = !active;

@@ -89,8 +89,8 @@ public class InventorySmall : MonoBehaviour {
 			pos = document2.transform.position;
 
 			
-			if(!spritename.Equals(document2.transform.GetChild(2).GetComponent<UISprite>().spriteName)){
-				spritename = document2.transform.GetChild(2).GetComponent<UISprite>().spriteName;
+			if(!spritename.Equals(document2.transform.GetChild(1).GetComponent<UISprite>().spriteName)){
+				spritename = document2.transform.GetChild(1).GetComponent<UISprite>().spriteName;
 				document2.transform.position = pos;
 			}
 

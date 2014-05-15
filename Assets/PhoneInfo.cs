@@ -18,7 +18,7 @@ public class PhoneInfo : MonoBehaviour {
 	{
 		if(alice2.topicSet == "")
 		{
-			this.transform.GetComponent<UILabel>().text = "Not Available";
+			this.transform.GetComponent<UILabel>().text = "This is your phone. It will display additional information about the current topic of conversation.";
 		} else if(alice2.topicSet == "MARCHOFTIME")
 		{
 			this.transform.GetComponent<UILabel>().text = "THE MARCH OF TIME:" + "\n" + "\n" + "The March of Time is an American radio news series broadcast from 1931 to 1945, and a companion newsreel series shown in movie theaters from 1935 to 1951. Created by broadcasting pioneer Fred Smith and Time magazine executive Roy E. Larsen, the program combined actual news events with reenactments. The 'voice' of The March of Time was Westbrook Van Voorhis. The radio program was later developed into a newsreel series produced and written by Louis de Rochemont and his brother Richard de Rochemont. The March of Time was recognized with an Academy Honorary Award in 1937.The March of Time organization also produced four feature films for theatrical release, and created documentary series for early television. Its first TV series, Crusade in Europe (1949), received a Peabody Award and one of the first Emmy Awards.";
