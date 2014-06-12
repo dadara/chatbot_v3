@@ -16,11 +16,17 @@ public class TurnPiecesPuzzle : MonoBehaviour
 	GameObject mainCamera;
 	GameLogic gameLogic;
 
+	private float timeSpent = 0;
+	GameObject scorePanel;
+
+	public GameObject timeLabel;
+
 	// Use this for initialization
 	void Start () 
 	{
 		mainCamera = GameObject.Find("MainCamera");
 		gameLogic = mainCamera.GetComponent<GameLogic>();
+		scorePanel = GameObject.Find("ScorePanel");
 	}
 
 	public void StartGame()
@@ -36,6 +42,8 @@ public class TurnPiecesPuzzle : MonoBehaviour
 
 		i = 0;
 		gameActive = true;
+		timeSpent = 0;
+		timeLabel.GetComponent<UILabel>().text = "0 s";
 	}
 	
 	// Update is called once per frame
@@ -43,6 +51,9 @@ public class TurnPiecesPuzzle : MonoBehaviour
 	{
 		if(gameActive)
 		{
+			timeSpent += Time.deltaTime;
+			timeLabel.GetComponent<UILabel>().text = Mathf.Round(timeSpent) + " s";
+
 			if(!gameCompleted)
 			{
 				parts[i].GetComponent<MeshRenderer>().material.color = selectedColor;
@@ -99,10 +110,17 @@ public class TurnPiecesPuzzle : MonoBehaviour
 		{
 			gameCompleted = true;
 			gameActive = false;
+			float points = Mathf.Round(1/timeSpent*100);
 			parts[i].GetComponent<MeshRenderer>().material.color = Color.white;
 			particles.Play();
-			gameLogic.ActivateAlert("Congratulations, you completed the picture!");
+			gameLogic.ActivateAlert("Congratulations, you completed the picture and scored " + points + " Points.");
+			scorePanel.GetComponent<Score>().addScore(points);
 		}
 	}
 
+	public void stopParticles()
+	{
+		particles.Stop();
+		particles.Clear();
+	}
 }

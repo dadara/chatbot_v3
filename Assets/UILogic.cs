@@ -3,9 +3,9 @@ using System.Collections;
 
 public class UILogic : MonoBehaviour {
 	
-	private bool inventoryIsActive = false;
+	public bool inventoryIsActive = false;
 	private bool phoneIsActive = false;
-	private bool scanIsActive = false;
+	public bool scanIsActive = false;
 
 	//Inventory Elements
 	public GameObject inventoryLargeCloseButton;

@@ -25,7 +25,8 @@ public class LetterMovement : MonoBehaviour {
 
 	void Update () 
 	{
-		if(this.transform.parent.parent.parent.GetComponent<WordPuzzle>().gameActive)
+		/*
+		if(this.transform.parent.parent.GetComponent<WordPuzzle>().gameActive)
 		{
 
 			// change to random direction at random intervals
@@ -47,7 +48,7 @@ public class LetterMovement : MonoBehaviour {
 			transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), 
 			                                Mathf.Clamp(transform.position.y, minY, maxY),
 			                                transform.position.z);
-		}
+		}*/
 	}
 
 	void OnMouseOver()
@@ -63,11 +64,14 @@ public class LetterMovement : MonoBehaviour {
 	
 	void OnMouseDown()
 	{
-		string letter = this.transform.GetComponent<TextMesh>().text;
-		if(this.transform.parent.parent.parent.GetComponent<WordPuzzle>().AddLetter(letter))
+		string text = this.transform.GetComponent<TextMesh>().text;
+
+		this.transform.parent.parent.GetComponent<WordPuzzle>().selectWord(text);
+
+		/*if(this.transform.parent.parent.parent.GetComponent<WordPuzzle>().AddLetter(letter))
 		{
 			this.transform.GetComponent<TextMesh>().text = "";
 			this.transform.GetComponent<BoxCollider>().enabled = true;
-		}
+		}*/
 	}
 }

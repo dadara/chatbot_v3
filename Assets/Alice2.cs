@@ -26,7 +26,7 @@ public class Alice2 : MonoBehaviour {
 
 	List<string> topics;
 	int cnt;
-	public GameObject panel;
+	GameObject panel;
 
 	GameObject janecb;
 	
@@ -74,6 +74,7 @@ public class Alice2 : MonoBehaviour {
 	bool ActivateTurnPiecesPuzzleBool;
 
 	public GameObject endscreen;
+	public GameObject scorePanel;
 
 	// Use this for initialization
 	void Start () {
@@ -126,7 +127,7 @@ public class Alice2 : MonoBehaviour {
 
 //******************User Interface Elements for chat (input buttons, textfield for Jane's answer*******************************//
 //		variable to check if input has changed (=Input buutton was pressed, Text saved in UIButtonInput in this string)
-		GameObject panel = GameObject.Find("Panel");
+		panel = GameObject.Find("Panel");
 
 		cacheInputBot = "";
 
@@ -137,10 +138,35 @@ public class Alice2 : MonoBehaviour {
 		Input2btn = GameObject.Find("Input2Button");
 		Input3btn = GameObject.Find("Input3Button");
 		
-		Input1btnLabel = Input1btn.GetComponentInChildren<UILabel>();
-		Input2btnLabel = Input2btn.GetComponentInChildren<UILabel>();
-		Input3btnLabel = Input3btn.GetComponentInChildren<UILabel>();
-		
+		//Input1btnLabel = Input1btn.GetComponentInChildren<UILabel>();
+		//Input2btnLabel = Input2btn.GetComponentInChildren<UILabel>();
+		//Input3btnLabel = Input3btn.GetComponentInChildren<UILabel>();
+
+		foreach (Transform child in Input1btn.transform)
+		{
+			if(child.name == "LabelBtnKeyword")
+			{
+				Input1btnLabel = child.GetComponent<UILabel>();
+			}
+		}
+
+		foreach (Transform child in Input2btn.transform)
+		{
+			if(child.name == "LabelBtnKeyword")
+			{
+				Input2btnLabel = child.GetComponent<UILabel>();
+			}
+		}
+
+		foreach (Transform child in Input3btn.transform)
+		{
+			if(child.name == "LabelBtnKeyword")
+			{
+				Input3btnLabel = child.GetComponent<UILabel>();
+			}
+		}
+
+
 		Input1btnLabel.text = "home";
 		Input2btnLabel.text = "call taxi";
 		Input3btnLabel.text = "here alone";
@@ -185,9 +211,13 @@ public class Alice2 : MonoBehaviour {
 //			}
 //		}
 
-		topicChangeTime += Time.deltaTime;
+		//Don't change topic while user is in inventory
+		if(!panel.GetComponent<UILogic>().inventoryIsActive && !panel.GetComponent<UILogic>().scanIsActive)
+		{
+			topicChangeTime += Time.deltaTime;
+		}
 		
-		if(topicChangeTime>=30){
+		if(topicChangeTime>=45){
 			ChangeTopic();
 			topicChangeTime=0;
 			Debug.Log("topicChangeTime=0");
@@ -207,7 +237,7 @@ public class Alice2 : MonoBehaviour {
 			chatHistory[cnt] = outputBot;
 			cnt++;
 
-			chatHistoryString = inputBot + Environment.NewLine + outputBot +Environment.NewLine + chatHistoryString;
+			chatHistoryString = inputBot + Environment.NewLine + outputBot + Environment.NewLine + Environment.NewLine + chatHistoryString;
 			if(chatHistoryString.Length > 17000){
 				Debug.Log("chatHistoryString too long");
 				chatHistoryString = chatHistoryString.Substring(0,17000);
@@ -226,11 +256,13 @@ public class Alice2 : MonoBehaviour {
 		int numberChatHistoryFile=0;
 		String line="";
 		startTime += Time.deltaTime;
-		if(startTime>= 360){
+
+		if(startTime>= 360 && scorePanel.GetComponent<Score>().getScore() > 20){
 			jane.text = "There's Jena and she found my Kitten, thanks for the nice conversation. Have a nice afternoon.";
 			Input1btnLabel.text = "end";
 			Input2btnLabel.text = "fin";
 			Input3btnLabel.text = "ende";
+			scorePanel.GetComponent<Score>().evaluateEndScore(inventory.Count);
 			endscreen.SetActive (true);
 		}
 

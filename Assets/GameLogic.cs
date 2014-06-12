@@ -13,6 +13,7 @@ public class GameLogic : MonoBehaviour {
 	public GameObject turnCubesPuzzle;
 	public GameObject turnCubesPuzzle2;
 	public GameObject wordPuzzle;
+	public GameObject wordPuzzleUI;
 
 	//Instructions
 	public GameObject puzzleInstructions;
@@ -28,10 +29,25 @@ public class GameLogic : MonoBehaviour {
 	private Vector3 cameraPos;
 	public bool gameIsWaitingForActivation = false;
 	string gameWaitingForActivation;
+	public GameObject clouds;
+	GameObject phoneSprite;
+	GameObject inventoryViewAllButton;	
+
+	//Input Buttons
+	GameObject Input1btn;
+	GameObject Input2btn;
+	GameObject Input3btn;
+
+
 
 	void Start () 
 	{
 		cameraPos = transform.position;
+		Input1btn = GameObject.Find("Input1Button");
+		Input2btn = GameObject.Find("Input2Button");
+		Input3btn = GameObject.Find("Input3Button");
+		phoneSprite = GameObject.Find("PhoneSprite");
+		inventoryViewAllButton = GameObject.Find("InventoryViewAllButton");
 	}
 
 	// Update is called once per frame
@@ -77,6 +93,10 @@ public class GameLogic : MonoBehaviour {
 		{
 			ActivateTurnCubesPuzzle2();
 		}
+
+		//Stop Clouds
+		clouds.GetComponent<ParticleSystem>().Stop();
+		clouds.GetComponent<ParticleSystem>().Clear();
 	}
 
 	//Starts TurnPiecesPuzzle
@@ -279,9 +299,14 @@ public class GameLogic : MonoBehaviour {
 
 		wordPuzzle.SetActive(true);
 		puzzleInstructions.SetActive(true);
+		wordPuzzleUI.SetActive(true);
+
+		//Stop Clouds
+		clouds.GetComponent<ParticleSystem>().Stop();
+		clouds.GetComponent<ParticleSystem>().Clear();
 		
 		instructionLabel1.GetComponent<UILabel>().text = "Jane got confused and said '" + faultyWord + "' instead of another word";
-		instructionLabel2.GetComponent<UILabel>().text = "Click on the letters in the right order to guess the word she meant";
+		instructionLabel2.GetComponent<UILabel>().text = "Click on the right word. You won't get any points if you choose the wrong one.";
 		
 		cameraPos =  new Vector3 (wordPuzzle.transform.position.x, this.transform.position.y, this.transform.position.z);
 		
@@ -299,6 +324,21 @@ public class GameLogic : MonoBehaviour {
 		turnCubesPuzzle.SetActive(false);
 		turnCubesPuzzle2.SetActive(false);
 		wordPuzzle.SetActive(false);
+		wordPuzzleUI.SetActive(false);
+
+		//Stop Particles
+		turnPiecesPuzzle.GetComponent<TurnPiecesPuzzle>().stopParticles();
+		turnPiecesPuzzle2.GetComponent<TurnPiecesPuzzle>().stopParticles();
+		turnCubesPuzzle.GetComponent<TurnCubesPuzzle>().stopParticles();
+		turnCubesPuzzle2.GetComponent<TurnCubesPuzzle>().stopParticles();
+		wordPuzzle.GetComponent<WordPuzzle>().stopParticles();
+
+		//Aktivate InputButtons
+		Input1btn.GetComponent<BoxCollider>().enabled = true;
+		Input2btn.GetComponent<BoxCollider>().enabled = true;
+		Input3btn.GetComponent<BoxCollider>().enabled = true;
+		phoneSprite.GetComponent<BoxCollider>().enabled = true;
+		inventoryViewAllButton.GetComponent<BoxCollider>().enabled = true;
 
 		mainGame.SetActive(true);
 		
@@ -309,6 +349,17 @@ public class GameLogic : MonoBehaviour {
 	//Activates AlertPanel and displays a message
 	public void ActivateAlert(string message)
 	{
+		//Stop Clouds
+		clouds.GetComponent<ParticleSystem>().Stop();
+		clouds.GetComponent<ParticleSystem>().Clear();
+
+		//Deaktivate InputButtons
+		Input1btn.GetComponent<BoxCollider>().enabled = false;
+		Input2btn.GetComponent<BoxCollider>().enabled = false;
+		Input3btn.GetComponent<BoxCollider>().enabled = false;
+		phoneSprite.GetComponent<BoxCollider>().enabled = false;
+		inventoryViewAllButton.GetComponent<BoxCollider>().enabled = false;
+
 		alerts.SetActive(true);
 		alertLabel.GetComponent<UILabel>().text = message;
 	}

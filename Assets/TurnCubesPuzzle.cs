@@ -18,11 +18,17 @@ public class TurnCubesPuzzle : MonoBehaviour
 	GameObject mainCamera;
 	GameLogic gameLogic;
 
+	private float timeSpent = 0;
+	GameObject scorePanel;
+
+	public GameObject timeLabel;
+
 	// Use this for initialization
 	void Start () 
 	{
 		mainCamera = GameObject.Find("MainCamera");
 		gameLogic = mainCamera.GetComponent<GameLogic>();
+		scorePanel = GameObject.Find("ScorePanel");
 	}
 
 	public void StartGame()
@@ -31,6 +37,8 @@ public class TurnCubesPuzzle : MonoBehaviour
 		cnt = 0;
 		gameActive = true;
 		cubeSelected = false;
+		timeSpent = 0;
+		timeLabel.GetComponent<UILabel>().text = "0 s";
 
 		//Color selected Cube
 		foreach (Transform child in parts[i].transform)
@@ -49,6 +57,9 @@ public class TurnCubesPuzzle : MonoBehaviour
 	{
 		if(gameActive)
 		{
+			timeSpent += Time.deltaTime;
+			timeLabel.GetComponent<UILabel>().text = Mathf.Round(timeSpent) + " s";
+
 			if(!gameCompleted)
 			{   
 				if(!cubeSelected)
@@ -138,6 +149,7 @@ public class TurnCubesPuzzle : MonoBehaviour
 		{
 			gameCompleted = true;
 			gameActive = false;
+			float points = Mathf.Round(1/timeSpent*200);
 
 			foreach (Transform child in parts[i].transform)
 			{
@@ -145,7 +157,14 @@ public class TurnCubesPuzzle : MonoBehaviour
 			}
 
 			particles.Play();
-			gameLogic.ActivateAlert("Congratulations, you completed the picture!");
+			gameLogic.ActivateAlert("Congratulations, you completed the picture and scored " + points + " Points.");
+			scorePanel.GetComponent<Score>().addScore(points);
 		}
+	}
+
+	public void stopParticles()
+	{
+		particles.Stop();
+		particles.Clear();
 	}
 }
